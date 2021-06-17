@@ -1,0 +1,25 @@
+{
+  "short_name": "Simple Solution Club | Connecting Tech to Talent",
+  "name": "Introducing kids to the various concepts around earning, spending, saving, and investments. Helping them to have a financially fit future.",
+  "icons": [
+    {
+      "src": "simpleSolutionClub64.jpg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "simpleSolutionClub192.jpg",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "simpleSolutionClub512.jpg",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

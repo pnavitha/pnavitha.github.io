@@ -1,0 +1,50 @@
+{
+  "name": "peso",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.11.1",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "grommet": "^2.14.0",
+    "polished": "^3.6.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-images-upload": "^1.2.8",
+    "react-loader-spinner": "^3.1.14",
+    "react-player": "^2.7.0",
+    "react-responsive-carousel": "^3.2.11",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "screenfull": "^5.0.2",
+    "styled-components": "^5.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "deploy": "react-scripts build && aws s3 rm s3://simplesolutionclub.com/ --recursive && aws s3 sync build/ s3://simplesolutionclub.com --acl public-read"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.0.4"
+  }
+}
