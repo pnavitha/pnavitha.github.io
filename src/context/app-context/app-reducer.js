@@ -141,25 +141,5 @@ const AppReducer = (state, action) => {
     };
 };
 
-const createSkillsObject = (state, oldSkills, areaKey, subAreaKey, skillKey, newValue) => {
-    let newSkills;
-    if(!oldSkills) {
-        newSkills = {}
-    } else {
-        newSkills = {...oldSkills}
-    }
-
-    if(!newSkills[areaKey]) {
-        newSkills[areaKey] = {}
-    }
-
-    if(!newSkills[areaKey][subAreaKey]) {
-        newSkills[areaKey][subAreaKey] = {}
-    }
-
-    newSkills[areaKey][subAreaKey][skillKey] = newValue;
-    return newSkills;
-}
-
 export default AppReducer;
 

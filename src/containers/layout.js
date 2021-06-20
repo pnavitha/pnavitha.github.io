@@ -104,7 +104,7 @@ export default function Layout() {
                 </Toolbar>
             </AppBar>
             </div>
-            <SidePanel />
+            {/* <SidePanel /> */}
             <Switch>
                 <Route exact path="/">
                     <Home />

@@ -4,8 +4,6 @@ import { Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
-import InfoIcon from '@material-ui/icons/Info';
-import { Doughnut } from 'react-chartjs-2';
 import { AppContext } from '../context/app-context/app-context-provider';
 import {
     Link
@@ -15,12 +13,18 @@ import ContentHeader from '../components/contentHeader';
 import { useHistory } from "react-router-dom";
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import Paper from '@material-ui/core/Paper';
+import CreditDebitTable from '../components/CreditDebitTable';
+import CreditDebitBarChart from '../components/CreditDebitBarChart';
+import CreditAnalysisByParty from '../components/CreditAnalsisByParty';
+import CreditAnalysisByCategory from '../components/CreditAnalsisByCategory';
+import DebitAnalysisByParty from '../components/DebitAnalsisByParty';
+import DebitAnalysisByCategory from '../components/DebitAnalsisByCategory';
 
 const useStyles = makeStyles({
     contentAreaWrapper: {
         position: 'absolute',
         top: 48,
-        left: '12.8%',
+        // left: '12.8%',
         background: '#f2f3f7',
         padding: '16px',
         height: 'auto',
@@ -33,8 +37,8 @@ const useStyles = makeStyles({
         background: '#fff',
         paddingTop: '2%',
         paddingBottom: '2%',
-        paddingRight: '5%',
-        paddingLeft: '5%',
+        paddingRight: '2%',
+        paddingLeft: '2%',
     },
     whatsNewWrapper: {
         background: '#fff',
@@ -56,18 +60,42 @@ const Home = () => {
             <Grid item>
                 <Paper elevation={2} square className={classes.ContentWrapper}>
                 <Typography variant="subtitle1" level="4" margin="xsmall">Demo Report...</Typography>
-
-                    <Grid container direction="row" justify="center">
-
-                        <Grid item xs={12} sm={6}>
-                            <br />
-                            {/* <Doughnut data={state.demoReport.expenseData} /> */}
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            {/* <Doughnut data={state.demoReport.expenseData} /> */}
-                            {/* <img src={require("../images/svg_childrenPlaying.svg")} alt="simple solution club how to start financial education to my kids and talk about money earning, spending, saving, and investments" width="100%" height="100rem" /> */}
-                        </Grid>
+                <Grid item xs={12} sm={6}>
+                    <Typography variant="subtitle1" level="4" margin="xsmall">Summary...</Typography>
+                </Grid>
+                <Grid container direction="row" justify="flex-start" alignItems="flex-end" spacing={2}>
+                    <Grid item xs={12} sm={6}>
+                        <CreditDebitTable />
                     </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <CreditDebitBarChart />
+                    </Grid>
+                </Grid>
+                <br/>
+                <Grid item xs={12} sm={6}>
+                    <Typography variant="subtitle1" level="4" margin="xsmall">Credit Analysis...</Typography>
+                </Grid>
+                <Grid container direction="row" justify="flex-start" alignItems="flex-end" spacing={2}>
+                    <Grid item xs={12} sm={6}>
+                        <CreditAnalysisByCategory />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <CreditAnalysisByParty />
+                    </Grid>
+                </Grid>
+
+                <br/>
+                <Grid item xs={12} sm={6}>
+                    <Typography variant="subtitle1" level="4" margin="xsmall">Debit Analysis...</Typography>
+                </Grid>
+                <Grid container direction="row" justify="flex-start" alignItems="flex-end" spacing={2}>
+                    <Grid item xs={12} sm={6}>
+                        <DebitAnalysisByCategory />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <DebitAnalysisByParty />
+                    </Grid>
+                </Grid>
                     <br/>
                     <Link to="/help">
                         <Button onClick={() => dispatch({ type: "NAVIGATE_TO_HELP_PAGE" })} color="primary" startIcon={<PersonAddIcon />}>
