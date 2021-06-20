@@ -17,14 +17,14 @@ const useStyles = makeStyles({
         position: 'fixed',
         top: 48,
         bottom: 0,
-        minWidth: '13%',
-        maxWidth: '13%',
+        minWidth: '12%',
+        maxWidth: '12%',
         background: '#fff',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',
         flexWrap: 'wrap',
-        padding: '5px',
+        padding: '4px',
     },
 });
 
@@ -66,7 +66,7 @@ const SidePanel = () => {
                                 </Button>
                             </Link>
                         </Grid>
-                        <hr />
+                        {/* <hr />
                         { state.profile && state.profile != {} &&
                             <Grid item>
                             <Link to="/my-reports" style={{ textDecoration: state.activeMenu === 'about' ? 'underline' : 'none' }}>
@@ -82,7 +82,7 @@ const SidePanel = () => {
                                 {<Hidden xsDown>LOGOUT</Hidden>}
                             </Button>
                     </Grid>
-                        }
+                        } */}
                     </Grid>
                 </Grid>
             </Grid>

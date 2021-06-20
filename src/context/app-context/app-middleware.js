@@ -83,7 +83,29 @@ export const AppMiddleware = (dispatch, state) => (action) => {
                     // }
                 })();
             }
-            break;    
+            break; 
+        case 'UPLOAD_PDF_AND_ANALYZE':
+            console.log("in middleware with action: ", action);
+            (async () => {
+
+                dispatch({ type: 'LOADING_IN_PROGRESS' });
+                // const payload = {
+                //     base64Pdf: action.payload,
+                //     action: "UPLOAD_FILE"
+                // }
+                // console.log("payload: ", payload);
+                // const response = await fetch('https://i5870mwfv5.execute-api.ap-southeast-1.amazonaws.com/prod/notes', {
+                //     method: 'POST',
+                //     body: JSON.stringify(payload),
+                // });
+
+                // const responseJson = await response.json();
+                // console.log("response: ", responseJson);
+                dispatch({ type: 'LOADING_SUCCESS' });
+                // if (responseJson.statusCode === 200) {
+                //     dispatch({ type: 'LOGIN_SUCCESS' });
+                // }
+            })();      
         default: {
             dispatch(action);
             break;

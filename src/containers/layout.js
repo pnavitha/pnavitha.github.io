@@ -66,7 +66,7 @@ export default function Layout() {
                         <Grid item>
                         <Link to="/" style={{ textDecoration: 'none', color: '#fff' }}>
                         <Typography variant="h5" className={classes.title}>
-                            Peso
+                            Paiso
                         </Typography>
                         </Link>
                         </Grid>
@@ -83,7 +83,7 @@ export default function Layout() {
                                 <Link to="/help">
                                     <IconButton size='small' color='secondary' style={{ color: '#00e600' }} onClick={() => dispatch({ type: "NAVIGATE_TO_HELP_PAGE" })}><WhatsAppIcon /></IconButton>
                                 </Link>
-                        {(!state.profile || state.profile == {}) ? <Box>
+                        {/* {(!state.profile || state.profile == {}) ? <Box>
                             <Link to="/login">
                             <Button color="secondary"  className={classes.register} onClick={() => dispatch({ type: "NAVIGATE_TO_LOGIN_PAGE"})}>
                                 Login
@@ -97,7 +97,7 @@ export default function Layout() {
                             </Link>
                         </Box> : 
                         <IconButton size='small' color='secondary'><AccountCircleIcon /></IconButton>
-                        }
+                        } */}
                         </Grid>
                         </Grid>
                     </Grid>

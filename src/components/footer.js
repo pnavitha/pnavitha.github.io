@@ -15,7 +15,7 @@ const Footer = () => {
     const classes = useStyles();
 
     return <Box className={classes.footer}>
-        <Typography variant="body1">Copyright 2021 Peso. All rights reserved.</Typography>    
+        <Typography variant="body1">Copyright 2021 Paiso. All rights reserved.</Typography>    
         </Box>
 }
 

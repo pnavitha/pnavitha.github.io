@@ -47,7 +47,7 @@ const Login = () => {
   >
     <DialogContent>
         <Box fontWeight="fontWeightBold" color="#1d75ae" >
-            Welcome to Peso!!
+            Welcome to Paiso!!
         </Box>
         <Grid container direction="column">
         <FormControl>

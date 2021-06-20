@@ -48,7 +48,7 @@ const Register = () => {
   >
     <DialogContent>
         <Box fontWeight="fontWeightBold" color="#1d75ae" >
-            Thanks for choosing Peso!!
+            Thanks for choosing Paiso!!
         </Box>
         <Grid container direction="column">
         <FormControl>

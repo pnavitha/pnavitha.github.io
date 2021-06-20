@@ -1,4 +1,4 @@
-This project was forked from the dummy app "peso".
+This project was forked from the dummy app "paiso".
 
 ## Functionality
 
