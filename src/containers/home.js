@@ -13,12 +13,14 @@ import ContentHeader from '../components/contentHeader';
 import { useHistory } from "react-router-dom";
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import Paper from '@material-ui/core/Paper';
+import Hidden from '@material-ui/core/Hidden';
 import CreditDebitTable from '../components/CreditDebitTable';
 import CreditDebitBarChart from '../components/CreditDebitBarChart';
 import CreditAnalysisByParty from '../components/CreditAnalsisByParty';
 import CreditAnalysisByCategory from '../components/CreditAnalsisByCategory';
 import DebitAnalysisByParty from '../components/DebitAnalsisByParty';
 import DebitAnalysisByCategory from '../components/DebitAnalsisByCategory';
+import BankStatement from '../components/BankStatement';
 
 const useStyles = makeStyles({
     contentAreaWrapper: {
@@ -26,7 +28,7 @@ const useStyles = makeStyles({
         top: 48,
         // left: '12.8%',
         background: '#f2f3f7',
-        padding: '16px',
+        padding: '10px',
         height: 'auto',
         overflow: 'scroll',
         direction: 'column',
@@ -37,8 +39,8 @@ const useStyles = makeStyles({
         background: '#fff',
         paddingTop: '2%',
         paddingBottom: '2%',
-        paddingRight: '2%',
-        paddingLeft: '2%',
+        paddingRight: '1%',
+        paddingLeft: '1%',
     },
     whatsNewWrapper: {
         background: '#fff',
@@ -96,6 +98,13 @@ const Home = () => {
                         <DebitAnalysisByParty />
                     </Grid>
                 </Grid>
+
+                <Hidden only="xs">
+                <Grid item xs={12} sm={12}>
+                    <Typography variant="subtitle1" level="4" margin="xsmall">Statement...</Typography>
+                    <BankStatement />
+                </Grid>
+                </Hidden>
                     <br/>
                     <Link to="/help">
                         <Button onClick={() => dispatch({ type: "NAVIGATE_TO_HELP_PAGE" })} color="primary" startIcon={<PersonAddIcon />}>

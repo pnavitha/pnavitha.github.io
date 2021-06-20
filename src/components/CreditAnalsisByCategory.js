@@ -24,12 +24,13 @@ const useStyles = makeStyles({
 });
 
 const columns = [
-    { id: 'category', label: 'Category', minWidth: 20, align: 'left' },
-    { id: 'cr', label: 'Credit', minWidth: 20, align: 'right' },
+    { id: 'category', label: 'Category', minWidth: 10, maxWidth: 10, align: 'left' },
+    { id: 'cr', label: 'Credit', minWidth: 10, maxWidth: 10, align: 'right' },
     {
       id: 'crCount',
       label: 'Cr Ct',
-      minWidth: 20,
+      minWidth: 10,
+      maxWidth: 10,
       align: 'right'
     }
 ];

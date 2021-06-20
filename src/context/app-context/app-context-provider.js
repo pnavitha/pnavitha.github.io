@@ -144,7 +144,91 @@ const initialState = {
                 dr: 1000,
                 drCount: 2
             },
-        }    
+        },
+        bankStatement: [
+            {
+                "Date": "05-07-2020",
+                "Desc": "O/S INTEREST RECOVERY FROM A/C XXXXXXXXX X0570",
+                "Dr": null,
+                "Cr": 21000,
+                "Bal": 286445,
+                "Cat": "INTEREST-EARNED",
+                "Party": null
+              },
+              {
+                "Date": "20-05-2020",
+                "Desc": "99283999TERMINAL I CARDS SETTL. 11/02/20",
+                "Dr": null,
+                "Cr": 1,
+                "Bal": 286446,
+                "Cat": "CARD-SETTLEMENT",
+                "Party": null
+              },
+              {
+                "Date": "20-05-2020",
+                "Desc": "99283999TERMINAL 1 CARDS SETTL. 05/03/20",
+                "Dr": null,
+                "Cr": 0.99,
+                "Bal": 286446.99,
+                "Cat": "CARD-SETTLEMENT",
+                "Party": "MUTHU RAJ"
+              },
+              {
+                "Date": "31-05-2020",
+                "Desc": "DEBIT INTEREST CAPITALIZED",
+                "Dr": 28264,
+                "Cr": null,
+                "Bal": 258182.99,
+                "Cat": "INTEREST-PAID",
+                "Party": null
+              },
+              {
+                "Date": "06-10-2020",
+                "Desc": "O/S INTEREST RECOVERY FROM A/C XXXXXXXXX X0570",
+                "Dr": null,
+                "Cr": 2000,
+                "Bal": 260182.99,
+                "Cat": "INTEREST-EARNED",
+                "Party": "BAG INDUSTRIES"
+              },
+              {
+                "Date": "07-01-2020",
+                "Desc": "DEBIT INTEREST CAPITALIZED",
+                "Dr": 27691,
+                "Cr": null,
+                "Bal": 232491.99,
+                "Cat": "INTEREST-PAID",
+                "Party": null
+              },
+              {
+                "Date": "24-07-2020",
+                "Desc": "CHQ DEP - TRANSFER OW 1 - CHENNAI RK SAL",
+                "Dr": null,
+                "Cr": 187200,
+                "Bal": 419691.99,
+                "Cat": "CHQ-TRANSFER",
+                "Party": null
+              },
+              {
+                "Date": "28-07-2020",
+                "Desc": "I/W CHQ RETURN-MICR -MADRASA E MOHID",
+                "Dr": 19850,
+                "Cr": null,
+                "Bal": 399841.99,
+                "Cat": "INWARD-RETURN",
+                "Party": null
+              },
+              {
+                "Date": "28-07-2020",
+                "Desc": "I/W CHQ RETURN-MICR CTS-CHENNAL RK S",
+                "Dr": null,
+                "Cr": 19850,
+                "Bal": 419691.99,
+                "Cat": "INWARD-RETURN",
+                "Party": null
+              },
+        ]  
+
     }
 };
 

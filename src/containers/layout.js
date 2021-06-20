@@ -51,6 +51,9 @@ const useStyles = makeStyles((theme) => ({
     register: {
         fontSize: 'x-small'
       },
+      helpSection: {
+          paddingRight: '20px'
+      }  
   }));
 
 export default function Layout() {
@@ -76,6 +79,7 @@ export default function Layout() {
                             direction="row"
                             justify="flex-end"
                             alignItems="center"
+                            className={classes.helpSection}
                             >
                                 <Link to="/help">
                                     <IconButton size='small' color='secondary' onClick={() => dispatch({ type: "NAVIGATE_TO_HELP_PAGE" })}><PhoneIcon /></IconButton>
