@@ -37,6 +37,20 @@ const columns = [
       minWidth: 1,
       maxWidth: 2,
       align: 'right'
+    },
+    {
+        id: 'Cat',
+        label: 'Category',
+        minWidth: 1,
+        maxWidth: 2,
+        align: 'left'
+    },
+    {
+        id: 'Party',
+        label: 'Party',
+        minWidth: 1,
+        maxWidth: 2,
+        align: 'left'
     }
 ];
 

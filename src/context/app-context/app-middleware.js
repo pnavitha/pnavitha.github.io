@@ -90,6 +90,10 @@ export const AppMiddleware = (dispatch, state) => (action) => {
 
                 dispatch({ type: 'LOADING_IN_PROGRESS' });
                 // const payload = {
+                //     bankStatementInfo:{
+                //          password: state.newBankStatementForm.bankStatementPassword  
+                //          bankName: state.newBankStatementForm.selectedBankName
+                //        } 
                 //     base64Pdf: action.payload,
                 //     action: "UPLOAD_FILE"
                 // }

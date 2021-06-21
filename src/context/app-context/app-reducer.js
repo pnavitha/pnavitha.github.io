@@ -131,7 +131,15 @@ const AppReducer = (state, action) => {
                     ...state.newBankStatementForm,
                     selectedBankName: action.payload
                 }
-            } 
+            }
+        case 'UPDATE_BANK_STATEMENT_PASSWORD':
+            return {
+                ...state,
+                newBankStatementForm: {
+                    ...state.newBankStatementForm,
+                    bankStatementPassword: action.payload
+                }
+            }     
         case 'LOGOUT':
             return {
                 ...state,
