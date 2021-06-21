@@ -28,7 +28,7 @@ const columns = [
     { id: 'cr', label: 'Credit', minWidth: 10, maxWidth: 10, align: 'right' },
     {
       id: 'crCount',
-      label: 'Cr Ct',
+      label: 'Credit Count',
       minWidth: 10,
       maxWidth: 10,
       align: 'right'
@@ -45,11 +45,11 @@ const options = {
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
-      backgroundColor: '#000',
+      backgroundColor: '#282c35',
       color: '#fff',
     },
     body: {
-      fontSize: 14,
+      fontSize: 8,
     },
   }))(TableCell);
 
@@ -113,7 +113,7 @@ const CreditAnalsisByCategory = () => {
                             const cellValue = (column.id === 'category') ? key : value[column.id];
                             return (
                             <TableCell key={column.id} align={column.align}>
-                                <Typography variant="body1" margin="xsmall">{cellValue}</Typography>
+                                <Typography variant="body2" margin="xsmall">{cellValue}</Typography>
                             </TableCell>
                             );
                         })}

@@ -28,7 +28,7 @@ const columns = [
     { id: 'dr', label: 'Debit', minWidth: 20, align: 'right' },
     {
       id: 'drCount',
-      label: 'Dr Ct',
+      label: 'Debit Count',
       minWidth: 20,
       align: 'right'
     }
@@ -44,11 +44,11 @@ const options = {
 
 const StyledTableCell = withStyles(() => ({
     head: {
-      backgroundColor: '#000',
+      backgroundColor: '#282c35',
       color: '#fff',
     },
     body: {
-      fontSize: 14,
+      fontSize: 8,
     },
   }))(TableCell);
 
@@ -112,7 +112,7 @@ const DebitAnalsisByParty = () => {
                             const cellValue = (column.id === 'category') ? key : value[column.id];
                             return (
                             <TableCell key={column.id} align={column.align}>
-                                <Typography variant="body1" margin="xsmall">{cellValue}</Typography>
+                                <Typography variant="body2" margin="xsmall">{cellValue}</Typography>
                             </TableCell>
                             );
                         })}

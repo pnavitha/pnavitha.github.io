@@ -69,7 +69,7 @@ export default function Layout() {
                         <Grid item>
                         <Link to="/" style={{ textDecoration: 'none', color: '#fff' }}>
                         <Typography variant="h5" className={classes.title}>
-                            Paiso
+                            FinDash
                         </Typography>
                         </Link>
                         </Grid>

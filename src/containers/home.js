@@ -25,10 +25,9 @@ import BankStatement from '../components/BankStatement';
 const useStyles = makeStyles({
     contentAreaWrapper: {
         position: 'absolute',
-        top: 48,
-        // left: '12.8%',
+        top: 50,
         background: '#f2f3f7',
-        padding: '10px',
+        padding: '8px',
         height: 'auto',
         overflow: 'scroll',
         direction: 'column',
@@ -45,6 +44,9 @@ const useStyles = makeStyles({
     whatsNewWrapper: {
         background: '#fff',
         padding: '16px',
+    },
+    reportSubtitle: {
+        padding: '4px'
     }
 });
 
@@ -61,9 +63,10 @@ const Home = () => {
             <Grid item><br /></Grid>
             <Grid item>
                 <Paper elevation={2} square className={classes.ContentWrapper}>
-                <Typography variant="subtitle1" level="4" margin="xsmall">Demo Report...</Typography>
-                <Grid item xs={12} sm={6}>
-                    <Typography variant="subtitle1" level="4" margin="xsmall">Summary...</Typography>
+                <Typography variant="subtitle1" level="4" margin="xsmall">DEMO REPORT...</Typography>
+                <Grid item xs={12} sm={12}>
+                    <Typography className={classes.reportSubtitle} variant="subtitle2" level="4" margin="xsmall">Summary</Typography>
+                    <br/>
                 </Grid>
                 <Grid container direction="row" justify="flex-start" alignItems="flex-end" spacing={2}>
                     <Grid item xs={12} sm={6}>
@@ -74,10 +77,11 @@ const Home = () => {
                     </Grid>
                 </Grid>
                 <br/>
-                <Grid item xs={12} sm={6}>
-                    <Typography variant="subtitle1" level="4" margin="xsmall">Credit Analysis...</Typography>
+                <Grid item xs={12} sm={12}>
+                    <Typography className={classes.reportSubtitle} variant="subtitle2" level="4" margin="xsmall">Credit Analysis</Typography>
+                    <br/>
                 </Grid>
-                <Grid container direction="row" justify="flex-start" alignItems="flex-end" spacing={2}>
+                <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={2}>
                     <Grid item xs={12} sm={6}>
                         <CreditAnalysisByCategory />
                     </Grid>
@@ -87,10 +91,11 @@ const Home = () => {
                 </Grid>
 
                 <br/>
-                <Grid item xs={12} sm={6}>
-                    <Typography variant="subtitle1" level="4" margin="xsmall">Debit Analysis...</Typography>
+                <Grid item xs={12} sm={12}>
+                    <Typography className={classes.reportSubtitle} variant="subtitle2" level="4" margin="xsmall">Debit Analysis</Typography>
+                    <br />
                 </Grid>
-                <Grid container direction="row" justify="flex-start" alignItems="flex-end" spacing={2}>
+                <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={2}>
                     <Grid item xs={12} sm={6}>
                         <DebitAnalysisByCategory />
                     </Grid>
@@ -98,13 +103,12 @@ const Home = () => {
                         <DebitAnalysisByParty />
                     </Grid>
                 </Grid>
-
-                <Hidden only="xs">
+                <br />
                 <Grid item xs={12} sm={12}>
-                    <Typography variant="subtitle1" level="4" margin="xsmall">Statement...</Typography>
+                    <Typography className={classes.reportSubtitle} variant="subtitle2" level="4" margin="xsmall">Statement</Typography>
+                    <br />
                     <BankStatement />
                 </Grid>
-                </Hidden>
                     <br/>
                     <Link to="/help">
                         <Button onClick={() => dispatch({ type: "NAVIGATE_TO_HELP_PAGE" })} color="primary" startIcon={<PersonAddIcon />}>

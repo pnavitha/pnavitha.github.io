@@ -27,7 +27,7 @@ const columns = [
     { id: 'cr', label: 'Credit', minWidth: 20, align: 'right' },
     {
       id: 'crCount',
-      label: 'Cr Ct',
+      label: 'Credit Count',
       minWidth: 2,
       align: 'right'
     },
@@ -39,7 +39,7 @@ const columns = [
     },
     {
       id: 'drCount',
-      label: 'Dr Ct',
+      label: 'Debit Count',
       minWidth: 2,
       align: 'right'
     },
@@ -47,11 +47,11 @@ const columns = [
 
 const StyledTableCell = withStyles(() => ({
     head: {
-      backgroundColor: '#000',
+      backgroundColor: '#282c35',
       color: '#fff',
     },
     body: {
-      fontSize: 14,
+      fontSize: 8,
     },
   }))(TableCell);
 
@@ -107,7 +107,7 @@ const CreditDebitTable = () => {
 
                             return (
                             <TableCell key={column.id} align={column.align}>
-                                <Typography variant="body1" margin="xsmall">{cellValue}</Typography>
+                                <Typography variant="body2" margin="xsmall">{cellValue}</Typography>
                             </TableCell>
                             );
                         })}

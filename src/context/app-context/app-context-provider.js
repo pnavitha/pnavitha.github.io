@@ -226,7 +226,7 @@ const initialState = {
               },
               {
                 "Date": "28-07-2020",
-                "Desc": "I/W CHQ RETURN-MICR CTS-CHENNAL RK S",
+                "Desc": "I/W CHQ RETURN-MICredit CountS-CHENNAL RK S",
                 "Dr": null,
                 "Cr": 19850,
                 "Bal": 419691.99,
