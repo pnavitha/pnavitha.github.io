@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import { AppContext } from '../context/app-context/app-context-provider';
 import { 
     Paper,
@@ -45,6 +45,16 @@ const columns = [
     },
 ];
 
+const StyledTableCell = withStyles(() => ({
+    head: {
+      backgroundColor: '#000',
+      color: '#fff',
+    },
+    body: {
+      fontSize: 14,
+    },
+  }))(TableCell);
+
 const CreditDebitTable = () => {
     const classes = useStyles();
     const [state, dispatch] = useContext(AppContext);
@@ -70,13 +80,13 @@ const CreditDebitTable = () => {
                 <TableHead>
                     <TableRow className={classes.tableHead}>
                     {columns.map((column) => (
-                        <TableCell
+                        <StyledTableCell
                         key={column.id}
                         align={column.align}
                         style={{ minWidth: column.minWidth }}
                         >
                         {column.label}
-                        </TableCell>
+                        </StyledTableCell>
                     ))}
                     </TableRow>
                 </TableHead>

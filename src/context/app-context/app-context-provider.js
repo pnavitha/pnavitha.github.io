@@ -117,6 +117,12 @@ const initialState = {
                 crCount: 2,
                 dr: 10000,
                 drCount: 2
+            },
+            "REVERSED": {
+                cr: 10000,
+                crCount: 2,
+                dr: 2000,
+                drCount: 2
             }
         },
         partyWiseTransactions: {

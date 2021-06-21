@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import { AppContext } from '../context/app-context/app-context-provider';
 import { 
     Paper,
@@ -43,12 +43,26 @@ const options = {
       },
 };
 
-function total(chart){
-    let data = chart.chart.data.datasets[0].data;
-    const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    var total = data.reduce(reducer);
-    return total;
-  }
+const StyledTableCell = withStyles((theme) => ({
+    head: {
+      backgroundColor: '#000',
+      color: '#fff',
+    },
+    body: {
+      fontSize: 14,
+    },
+  }))(TableCell);
+
+const StyledTableRow = withStyles((theme) => ({
+root: {
+    '&:nth-of-type(odd)': {
+    backgroundColor: '#ebffeb'
+    },
+    '&:nth-of-type(even)': {
+    backgroundColor: '#d8ffd8'
+    },
+},
+}))(TableRow);  
 
 const CreditAnalsisByCategory = () => {
     const classes = useStyles();
@@ -81,20 +95,20 @@ const CreditAnalsisByCategory = () => {
                 <TableHead>
                     <TableRow className={classes.tableHead}>
                     {columns.map((column) => (
-                        <TableCell
+                        <StyledTableCell
                         key={column.id}
                         align={column.align}
                         style={{ minWidth: column.minWidth }}
                         >
                         {column.label}
-                        </TableCell>
+                        </StyledTableCell>
                     ))}
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {Object.entries(state.demoReport.categoryWiseTransactions).map(([key, value]) => {
                     return (
-                        <TableRow hover role="checkbox" tabIndex={-1} key={key}>
+                        <StyledTableRow hover role="checkbox" tabIndex={-1} key={key}>
                         {columns.map((column) => {
                             const cellValue = (column.id === 'category') ? key : value[column.id];
                             return (
@@ -103,7 +117,7 @@ const CreditAnalsisByCategory = () => {
                             </TableCell>
                             );
                         })}
-                        </TableRow>
+                        </StyledTableRow>
                     );
                     })}
                 </TableBody>

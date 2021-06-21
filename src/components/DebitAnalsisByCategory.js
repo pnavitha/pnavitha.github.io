@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import { AppContext } from '../context/app-context/app-context-provider';
 import { 
     Paper,
@@ -43,6 +43,27 @@ const options = {
       },
 };
 
+const StyledTableCell = withStyles(() => ({
+    head: {
+      backgroundColor: '#000',
+      color: '#fff',
+    },
+    body: {
+      fontSize: 14,
+    },
+  }))(TableCell);
+
+const StyledTableRow = withStyles(() => ({
+    root: {
+        '&:nth-of-type(odd)': {
+        backgroundColor: '#ffebeb'
+        },
+        '&:nth-of-type(even)': {
+        backgroundColor: '#ffd8d8'
+        },
+    },
+}))(TableRow); 
+
 const DebitAnalsisByCategory = () => {
     const classes = useStyles();
     const [state, dispatch] = useContext(AppContext);
@@ -53,11 +74,11 @@ const DebitAnalsisByCategory = () => {
           {
             data: Object.values(state.demoReport.categoryWiseTransactions).map((value) => value.dr),
             backgroundColor: [
-                '#000000',  
-                '#333333',
-                '#666666',
-                '#858585',
-                '#adadad'
+                '#620000',  
+                '#b10000',
+                '#ff0000',
+                '#ff4e4e',
+                '#ffc4c4'
             ]
           },
         ],
@@ -74,20 +95,20 @@ const DebitAnalsisByCategory = () => {
                 <TableHead>
                     <TableRow className={classes.tableHead}>
                     {columns.map((column) => (
-                        <TableCell
+                        <StyledTableCell
                         key={column.id}
                         align={column.align}
                         style={{ minWidth: column.minWidth }}
                         >
                         {column.label}
-                        </TableCell>
+                        </StyledTableCell>
                     ))}
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {Object.entries(state.demoReport.categoryWiseTransactions).map(([key, value]) => {
                     return (
-                        <TableRow hover role="checkbox" tabIndex={-1} key={key}>
+                        <StyledTableRow hover role="checkbox" tabIndex={-1} key={key}>
                         {columns.map((column) => {
                             const cellValue = (column.id === 'category') ? key : value[column.id];
                             return (
@@ -96,7 +117,7 @@ const DebitAnalsisByCategory = () => {
                             </TableCell>
                             );
                         })}
-                        </TableRow>
+                        </StyledTableRow>
                     );
                     })}
                 </TableBody>

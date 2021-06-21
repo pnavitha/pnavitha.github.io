@@ -32,7 +32,7 @@ const CreditDebitTable = () => {
           {
             label: 'Debit',
             data: Object.values(state.demoReport.monthlyTransactions).map(value => value.cr),
-            backgroundColor: '#000'
+            backgroundColor: '#ff0000'
           },
           {
             label: 'Credit',

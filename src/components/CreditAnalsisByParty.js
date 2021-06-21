@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import { AppContext } from '../context/app-context/app-context-provider';
 import { 
     Paper,
@@ -43,6 +43,27 @@ const options = {
       },
 };
 
+const StyledTableCell = withStyles(() => ({
+    head: {
+      backgroundColor: '#000',
+      color: '#fff',
+    },
+    body: {
+      fontSize: 14,
+    },
+  }))(TableCell);
+
+const StyledTableRow = withStyles(() => ({
+    root: {
+        '&:nth-of-type(odd)': {
+        backgroundColor: '#ebffeb'
+        },
+        '&:nth-of-type(even)': {
+        backgroundColor: '#d8ffd8'
+        },
+    },
+}))(TableRow); 
+
 const CreditAnalsisByParty = () => {
     const classes = useStyles();
     const [state, dispatch] = useContext(AppContext);
@@ -74,20 +95,20 @@ const CreditAnalsisByParty = () => {
                 <TableHead>
                     <TableRow className={classes.tableHead}>
                     {columns.map((column) => (
-                        <TableCell
+                        <StyledTableCell
                         key={column.id}
                         align={column.align}
                         style={{ minWidth: column.minWidth }}
                         >
                         {column.label}
-                        </TableCell>
+                        </StyledTableCell>
                     ))}
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {Object.entries(state.demoReport.partyWiseTransactions).map(([key, value]) => {
                     return (
-                        <TableRow hover role="checkbox" tabIndex={-1} key={key}>
+                        <StyledTableRow hover role="checkbox" tabIndex={-1} key={key}>
                         {columns.map((column) => {
                             const cellValue = (column.id === 'category') ? key : value[column.id];
                             return (
@@ -96,7 +117,7 @@ const CreditAnalsisByParty = () => {
                             </TableCell>
                             );
                         })}
-                        </TableRow>
+                        </StyledTableRow>
                     );
                     })}
                 </TableBody>
