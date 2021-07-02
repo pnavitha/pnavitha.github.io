@@ -87,7 +87,7 @@ const ContentHeader = () => {
         <Paper elevation={2} square className={classes.ContentWrapper}>
             <Typography variant="subtitle1">ABOUT US...</Typography>
             <br />
-            <Typography variant="body1">We are the team who believes technology can help in your business money problems. We fasten the decision making time for borrower's loan application in banks....</Typography>
+            <Typography variant="body1">We are the team who believes technology can help in your business money problems. We fasten the decision making time for borrower's loan applications in banks....</Typography>
             <Link to="/about" style={{ textDecoration: 'none' }}>
                 <Button onClick={() => dispatch({ type: "NAVIGATE_TO_ABOUT_PAGE" })} color="primary" startIcon={<InfoIcon />}>
                     Know more

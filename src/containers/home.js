@@ -64,7 +64,8 @@ const Home = () => {
             <Grid item>
                 <Paper elevation={2} square className={classes.ContentWrapper}>
                 <Typography variant="subtitle1" level="4" margin="xsmall">DEMO REPORT...</Typography>
-                <Typography variant="body1">We use technology to understand business finances. We generate multiple reports to create a profile of borrower. We analyse these reports and match the borrower with perfect lenders. Our technology is AI-driven and always learning. Following is a snippet of some basic analysis reports. Our reports are completely flexible and always improving.</Typography>
+                <br/>
+                <Typography variant="body1">We use technology to understand business finances. We generate multiple reports to create a valuable profile of borrower. We analyse these reports and match the borrower with perfect lenders. Our technology is AI-driven and always learning. Following is a snippet of some basic analysis reports. Our reports are completely flexible and always improving.</Typography>
                 <br/>
                 <Grid item xs={12} sm={12}>
                     <Typography className={classes.reportSubtitle} variant="subtitle2" level="4" margin="xsmall">Summary</Typography>

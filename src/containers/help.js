@@ -46,8 +46,10 @@ const Help = () => {
             We are always available at the following channels.
         </Box>
         <DialogContentText>
+          <br/>
           1. Call - 7093003840<br/>
-          2. WhatsApp - 7093003840
+          2. Email - connect@findash.in<br/>
+          3. WhatsApp - 7093003840
           </DialogContentText>
     </DialogContent>
     <DialogActions>

@@ -22,6 +22,7 @@ import IconButton from '@material-ui/core/IconButton';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import PhoneIcon from '@material-ui/icons/Phone';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import EmailIcon from '@material-ui/icons/Email';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -83,6 +84,9 @@ export default function Layout() {
                             >
                                 <Link to="/help">
                                     <IconButton size='small' color='secondary' onClick={() => dispatch({ type: "NAVIGATE_TO_HELP_PAGE" })}><PhoneIcon /></IconButton>
+                                </Link>
+                                <Link to="/help">
+                                    <IconButton size='small' color='secondary' onClick={() => dispatch({ type: "NAVIGATE_TO_HELP_PAGE" })}><EmailIcon /></IconButton>
                                 </Link>
                                 <Link to="/help">
                                     <IconButton size='small' color='secondary' style={{ color: '#00e600' }} onClick={() => dispatch({ type: "NAVIGATE_TO_HELP_PAGE" })}><WhatsAppIcon /></IconButton>

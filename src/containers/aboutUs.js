@@ -48,7 +48,7 @@ const AboutUs = () => {
             <Grid container direction="row" justify="center">
                 <Grid item xs={12} sm={8}>
                     <Typography variant="subtitle1">Who are we?</Typography>
-                    <Typography variant="body1">We are the team who believes technology can help in your business money problems. We fasten the decision making time for borrower's loan application in banks and other lending parties. It does not matter which domain you do business in or in what turnover. We are present for each buisness. We use our tech to analyse your documents and direct you to the right lenders.</Typography>
+                    <Typography variant="body1">We are the team who believes technology can help in your business money problems. We fasten the decision-making time for borrower's loan applications in banks and other lending parties. It does not matter which domain you do business in or in what turnover. We are present for each business. We use our tech to analyse your documents and direct you to the right lenders.</Typography>
                 </Grid>
                 <Grid item xs={12} sm={4}>
                     <img src={require("../images/svg_aboutus.svg")} alt="simple solution club best way to talk to kids about money earning, spending, saving, and investments" width="100%" height="100rem" />
@@ -72,7 +72,7 @@ const AboutUs = () => {
                 <Grid item xs={12} sm={8} >
                     <Typography variant="subtitle1">How can we help you?</Typography>
                     <br />
-                    <Typography variant="body1">We are expert in different kinds of business loans and MSME loans. We analyse all the documents related to your business and direct you to the right bank which can help you with the money problem and provides the best offer.</Typography>
+                    <Typography variant="body1">We are experts in different kinds of business loans and MSME loans. We analyse all the documents related to your business and direct you to the right bank which can help you with the money problem and provides the best offer.</Typography>
                 </Grid>
                 <Grid item xs={12} sm={4} >
                     <img src={require("../images/svg_project.svg")} alt="simple solution club best way of talking to child about money earning, spending, saving, and investments" width="100%" height="100rem" />
