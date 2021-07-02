@@ -46,8 +46,8 @@ const Help = () => {
             We are always available at the following channels.
         </Box>
         <DialogContentText>
-          1. Call - 1020304050<br/>
-          2. WhatsApp - 1020304050
+          1. Call - 7093003840<br/>
+          2. WhatsApp - 7093003840
           </DialogContentText>
     </DialogContent>
     <DialogActions>

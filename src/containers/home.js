@@ -27,7 +27,7 @@ const useStyles = makeStyles({
         position: 'absolute',
         top: 50,
         background: '#f2f3f7',
-        padding: '8px',
+        padding: '1%',
         height: 'auto',
         overflow: 'scroll',
         direction: 'column',
@@ -38,8 +38,8 @@ const useStyles = makeStyles({
         background: '#fff',
         paddingTop: '2%',
         paddingBottom: '2%',
-        paddingRight: '1%',
-        paddingLeft: '1%',
+        paddingRight: '5%',
+        paddingLeft: '5%',
     },
     whatsNewWrapper: {
         background: '#fff',
@@ -64,6 +64,8 @@ const Home = () => {
             <Grid item>
                 <Paper elevation={2} square className={classes.ContentWrapper}>
                 <Typography variant="subtitle1" level="4" margin="xsmall">DEMO REPORT...</Typography>
+                <Typography variant="body1">We use technology to understand business finances. We generate multiple reports to create a profile of borrower. We analyse these reports and match the borrower with perfect lenders. Our technology is AI-driven and always learning. Following is a snippet of some basic analysis reports. Our reports are completely flexible and always improving.</Typography>
+                <br/>
                 <Grid item xs={12} sm={12}>
                     <Typography className={classes.reportSubtitle} variant="subtitle2" level="4" margin="xsmall">Summary</Typography>
                     <br/>

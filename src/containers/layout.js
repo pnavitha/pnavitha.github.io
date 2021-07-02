@@ -87,28 +87,12 @@ export default function Layout() {
                                 <Link to="/help">
                                     <IconButton size='small' color='secondary' style={{ color: '#00e600' }} onClick={() => dispatch({ type: "NAVIGATE_TO_HELP_PAGE" })}><WhatsAppIcon /></IconButton>
                                 </Link>
-                        {/* {(!state.profile || state.profile == {}) ? <Box>
-                            <Link to="/login">
-                            <Button color="secondary"  className={classes.register} onClick={() => dispatch({ type: "NAVIGATE_TO_LOGIN_PAGE"})}>
-                                Login
-                            </Button>
-                            </Link>
-                            /
-                            <Link to="/register">
-                            <Button size="small" color="secondary" className={classes.register} onClick={() => dispatch({ type: "NAVIGATE_TO_REGISTER_PAGE"})}>
-                                Register
-                            </Button>
-                            </Link>
-                        </Box> : 
-                        <IconButton size='small' color='secondary'><AccountCircleIcon /></IconButton>
-                        } */}
                         </Grid>
                         </Grid>
                     </Grid>
                 </Toolbar>
             </AppBar>
             </div>
-            {/* <SidePanel /> */}
             <Switch>
                 <Route exact path="/">
                     <Home />

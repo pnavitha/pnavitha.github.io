@@ -44,12 +44,6 @@ const AppReducer = (state, action) => {
             return {
                 ...state,
                 activeMenu: 'login'
-            }    
-        case 'REGISTER_SUCCESS':
-            return {
-                ...state,
-                profile: { ...state.registerForm },
-                registerForm: {}
             }
         case 'CLEAR_REGISTER_FORM':
             return {
@@ -124,26 +118,27 @@ const AppReducer = (state, action) => {
                 ...state,
                 fetchedProfiles: action.payload
             }  
-        case 'UPDATE_BANK_NAME':
+        case 'UPDATE_USER_PHONE_NUMBER':
             return {
                 ...state,
-                newBankStatementForm:{
-                    ...state.newBankStatementForm,
-                    selectedBankName: action.payload
+                profilesForm:{
+                    ...state.profilesForm,
+                    phoneNumber: action.payload
                 }
             }
-        case 'UPDATE_BANK_STATEMENT_PASSWORD':
+        case 'UPDATE_USER_PHONE_EMALID':
             return {
                 ...state,
-                newBankStatementForm: {
-                    ...state.newBankStatementForm,
-                    bankStatementPassword: action.payload
+                profilesForm: {
+                    ...state.profilesForm,
+                    email: action.payload
                 }
             }     
-        case 'LOGOUT':
+        case 'REGISTER_SUCCESS':
             return {
                 ...state,
-                profile: undefined
+                profilesForm: {},
+                profileAdded: true
             }        
         default: return state;
     };

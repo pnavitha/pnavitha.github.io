@@ -26,7 +26,7 @@ const useStyles = makeStyles({
     ContentWrapper: {
         background: '#fff',
         paddingTop: '2%',
-        paddingBottom: '2%',
+        paddingBottom: '5%',
         paddingRight: '5%',
         paddingLeft: '5%',
     },
@@ -39,14 +39,14 @@ const useStyles = makeStyles({
         paddingLeft: '5%',
     },
     submitDetails: {
-        border: '1px solid #ccc',
+        // border: '1px solid #ccc',
         display: 'inline-block',
-        padding: '8px 12px',
+        padding: '4px 4px',
         cursor: 'pointer',
         backgroundColor: '#000',
         color: '#fff',
         textAlign: 'center',
-        boxShadow: '4px 4px #c3c3c3',
+        boxShadow: '2px 2px #c3c3c3',
         '&:hover': {
             background: '#25252B',
         },
@@ -87,7 +87,7 @@ const ContentHeader = () => {
         <Paper elevation={2} square className={classes.ContentWrapper}>
             <Typography variant="subtitle1">ABOUT US...</Typography>
             <br />
-            <Typography variant="body1">We help you in tracking your finances so that you focus on more important business which you aspire for...</Typography>
+            <Typography variant="body1">We are the team who believes technology can help in your business money problems. We fasten the decision making time for borrower's loan application in banks....</Typography>
             <Link to="/about" style={{ textDecoration: 'none' }}>
                 <Button onClick={() => dispatch({ type: "NAVIGATE_TO_ABOUT_PAGE" })} color="primary" startIcon={<InfoIcon />}>
                     Know more
@@ -98,44 +98,34 @@ const ContentHeader = () => {
     </Grid>
     <Grid item xs={12} sm={6}>
         <Paper elevation={2} square className={classes.JoinClubWrapper}>
-            <Grid container direction='column'>
-                <Typography variant="subtitle1">GET BANK STATEMENT ANALYSIS...</Typography>
-                <br />
+            { state.profileAdded ? 
                 <Box fontWeight="bold" color="#1d75ae" >
-                    Provide your bank statement to get details.
+                    Thank you for taking a step ahead. We will call you to help with your Business and MSME loans.
+                </Box> :
+                <Grid container direction='column'>
+                <Typography variant="subtitle1">CONNECT TO KNOW MORE...</Typography>
+                <Box fontWeight="bold" color="#1d75ae" >
+                    Provide your contact information. We will reach out to you.
                 </Box>
-                <Autocomplete
-                    size='small'
-                    fontSize='small'
-                    options={state.bankNames}
-                    value={state.newBankStatementForm ? state.newBankStatementForm.selectedBankName : ""}
-                    onChange={(event, newValue) => dispatch({ type: "UPDATE_BANK_NAME", payload: newValue })}
-                    getOptionLabel={(option) => option}
-                    renderInput={(params) => <TextField {...params} InputLabelProps={{ style: { fontSize: 12 } }} label="Select Bank Name" />}
-                />
-                <Grid container direction='row' justify="flex-start" alignItems="flex-end">
-                    <Grid item xs={10} sm={10}>
-                        <FormControl className={classes.bankPassword}>
-                            <InputLabel >Bank statement password</InputLabel>
-                            <Input
-                                type={visibility ? "text" : "password"}
-                                value={state.newBankStatementForm ? state.newBankStatementForm.bankStatementPassword : ""}
-                                onChange={(event) => dispatch({ type: "UPDATE_BANK_STATEMENT_PASSWORD", payload: event.target.value })} />
-                        </FormControl>  
-                    </Grid>
-                    <Grid item>
-                        {visibility ?
-                            <IconButton size='small' color="primary" onClick={() => setVisibility(false)}><VisibilityIcon /></IconButton> :
-                            <IconButton size='small' onClick={() => setVisibility(true)}><VisibilityOffIcon /></IconButton>
-                        }
-                    </Grid>
-                </Grid>
-                <br/>
-                <InputLabel className={classes.submitDetails}>
-                    <input style={{ display: 'none' }} accept="application/pdf" type="file" name="file" onChange={changeHandler} />
-                    UPLOAD PDF & GET ANALYSIS
-                </InputLabel>
-            </Grid>
+                <FormControl className={classes.bankPassword}>
+                    <InputLabel >Phone Number</InputLabel>
+                    <Input
+                        type="text"
+                        value={state.profilesForm ? state.profilesForm.phoneNumber : ""}
+                        onChange={(event) => dispatch({ type: "UPDATE_USER_PHONE_NUMBER", payload: event.target.value })} />
+                </FormControl>  
+                <FormControl className={classes.bankPassword}>
+                    <InputLabel >Email Id</InputLabel>
+                    <Input
+                        type="text"
+                        value={state.profilesForm ? state.profilesForm.email : ""}
+                        onChange={(event) => dispatch({ type: "UPDATE_USER_PHONE_EMALID", payload: event.target.value })} />
+                </FormControl>  
+                <br />
+                <Button className={classes.submitDetails} onClick={() => dispatch({ type: "REGISTER" })}>
+                    SUBMIT
+                </Button>
+            </Grid>}
         </Paper>
     </Grid>
 </Grid>

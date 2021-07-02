@@ -8,7 +8,7 @@ import {
     TableCell,
     TableContainer,
     TableHead,
-    TableRow ,
+    TableRow,
     Typography
 } from '@material-ui/core';
 
@@ -38,20 +38,20 @@ const columns = [
       maxWidth: 2,
       align: 'right'
     },
-    {
-        id: 'Cat',
-        label: 'Category',
-        minWidth: 1,
-        maxWidth: 2,
-        align: 'left'
-    },
-    {
-        id: 'Party',
-        label: 'Party',
-        minWidth: 1,
-        maxWidth: 2,
-        align: 'left'
-    }
+    // {
+    //     id: 'Cat',
+    //     label: 'Category',
+    //     minWidth: 1,
+    //     maxWidth: 2,
+    //     align: 'left'
+    // },
+    // {
+    //     id: 'Party',
+    //     label: 'Party',
+    //     minWidth: 1,
+    //     maxWidth: 2,
+    //     align: 'left'
+    // }
 ];
 
 const StyledTableCell = withStyles(() => ({

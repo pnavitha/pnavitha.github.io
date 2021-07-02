@@ -7,6 +7,7 @@ const initialState = {
     profile: null,
     profilesForm: {},
     registerForm: {},
+    profileAdded: false,
     isLoading: false,
     activeMenu: '',
     bankNames:["HDFC Bank", "Axis Bank"],

@@ -21,7 +21,7 @@ const useStyles = makeStyles({
         top: 48,
         bottom: 0,
         right: 0,
-        left: '14%',
+        // left: '14%',
         background: '#fafbeb',
         padding: '16px',
         height: 'auto',
@@ -48,7 +48,7 @@ const AboutUs = () => {
             <Grid container direction="row" justify="center">
                 <Grid item xs={12} sm={8}>
                     <Typography variant="subtitle1">Who are we?</Typography>
-                    <Typography variant="body1">Simple Solution Club is a new initiative to simplify finances for next generation. We have on our team of qualified educators, renowned child psychologists, and experienced financial professionals who have worked to prepare an age-appropriate curriculum and study materials to ensure that your child builds a positive relationship with money.</Typography>
+                    <Typography variant="body1">We are the team who believes technology can help in your business money problems. We fasten the decision making time for borrower's loan application in banks and other lending parties. It does not matter which domain you do business in or in what turnover. We are present for each buisness. We use our tech to analyse your documents and direct you to the right lenders.</Typography>
                 </Grid>
                 <Grid item xs={12} sm={4}>
                     <img src={require("../images/svg_aboutus.svg")} alt="simple solution club best way to talk to kids about money earning, spending, saving, and investments" width="100%" height="100rem" />
@@ -63,7 +63,7 @@ const AboutUs = () => {
                 <Grid item xs={12} sm={8} >
                     <Typography variant="subtitle1">What is our motto?</Typography>
                     <br />
-                    <Typography variant="body1">From piggy banks to bank accounts, work & wages to mutual funds, interest to compounding we will introduce topics at the right age to ensure that your child is always ahead of the financial curve.</Typography>
+                    <Typography variant="body1">We understand that Business runs on Money and Time. We value both and thus, hustle to make money available for your business, as soon as possible. Our work is to guide you with our financial knowledge, at each step of your business.</Typography>
                 </Grid>
             </Grid>
             <br />
@@ -72,7 +72,7 @@ const AboutUs = () => {
                 <Grid item xs={12} sm={8} >
                     <Typography variant="subtitle1">How can we help you?</Typography>
                     <br />
-                    <Typography variant="body1">We at Simple Solution Club have built the most robust curriculum for imparting financial education to children. The medium of instruction will be a mix of video lessons and interactive sessions on our immersive viewing platform along with offline accessories that work towards creating a holistic learning environment.</Typography>
+                    <Typography variant="body1">We are expert in different kinds of business loans and MSME loans. We analyse all the documents related to your business and direct you to the right bank which can help you with the money problem and provides the best offer.</Typography>
                 </Grid>
                 <Grid item xs={12} sm={4} >
                     <img src={require("../images/svg_project.svg")} alt="simple solution club best way of talking to child about money earning, spending, saving, and investments" width="100%" height="100rem" />
