@@ -2,6 +2,13 @@ import { createMuiTheme } from '@material-ui/core/styles';
 
 export const Theme = createMuiTheme({
   typography: {
+    h1: {
+      fontSize: '6rem',
+      fontWeight: 'bold',
+      '@media (min-width:300px)': {
+        fontSize: '3rem',
+      }
+    },
     h5: {
       fontSize: '1.3rem',
       '@media (min-width:300px)': {
@@ -36,12 +43,12 @@ export const Theme = createMuiTheme({
   },
   palette: {
     primary: {
-      main: '#000',
+      main: '#0975e1',
       contrastText: '#fff',
     },
     secondary: {
-      main: '#fff',
-      contrastText: '#000',
+      main: '#f38b01',
+      contrastText: '#fff',
     },
     error: {
       main: '#ff5252'

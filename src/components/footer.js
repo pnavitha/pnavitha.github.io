@@ -4,10 +4,10 @@ import { Typography,Box } from '@material-ui/core';
 
 const useStyles = makeStyles({
     footer: {
-        backgroundColor: '#25252B',
+        // backgroundColor: '#25252B',
         padding: '20px',
-        color: '#fff',
-        marginTop: '50px'
+        // color: '#fff',
+        // marginTop: '50px'
     }
 });
 
@@ -15,7 +15,7 @@ const Footer = () => {
     const classes = useStyles();
 
     return <Box className={classes.footer}>
-        <Typography variant="body1">Copyright 2021 Paiso. All rights reserved.</Typography>    
+            <Typography variant="body1">Copyright 2021 FinDash. All rights reserved.</Typography>    
         </Box>
 }
 
