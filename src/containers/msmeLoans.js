@@ -143,7 +143,7 @@ const MsmeLoans = () => {
                 </Grid>
             </Grid>
         </Paper>
-        <Paper elevation={2} square className={classes.greyWrapper}>
+        <Paper elevation={2} square className={classes.whiteWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
                 <Grid item xs={12} sm={4}>
                     <Typography variant="subtitle1">Tabular Information</Typography>
@@ -156,7 +156,7 @@ const MsmeLoans = () => {
                 </Grid>
             </Grid>
         </Paper>
-        <Paper elevation={2} square className={classes.whiteWrapper}>
+        <Paper elevation={2} square className={classes.greyWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
                 <Grid item xs={12} sm={4}>
                     <Typography variant="subtitle1">FAQs</Typography>
@@ -169,7 +169,7 @@ const MsmeLoans = () => {
                 </Grid>
             </Grid>
         </Paper>
-        <Paper elevation={2} square className={classes.greyWrapper}>
+        <Paper elevation={2} square className={classes.whiteWrapper}>
         <Link to="/" >
                 <Button color="primary" startIcon={<HomeIcon />}>
                     GOTO HOME PAGE

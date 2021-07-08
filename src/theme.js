@@ -11,6 +11,7 @@ export const Theme = createMuiTheme({
     },
     h5: {
       fontSize: '1.3rem',
+      fontWeight: 'bold',
       '@media (min-width:300px)': {
         fontSize: '1.4rem',
       }

@@ -23,9 +23,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
     },
-    title: {
-        flexGrow: 1,
-    },
     subTitle: {
         flexGrow: 1,
         marginLeft: '6px',
@@ -58,9 +55,9 @@ export default function Layout() {
                     <Grid container direction="row" className={classes.headerWrapper} justify="space-between" >
                         <Grid item>
                         <Link to="/" style={{ textDecoration: 'none', color:'#0975e1'}}>
-                        <Typography variant="h5" className={classes.title}>
-                            FinDash
-                        </Typography>
+                        <Grid container direction="row">
+                        <img src={require("../images/logo.png")} alt="" width="120px" height="30px"/>
+                        </Grid>
                         </Link>
                         </Grid>
                         <Grid item>
@@ -96,7 +93,7 @@ export default function Layout() {
                 <Route path="/help">
                     <Help />
                 </Route>
-                <Route path="/msme-loans">
+                <Route path="/msme-loan">
                     <MsmeLoans />
                 </Route>
             </Switch>

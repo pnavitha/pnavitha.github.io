@@ -110,7 +110,7 @@ const MoneyInformation = () => {
                     </Link>
                 </Grid>
                 <Grid item>
-                <Link to="/msme-loans" style={{ textDecoration: 'none' }}>
+                <Link to="/msme-loan" style={{ textDecoration: 'none' }}>
                     <Paper square elevation={2} className={classes.Card}>
                         <Typography variant="subtitle1">MSME Loans</Typography>
                         <br />

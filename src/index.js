@@ -7,6 +7,10 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import {
     BrowserRouter as Router
 } from "react-router-dom";
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('G-N1F4N1T26J'); // add your tracking id here.
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 function App() {
     return (
