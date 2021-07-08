@@ -139,7 +139,24 @@ const AppReducer = (state, action) => {
                 ...state,
                 profilesForm: {},
                 profileAdded: true
-            }        
+            }
+        case 'UPDATE_BANK_STATEMENT_PASSWORD':
+            return {
+                ...state,
+                newBankStatementForm: {
+                    ...state.newBankStatementForm,
+                    bankStatementPassword: action.payload
+                }
+            }
+        case 'UPDATE_BANK_NAME':
+            return {
+                ...state,
+                newBankStatementForm:{
+                    ...state.newBankStatementForm,
+                    selectedBankName: action.payload
+                }
+            }
+            
         default: return state;
     };
 };

@@ -57,7 +57,7 @@ const MoneyInformation = () => {
     const [state, dispatch] = useContext(AppContext);
 
     return <Paper square className={classes.ContentWrapper}>
-            <Grid container direction="row" justify="center" spacing={5}>
+            <Grid container direction="row" justify="center" spacing={8}>
                 <Grid item>
                     <Link to="/about" style={{ textDecoration: 'none' }}>
                         <Paper square elevation={2} className={classes.Card}>
@@ -95,9 +95,9 @@ const MoneyInformation = () => {
                 <Grid item>
                 <Link to="/about" style={{ textDecoration: 'none' }}>
                     <Paper square elevation={2} className={classes.Card}>
-                        <Typography variant="subtitle1">MSME Loan</Typography>
+                        <Typography variant="subtitle1">Retail Loans</Typography>
                         <br />
-                        <Typography variant="body1">Micro, small, medium loans for working capital...</Typography>
+                        <Typography variant="body1">Wide range of loan products like home loan, vehicle loan...</Typography>
                         <br/> 
                         <Grid container direction='column' justify="space-between" alignItems='center'>
                         <img src={require("../images/icon_msme_loan.svg")} alt="" width="22%" />
@@ -110,11 +110,11 @@ const MoneyInformation = () => {
                     </Link>
                 </Grid>
                 <Grid item>
-                <Link to="/about" style={{ textDecoration: 'none' }}>
+                <Link to="/msme-loans" style={{ textDecoration: 'none' }}>
                     <Paper square elevation={2} className={classes.Card}>
-                        <Typography variant="subtitle1">Business Loan</Typography>
+                        <Typography variant="subtitle1">MSME Loans</Typography>
                         <br />
-                        <Typography variant="body1">Expand your business with best interest rates...</Typography>
+                        <Typography variant="body1">Micro, small, medium loans for working capital at best interest rates...</Typography>
                         <br/> 
                         <Grid container direction='column' justify="space-between" alignItems='center'>
                         <img src={require("../images/icon_business_loan.svg")} alt="" width="20%" />
@@ -129,24 +129,7 @@ const MoneyInformation = () => {
                 <Grid item>
                 <Link to="/about" style={{ textDecoration: 'none' }}>
                     <Paper square elevation={2} className={classes.Card}>
-                        <Typography variant="subtitle1">All Loans</Typography>
-                        <br />
-                        <Typography variant="body1">Wide range of loan products like home loan, vehicle loan...</Typography>
-                        <br/> 
-                        <Grid container direction='column' justify="space-between" alignItems='center'>
-                        <img src={require("../images/icon_all_loan.svg")} alt="" width="20%" />
-                               <br/> 
-                                <Button size="small" onClick={() => dispatch({ type: "NAVIGATE_TO_ABOUT_PAGE" })} color="primary" startIcon={<InfoIcon />}>
-                                    Know more
-                                </Button>
-                            </Grid>
-                    </Paper>
-                    </Link>
-                </Grid>
-                <Grid item>
-                <Link to="/about" style={{ textDecoration: 'none' }}>
-                    <Paper square elevation={2} className={classes.Card}>
-                        <Typography variant="subtitle1">Gold Prices...</Typography>
+                        <Typography variant="subtitle1">Gold Prices</Typography>
                         <br />
                         <Typography variant="body1">Know latest gold, silver price in your state...</Typography>
                         <br/> 
@@ -163,7 +146,7 @@ const MoneyInformation = () => {
                 <Grid item>
                 <Link to="/about" style={{ textDecoration: 'none' }}>
                     <Paper square elevation={2} className={classes.Card}>
-                        <Typography variant="subtitle1">Fuel Prices...</Typography>
+                        <Typography variant="subtitle1">Fuel Prices</Typography>
                         <br />
                         <Typography variant="body1">Know latest fuel prices in your state...</Typography>
                         <br/> 

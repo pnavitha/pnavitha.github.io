@@ -8,6 +8,7 @@ import {
     Route
 } from "react-router-dom";
 import AboutUs from './aboutUs';
+import MsmeLoans from './msmeLoans';
 import Home from './home';
 import { AppContext } from '../context/app-context/app-context-provider';
 import { makeStyles } from '@material-ui/core/styles';
@@ -94,6 +95,9 @@ export default function Layout() {
                 </Route>
                 <Route path="/help">
                     <Help />
+                </Route>
+                <Route path="/msme-loans">
+                    <MsmeLoans />
                 </Route>
             </Switch>
         </div>
