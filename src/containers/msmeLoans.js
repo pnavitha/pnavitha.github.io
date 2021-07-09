@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Footer from '../components/footer';
 import {
     Link
@@ -18,7 +18,13 @@ import {
     FormControl,
     Input,
     IconButton,
-    Typography
+    Typography,
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow,
   } from '@material-ui/core'
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
@@ -49,6 +55,12 @@ const useStyles = makeStyles({
             color: '#ffffff',
         },
     },
+    // root: {
+    //     width: '100%',
+    // },
+    container: {
+        maxHeight: 350,
+    },
     bankPassword: {
         width: '100%'
     },
@@ -67,6 +79,34 @@ const useStyles = makeStyles({
         paddingLeft: '5%',
     },
 });
+
+const StyledTableCell = withStyles(() => ({
+    head: {
+        backgroundColor: '#000',
+        color: '#fff',
+    },
+    body: {
+        fontSize: 14,
+    },
+}))(TableCell);
+
+const StyledTableRow = withStyles((theme) => ({
+    root: {
+        '&:nth-of-type(odd)': {
+        backgroundColor: '#9cc7f4'
+        },
+        '&:nth-of-type(even)': {
+        backgroundColor: '#cde3f9'
+        },
+    },
+    }))(TableRow);
+
+    
+const columns = [
+    { id: 'LenderName', label: 'Lender Name', minWidth: 5, maxWidth: 5, align: 'left' },
+    { id: 'interestRate', label: 'Interest Rates', minWidth: 20, maxWidth: 20, align: 'left' },
+];
+
 
 const MsmeLoans = () => {
     const classes = useStyles();
@@ -146,26 +186,64 @@ const MsmeLoans = () => {
         <Paper elevation={2} square className={classes.whiteWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
                 <Grid item xs={12} sm={4}>
-                    <Typography variant="subtitle1">Tabular Information</Typography>
+                    <Typography variant="subtitle1">Lenderwise MSME loan interest rates</Typography>
                     <br/>
                     <br />
-                    <Typography variant="body1">We understand that Business runs on Money and Time. We value both and thus, hustle to make money available for your business, as soon as possible. Our work is to guide you with our financial knowledge, at each step of your business.</Typography>
+                    <Typography variant="body1">Many banks and NBFCs provide MSME loans to business owners as working capital or for business expansion. Different lenders provide different loan offers and schemes to support businesses in their daily operations or expansions. Mentioned is the table of lenders which provide msme loan without collateral. Lenders which are not in the list do provide MSME loan but decide on loan interest rates as per the borrower's profile and application details.</Typography>
                 </Grid>
                 <Grid item xs={12} sm={6}>
+                <TableContainer className={classes.container}>
+                <Table stickyHeader size="small">
+                    <TableHead>
+                        <TableRow className={classes.tableHead}>
+                            {columns.map((column) => (
+                                <StyledTableCell
+                                    key={column.id}
+                                    align={column.align}
+                                    style={{ minWidth: column.minWidth }}
+                                >
+                                    {column.label}
+                                </StyledTableCell>
+                            ))}
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {Object.entries(state.msmeLoans).map(([key, data]) => 
+                            <StyledTableRow hover role="checkbox" tabIndex={-1}>
+                                        {columns.map((column) => {
+                                            const value = column.id == "LenderName" ? key : data[column.id];
+                                            return (
+                                                <TableCell key={column.id} align={column.align}>
+                                                    <Typography variant="body1" margin="xsmall">{value}</Typography>
+                                                </TableCell>
+                                            );
+                                        })}
+                                    </StyledTableRow>
+                        )}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+
                     {/* <img src={require("../images/our_motto.svg")} alt="" width="100%" /> */}
                 </Grid>
             </Grid>
         </Paper>
         <Paper elevation={2} square className={classes.greyWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
-                <Grid item xs={12} sm={4}>
-                    <Typography variant="subtitle1">FAQs</Typography>
+                <Grid item>
+                    <Typography variant="subtitle1">Frequently asked questions</Typography>
                     <br/>
                     <br/>
-                    <Typography variant="body1">We are experts in different kinds of business loans and MSME loans. We analyse all the documents related to your business and direct you to the right bank which can help you with the money problem and provides the best offer.</Typography>
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                    {/* <img src={require("../images/analysis.svg")} alt="" width="100%" /> */}
+                    {state.frequentlyAskedQuestions.msmeLoans.map((faq) => 
+                    {
+                        return <Box>
+                            <Typography variant="subtitle1">{faq.question}</Typography>
+                            <br/>
+                            <Typography variant="body1">{faq.answer}</Typography>
+                            <br/>
+                        </Box>
+                    }
+                    )}
                 </Grid>
             </Grid>
         </Paper>

@@ -56,7 +56,7 @@ export default function Layout() {
                         <Grid item>
                         <Link to="/" style={{ textDecoration: 'none', color:'#0975e1'}}>
                         <Grid container direction="row">
-                        <img src={require("../images/logo.png")} alt="" width="120px" height="30px"/>
+                        <Typography variant="h5" >FinDash</Typography>
                         </Grid>
                         </Link>
                         </Grid>
