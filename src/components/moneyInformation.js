@@ -59,7 +59,7 @@ const MoneyInformation = () => {
     return <Paper square className={classes.ContentWrapper}>
             <Grid container direction="row" justify="center" spacing={8}>
                 <Grid item>
-                    <Link to="/about" style={{ textDecoration: 'none' }}>
+                    <Link to="/fixed-deposit" style={{ textDecoration: 'none' }}>
                         <Paper square elevation={2} className={classes.Card}>
                             <Typography variant="subtitle1">Fixed Deposits</Typography>
                             <br />

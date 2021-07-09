@@ -19,6 +19,7 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import EmailIcon from '@material-ui/icons/Email';
 import SavingsAccount from './savingsAccount';
+import FixedDeposit from './fixedDeposit';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -99,6 +100,9 @@ export default function Layout() {
                 </Route>
                 <Route path="/savings-account">
                     <SavingsAccount />
+                </Route>
+                <Route path="/fixed-deposit">
+                    <FixedDeposit />
                 </Route>
             </Switch>
         </div>

@@ -223,8 +223,6 @@ const SavingsAccount = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
-
-                    {/* <img src={require("../images/our_motto.svg")} alt="" width="100%" /> */}
                 </Grid>
             </Grid>
         </Paper>

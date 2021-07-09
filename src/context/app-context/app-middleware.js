@@ -56,7 +56,6 @@ export const AppMiddleware = (dispatch, state) => (action) => {
             }
             break; 
         case 'UPLOAD_PDF_AND_ANALYZE':
-            console.log("in middleware with action: ", action);
             (async () => {
 
                 dispatch({ type: 'LOADING_IN_PROGRESS' });
@@ -79,10 +78,55 @@ export const AppMiddleware = (dispatch, state) => (action) => {
                 //     dispatch({ type: 'LOGIN_SUCCESS' });
                 // }
             })(); 
+        case 'CALCULATE_FIXED_DEPOSIT_RATES':
+            dispatch({ type: 'CLEAR_FIXED_DEPOSIT_RATES_RESULT' , payload: banksRates});
+            const totalFixedDepositDays = getTotalDays(state.fixedDepositDuration);
+            if(totalFixedDepositDays <= 0)
+                return;
+
+            let bankFdDayMap = 999999999;
+            Object.keys(state.fixedDeposit).forEach((maxDaysCount) => {
+                if(Number(maxDaysCount) >= Number(totalFixedDepositDays) && Number(maxDaysCount) < Number(bankFdDayMap))
+                {   
+                    bankFdDayMap = maxDaysCount;
+                }
+            });
+            if(bankFdDayMap == 999999999) {
+                return;
+            }
             
+            var banksRates = Object.entries(state.fixedDeposit[bankFdDayMap]);
+            banksRates.sort((bank1, bank2) => { return bank2[1] - bank1[1];});
+            dispatch({ type: 'ADD_FIXED_DEPOSIT_RATES_RESULT' , payload: banksRates});
+            return;
+        case 'UPDATE_BANKWISE_FIXED_DEPOSIT':
+            const result = {};
+            Object.entries(state.fixedDeposit).map(([duration, banksInterest]) => {
+                Object.entries(banksInterest).map(([bankName, interestRate]) => {
+                    if(result[bankName] == undefined) {
+                        result[bankName] = {};
+                    }
+                    console.log("bank data: ", bankName + " " + duration);
+
+                    result[bankName][duration] = interestRate;
+                })
+            });   
+            dispatch({ type: 'ADD_BANKWISE_FIXED_DEPOSIT_RESULT' , payload: result}); 
         default: {
             dispatch(action);
             break;
         }
     };
 };
+
+const getTotalDays = (fixedDepositDuration) => {
+    let result = 0;
+    if(fixedDepositDuration.years !== "")
+        result += (365 * fixedDepositDuration.years);
+    if(fixedDepositDuration.months !== "")    
+        result += (30 * fixedDepositDuration.months);
+    if(fixedDepositDuration.days != "")     
+        result += fixedDepositDuration.days;
+
+    return result;    
+}
