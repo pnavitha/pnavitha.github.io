@@ -122,11 +122,12 @@ export const AppMiddleware = (dispatch, state) => (action) => {
 const getTotalDays = (fixedDepositDuration) => {
     let result = 0;
     if(fixedDepositDuration.years !== "")
-        result += (365 * fixedDepositDuration.years);
+        result += Number(365 * fixedDepositDuration.years);
     if(fixedDepositDuration.months !== "")    
-        result += (30 * fixedDepositDuration.months);
+        result += Number(30 * fixedDepositDuration.months);
     if(fixedDepositDuration.days != "")     
-        result += fixedDepositDuration.days;
+        result += Number(fixedDepositDuration.days);
 
+    console.log("result days: " + result);        
     return result;    
 }
