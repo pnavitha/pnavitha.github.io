@@ -18,6 +18,7 @@ import IconButton from '@material-ui/core/IconButton';
 import PhoneIcon from '@material-ui/icons/Phone';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import EmailIcon from '@material-ui/icons/Email';
+import SavingsAccount from './savingsAccount';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -95,6 +96,9 @@ export default function Layout() {
                 </Route>
                 <Route path="/msme-loan">
                     <MsmeLoans />
+                </Route>
+                <Route path="/savings-account">
+                    <SavingsAccount />
                 </Route>
             </Switch>
         </div>

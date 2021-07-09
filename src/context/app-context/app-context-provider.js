@@ -43,6 +43,44 @@ const initialState = {
             interestRate: "13% onwards"
         },
     },
+    savingsAccount: {
+        "Bank of Baroda": {
+            interestRate: "2.75% to 3.20%"
+        },
+        "Bank of India": {
+            interestRate: "2.9%"
+        },
+        "Bank of Maharashtra": {
+            interestRate: "2.75%",
+        },
+        "Canara Bank": {
+            interestRate: "2.9%",
+        },
+        "Central Bank of India": {
+            interestRate: "2.90%(upto 10 Lakhs), 2.70% above 10 Lakhs",
+        },
+        "Indian Bank":	{
+            interestRate: "2.9%",
+        },
+        // "Indian Overseas Bank": {
+        //     interestRate: "15% onwards",
+        // },
+        // "Punjab & Sind Bank": {
+        //     interestRate: "16% onwards",
+        // },
+        "Punjab National Bank": {
+            interestRate: "3%",
+        },
+        "State Bank of India": {
+            interestRate: "2.7%"
+        },
+        "UCO Bank": {
+            interestRate: "2.5%"
+        },
+        "Union Bank of India": {
+            interestRate: "3%"
+        },
+    },
     frequentlyAskedQuestions:{
         msmeLoans:[
             {
@@ -61,6 +99,33 @@ const initialState = {
             {
                 question: "What is MSME loan eligibility criteria?",
                 answer: "MSME loan can be availed by any self-employed professionals, entrepreneurs, business owners, micro-small and medium enterprises, sole proprietorship, partnership firms, limited liability partnership (LLP). Apart from this banks and NBFCs have their own criteria to check MSME loan application and borrower profile."
+            }
+        ],
+        savingsAccount:[
+            {
+                question: "Why is it important to have a savings account?",
+                answer: "Savings account at bank or post-office provides the safety to your wealth and also give a small interest on your savings. It is always suggested to keep one savings account irrespective of all your investments as savings account keep your money liquid. Thus you can withdraw it at time of emergencies. It is best to keep at least 3 months of your expense in savings account."
+
+            },
+            {
+                question: "What are different kinds of savings accounts?",
+                answer: "Banks provide different kinds of savings accounts depending on your need and usability. There exists salaried savings account, zero balance savings account, minor savings account, senior citizen savings account and regular savings account."
+            },
+            {
+                question: "Is savings account interest taxable?",
+                answer: "Interest earnings of up to Rs.10000 accrued on your savings account balance is tax free under Section 80TTA. Higher amounts earned as interest are subject to TDS."
+            },
+            {
+                question: "What documents required to open a savings account?",
+                answer: "Documents required are Proof of age and identity (PAN, Voter ID, Passport or Driving license), Photographs	(2 passport-sized photographs) and Proof of address (Driving license, Voter’s ID, Passport or Utility bill). Incase of senior citizen savings account, applicant also need Senior Citizen Card."
+            },
+            {
+                question: "Is there savings account for minors?",
+                answer: "For opening a saving account, applicant must be of 18 years or more. Minors can open a savings account only as a joint account with their parent or gaurdian. Joint account for minors is at banks and post office."
+            },
+            {
+                question: "What is savings account eligibility?",
+                answer: "Any Indian citizen or foreign citizen residing in India can open a savings account in any Indian Bank. Only criteria is of age eligibility of 18 years or more. Some banks have minimum balance required for the savings account."
             }
         ]
     }

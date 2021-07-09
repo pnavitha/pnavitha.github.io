@@ -76,7 +76,7 @@ const MoneyInformation = () => {
                     </Link>
                 </Grid>
                 <Grid item>
-                <Link to="/about" style={{ textDecoration: 'none' }}>
+                <Link to="/savings-account" style={{ textDecoration: 'none' }}>
                     <Paper square elevation={2} className={classes.Card}>
                         <Typography variant="subtitle1">Savings Account</Typography>
                         <br />
