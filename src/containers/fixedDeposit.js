@@ -140,7 +140,10 @@ const FixedDeposit = () => {
                     <br />
                     <Typography variant="h1">Get best interest rates on your fixed deposit.</Typography>
                     <br />
-                    <Typography variant="body1">Provide the duration for which you can fix the amount. Duration selected must be less than or equal to 10 years. Calculations are for amount below 2 Cr.</Typography>
+                    <Box fontWeight="bold" color="#0975e1" >
+                        Provide the duration for which you can fix the amount. 
+                    </Box>
+                    <Typography variant="body1">Duration selected must be less than or equal to 10 years. </Typography>
                     <br />
                     <Grid container direction='row' justify="flex-start" alignItems="flex-end" spacing={2}>
                         <Grid item>
@@ -175,6 +178,7 @@ const FixedDeposit = () => {
                     <Button variant="contained" onClick={() => dispatch({ type: "CALCULATE_FIXED_DEPOSIT_RATES" })} color="secondary">
                         GET BEST INTEREST RATES
                     </Button>
+                    <Typography variant="body1">** Interest rates are for amount below 2 Cr for regular customer.</Typography>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                     {state.fixedDepositRatesResult ?
@@ -261,7 +265,7 @@ const FixedDeposit = () => {
                     <br/>
                     <Typography variant="h1">Fixed deposit 3 months onwards till 9 month.</Typography>
                     <br />
-                    <Typography variant="body1">As a business person or salaried person, we always want our money to earn for us. Banks provide fixed deposit for as low as 7 days. Check the current interest rates offered by banks for small durations fixed deposits.</Typography>
+                    <Typography variant="body1">Fixed deposit interest rates changes with the duration. Checking FD rates regularly with different banks will provide you the option to avail better returns.</Typography>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                 <TableContainer className={classes.container}>
@@ -306,7 +310,7 @@ const FixedDeposit = () => {
                     <br/>
                     <Typography variant="h1">Fixed deposit 9 months onwards till 2 years.</Typography>
                     <br />
-                    <Typography variant="body1">As a business person or salaried person, we always want our money to earn for us. Banks provide fixed deposit for as low as 7 days. Check the current interest rates offered by banks for small durations fixed deposits.</Typography>
+                    <Typography variant="body1">Fixed deposit gives the security of assured returns. Fixed deposit is a risk-free investment. You only need to check which bank is providing you the best FD interest rates.</Typography>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                 <TableContainer className={classes.container}>
@@ -351,7 +355,7 @@ const FixedDeposit = () => {
                     <br/>
                     <Typography variant="h1">Fixed deposit 2 years onwards till 10 years.</Typography>
                     <br />
-                    <Typography variant="body1">As a business person or salaried person, we always want our money to earn for us. Banks provide fixed deposit for as low as 7 days. Check the current interest rates offered by banks for small durations fixed deposits.</Typography>
+                    <Typography variant="body1">Fixed deposits are with awesome product provided by banks. There are many benefits of FDs, like loan on FD, assured returns and even pre-maturity use of FD. You can apply to break your fixed deposit by deducting nominal charges by bank.</Typography>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                 <TableContainer className={classes.container}>

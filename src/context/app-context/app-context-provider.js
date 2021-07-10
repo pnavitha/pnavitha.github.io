@@ -331,7 +331,28 @@ const initialState = {
                 answer: "Any Indian citizen or foreign citizen residing in India can open a savings account in any Indian Bank. Only criteria is of age eligibility of 18 years or more. Some banks have minimum balance required for the savings account."
             }
         ],
-        fixedDeposit:[]
+        fixedDeposit:[
+            {
+                question: "Why are advantages of having a fixed deposit (FD)?",
+                answer: "Fixed Deposits or FDs are risk-free investment tool as they provide assured returns. Every bank and NBFCs provide facility of FD with different interest rates and tenures. Some banks even provide other facilities with fixed deposits, like loan on fixed deposits, additional interest for senior citizens and pre-mature usage of FD."
+            },
+            {
+                question: "What is the duration of fixed deposits?",
+                answer: "Fixed Deposits or FDs are provided with flexible durations. You can make an FD of as small as 7 days or as long as 10 years. Depending on the tenure the interest rates are mentioned by banks and NBFCs."
+            },
+            {
+                question: "What are fixed deposits interest rates depend on?",
+                answer: "Every bank and NBFC has to provide the minimum interest rates on FDs under the regulation of RBI. Apart from this, banks and NBFCs provide additional offeres depending on the tenure of FD and senior citizen interest rates."
+            },
+            {
+                question: "How much loan can I get on my FD?",
+                answer: "Banks give credit of 90% of FD amount as loan to the customer with nominal charges."
+            },
+            {
+                question: "Why is it good to take loan on Fixed deposit instead of breaking it?",
+                answer: "Fixed Deposit is your promise to the bank to let them use your money till the mentioned duration. But in time of emergency your can ask to break your fixed deposit or take loan over it. Both options are available to user in nominal charges. But it is better to take loan instead of breaking the fixed deposit. One reason is that your FD returns mostly higher and thus breaking it in between will cost you more money than the loan interest."
+            }
+        ]
     }
 };
 

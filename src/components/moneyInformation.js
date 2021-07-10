@@ -15,6 +15,7 @@ import {
     Input,
     FormControl,
     Paper,
+    Hidden
 } from '@material-ui/core';
 
 const useStyles = makeStyles({
@@ -92,6 +93,7 @@ const MoneyInformation = () => {
                     </Paper>
                     </Link>
                 </Grid>
+                <Hidden xsUp>
                 <Grid item>
                 <Link to="/about" style={{ textDecoration: 'none' }}>
                     <Paper square elevation={2} className={classes.Card}>
@@ -109,6 +111,7 @@ const MoneyInformation = () => {
                     </Paper>
                     </Link>
                 </Grid>
+                </Hidden>
                 <Grid item>
                 <Link to="/msme-loan" style={{ textDecoration: 'none' }}>
                     <Paper square elevation={2} className={classes.Card}>
@@ -118,40 +121,6 @@ const MoneyInformation = () => {
                         <br/> 
                         <Grid container direction='column' justify="space-between" alignItems='center'>
                         <img src={require("../images/icon_business_loan.svg")} alt="" width="20%" />
-                               <br/> 
-                                <Button size="small" onClick={() => dispatch({ type: "NAVIGATE_TO_ABOUT_PAGE" })} color="primary" startIcon={<InfoIcon />}>
-                                    Know more
-                                </Button>
-                            </Grid>
-                    </Paper>
-                    </Link>
-                </Grid>
-                <Grid item>
-                <Link to="/about" style={{ textDecoration: 'none' }}>
-                    <Paper square elevation={2} className={classes.Card}>
-                        <Typography variant="subtitle1">Gold Prices</Typography>
-                        <br />
-                        <Typography variant="body1">Know latest gold, silver price in your state...</Typography>
-                        <br/> 
-                        <Grid container direction='column' justify="space-between" alignItems='center'>
-                            <img src={require("../images/icon_gold.svg")} alt="" width="20%" />
-                               <br/> 
-                                <Button size="small" onClick={() => dispatch({ type: "NAVIGATE_TO_ABOUT_PAGE" })} color="primary" startIcon={<InfoIcon />}>
-                                    Know more
-                                </Button>
-                            </Grid>
-                    </Paper>
-                    </Link>
-                </Grid>
-                <Grid item>
-                <Link to="/about" style={{ textDecoration: 'none' }}>
-                    <Paper square elevation={2} className={classes.Card}>
-                        <Typography variant="subtitle1">Fuel Prices</Typography>
-                        <br />
-                        <Typography variant="body1">Know latest fuel prices in your state...</Typography>
-                        <br/> 
-                        <Grid container direction='column' justify="space-between" alignItems='center'>
-                            <img src={require("../images/icon_fuel.svg")} alt="" width="20%" />
                                <br/> 
                                 <Button size="small" onClick={() => dispatch({ type: "NAVIGATE_TO_ABOUT_PAGE" })} color="primary" startIcon={<InfoIcon />}>
                                     Know more

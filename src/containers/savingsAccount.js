@@ -135,61 +135,13 @@ const SavingsAccount = () => {
     }
 
     return <Box className={classes.contentAreaWrapper}>
-        {/* <Paper elevation={2} square className={classes.whiteWrapper}>
-            <Grid container direction="row" justify="space-evenly" spacing={2}>
-                <Grid item xs={12} sm={4}>
-                    <Typography variant="subtitle1">Check your credibility for MSME loans</Typography>
-                    <br/>
-                    <br/>
-                    <Typography variant="h1">Stay ahead using bank statement analysis.</Typography>
-                    <br/>
-                    <Typography variant="body1">Your bank-statement tells alot about you. Banks use your bank-statement to check your credibility.</Typography>
-                    <br/>
-                    <Autocomplete
-                        size='small'
-                        fontSize='small'
-                        options={state.bankNames}
-                        value={state.selectedBankName}
-                        value={state.newBankStatementForm ? state.newBankStatementForm.selectedBankName : ""}
-                        onChange={(event, newValue) => dispatch({ type: "UPDATE_BANK_NAME", payload: newValue })}
-                        getOptionLabel={(option) => option}
-                        renderInput={(params) => <TextField {...params} InputLabelProps={{ style: { fontSize: 12 } }} label="Select Bank Name" />}
-                    />
-                    <Grid container direction='row' justify="flex-start" alignItems="flex-end">
-                        <Grid item xs={10} sm={10}>
-                            <FormControl className={classes.bankPassword}>
-                                <InputLabel >Bank statement password</InputLabel>
-                                <Input
-                                    type={visibility ? "text" : "password"}
-                                    value={state.newBankStatementForm ? state.newBankStatementForm.bankStatementPassword : ""}
-                                    onChange={(event) => dispatch({ type: "UPDATE_BANK_STATEMENT_PASSWORD", payload: event.target.value })} />
-                            </FormControl>  
-                        </Grid>
-                        <Grid item>
-                            {visibility ?
-                                <IconButton size='small' color="primary" onClick={() => setVisibility(false)}><VisibilityIcon /></IconButton> :
-                                <IconButton size='small' onClick={() => setVisibility(true)}><VisibilityOffIcon /></IconButton>
-                            }
-                        </Grid>
-                    </Grid>
-                    <br />
-                    <InputLabel className={classes.submitDetails}>
-                    <input style={{ display: 'none' }} accept="application/pdf" type="file" name="file" onChange={changeHandler} />
-                        UPLOAD PDF & GET ANALYSIS
-                    </InputLabel>
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                    <img src={require("../images/msme_loans.svg")} alt="" width="100%" />
-                </Grid>
-            </Grid>
-        </Paper> */}
         <Paper elevation={2} square className={classes.whiteWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
                 <Grid item xs={12} sm={4}>
                     <Typography variant="subtitle1">Bankwise savings account interest rates</Typography>
                     <br/>
                     <br />
-                    <Typography variant="body1">Many banks and NBFCs provide savings account facility to businesses and retail customers. It is always suggested to keep some amount in savings account as it is liquid money and can be withdrawn quickly in emergencies. Different banks provide different interest rates on savings account.</Typography>
+                    <Typography variant="body1">Banks and NBFCs provide savings account facility to their customers which provides security to savings and an additional interest on the amount. It is always suggested to keep some amount in savings account as it is liquid money and can be withdrawn quickly in emergencies. Different banks provide different interest rates on savings account.</Typography>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                 <TableContainer className={classes.container}>

@@ -25,6 +25,7 @@ import {
     TableContainer,
     TableHead,
     TableRow,
+    Hidden
   } from '@material-ui/core'
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
@@ -135,6 +136,7 @@ const MsmeLoans = () => {
     }
 
     return <Box className={classes.contentAreaWrapper}>
+        <Hidden xsUp>
         <Paper elevation={2} square className={classes.whiteWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
                 <Grid item xs={12} sm={4}>
@@ -183,6 +185,7 @@ const MsmeLoans = () => {
                 </Grid>
             </Grid>
         </Paper>
+        </Hidden>
         <Paper elevation={2} square className={classes.whiteWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
                 <Grid item xs={12} sm={4}>
