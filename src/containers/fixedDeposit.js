@@ -7,17 +7,14 @@ import {
 import { AppContext } from '../context/app-context/app-context-provider';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import HomeIcon from '@material-ui/icons/Home';
-import Autocomplete from '@material-ui/lab/Autocomplete';
 import {
     Grid,
     Box,
     Button,
     InputLabel,
     Paper,
-    TextField,
     FormControl,
     Input,
-    IconButton,
     Typography,
     Table,
     TableBody,

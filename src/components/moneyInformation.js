@@ -8,14 +8,9 @@ import {
 } from "react-router-dom";
 import { 
     Typography,
-    Box,
     Grid,
     Button,
-    InputLabel,
-    Input,
-    FormControl,
     Paper,
-    Hidden
 } from '@material-ui/core';
 
 const useStyles = makeStyles({
@@ -30,27 +25,7 @@ const useStyles = makeStyles({
         padding: '8%',
         width: '170px',
         height: '190px',
-    },
-    JoinClubWrapper: {
-        background: '#fff',
-        height: '90%',
-        paddingTop: '2%',
-        paddingBottom: '2%',
-        paddingRight: '5%',
-        paddingLeft: '5%',
-    },
-    submitDetails: {
-        display: 'inline-block',
-        padding: '4px 4px',
-        cursor: 'pointer',
-        backgroundColor: '#000',
-        color: '#fff',
-        textAlign: 'center',
-        boxShadow: '2px 2px #c3c3c3',
-        '&:hover': {
-            background: '#25252B',
-        },
-    },
+    }
 });
 
 const MoneyInformation = () => {
@@ -93,25 +68,6 @@ const MoneyInformation = () => {
                     </Paper>
                     </Link>
                 </Grid>
-                <Hidden xsUp>
-                <Grid item>
-                <Link to="/about" style={{ textDecoration: 'none' }}>
-                    <Paper square elevation={2} className={classes.Card}>
-                        <Typography variant="subtitle1">Retail Loans</Typography>
-                        <br />
-                        <Typography variant="body1">Wide range of loan products like home loan, vehicle loan...</Typography>
-                        <br/> 
-                        <Grid container direction='column' justify="space-between" alignItems='center'>
-                        <img src={require("../images/icon_msme_loan.svg")} alt="" width="22%" />
-                               <br/> 
-                                <Button size="small" onClick={() => dispatch({ type: "NAVIGATE_TO_ABOUT_PAGE" })} color="primary" startIcon={<InfoIcon />}>
-                                    Know more
-                                </Button>
-                            </Grid>
-                    </Paper>
-                    </Link>
-                </Grid>
-                </Hidden>
                 <Grid item>
                 <Link to="/msme-loan" style={{ textDecoration: 'none' }}>
                     <Paper square elevation={2} className={classes.Card}>

@@ -3,13 +3,9 @@ import AppReducer from './app-reducer';
 import {AppMiddleware} from './app-middleware';
 
 const initialState = {
-    userEmailId: "",
-    profile: null,
     profilesForm: {},
-    registerForm: {},
     profileAdded: false,
     isLoading: false,
-    activeMenu: '',
     bankNames:["HDFC Bank", "Axis Bank"],
     msmeLoans:{
         "Central Bank of india": {
@@ -491,7 +487,7 @@ const initialState = {
                 answer: "Fixed Deposit is your promise to the bank to let them use your money till the mentioned duration. But in time of emergency your can ask to break your fixed deposit or take loan over it. Both options are available to user in nominal charges. But it is better to take loan instead of breaking the fixed deposit. One reason is that your FD returns mostly higher and thus breaking it in between will cost you more money than the loan interest."
             },
             {
-                question: "Is fiexed deposit (FD) interest taxable?",
+                question: "Is fixed deposit (FD) interest taxable?",
                 answer: "Fixed Deposit interest is treated as any other earning and thus it is 100% taxable."
             }
         ],

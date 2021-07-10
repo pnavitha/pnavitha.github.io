@@ -7,17 +7,11 @@ import {
 import { AppContext } from '../context/app-context/app-context-provider';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import HomeIcon from '@material-ui/icons/Home';
-import Autocomplete from '@material-ui/lab/Autocomplete';
 import {  
     Grid,
     Box,
     Button,
-    InputLabel,
     Paper,
-    TextField,
-    FormControl,
-    Input,
-    IconButton,
     Typography,
     Table,
     TableBody,
@@ -37,21 +31,6 @@ const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'column',
         width: '100%'
-    },
-    submitDetails: {
-        border: '1px solid #ccc',
-        borderRadius: '5px',
-        display: 'inline-block',
-        padding: '8px 12px',
-        cursor: 'pointer',
-        backgroundColor: '#f38b01',
-        color: '#fff',
-        textAlign: 'center',
-        boxShadow: '1px 1px #c3c3c3',
-        '&:hover': {
-            background: '#d38b01',
-            color: '#ffffff',
-        },
     },
     container: {
         maxHeight: 350,

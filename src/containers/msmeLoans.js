@@ -56,9 +56,6 @@ const useStyles = makeStyles({
             color: '#ffffff',
         },
     },
-    // root: {
-    //     width: '100%',
-    // },
     container: {
         maxHeight: 350,
     },
@@ -226,8 +223,6 @@ const MsmeLoans = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
-
-                    {/* <img src={require("../images/our_motto.svg")} alt="" width="100%" /> */}
                 </Grid>
             </Grid>
         </Paper>

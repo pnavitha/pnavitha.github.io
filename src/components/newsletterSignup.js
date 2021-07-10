@@ -1,11 +1,8 @@
-import React, { useContext, useState }  from 'react';
+import React, { useContext }  from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
-import InfoIcon from '@material-ui/icons/Info';
 import { AppContext } from '../context/app-context/app-context-provider';
-import {
-    Link
-} from "react-router-dom";
+
 import { 
     Typography,
     Box,
@@ -23,14 +20,6 @@ const useStyles = makeStyles({
         background: '#fff',
         paddingTop: '2%',
         paddingBottom: '5%',
-        paddingRight: '5%',
-        paddingLeft: '5%',
-    },
-    JoinClubWrapper: {
-        background: '#fff',
-        height: '90%',
-        paddingTop: '2%',
-        paddingBottom: '2%',
         paddingRight: '5%',
         paddingLeft: '5%',
     },

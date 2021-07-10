@@ -7,17 +7,11 @@ import {
 import { AppContext } from '../context/app-context/app-context-provider';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import HomeIcon from '@material-ui/icons/Home';
-import Autocomplete from '@material-ui/lab/Autocomplete';
 import {  
     Grid,
     Box,
     Button,
-    InputLabel,
     Paper,
-    TextField,
-    FormControl,
-    Input,
-    IconButton,
     Typography,
     Table,
     TableBody,
@@ -26,8 +20,6 @@ import {
     TableHead,
     TableRow,
   } from '@material-ui/core'
-import VisibilityIcon from '@material-ui/icons/Visibility';
-import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 
   
 const useStyles = makeStyles({
@@ -40,29 +32,8 @@ const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'column',
     },
-    submitDetails: {
-        border: '1px solid #ccc',
-        borderRadius: '5px',
-        display: 'inline-block',
-        padding: '8px 12px',
-        cursor: 'pointer',
-        backgroundColor: '#f38b01',
-        color: '#fff',
-        textAlign: 'center',
-        boxShadow: '1px 1px #c3c3c3',
-        '&:hover': {
-            background: '#d38b01',
-            color: '#ffffff',
-        },
-    },
-    // root: {
-    //     width: '100%',
-    // },
     container: {
         maxHeight: 350,
-    },
-    bankPassword: {
-        width: '100%'
     },
     whiteWrapper: {
         background: '#fff',
@@ -111,30 +82,8 @@ const columns = [
 const SavingsAccount = () => {
     const classes = useStyles();
     const [state, dispatch] = useContext(AppContext);
-    const [visibility, setVisibility] = React.useState(false);
 
-    const changeHandler = (event) => {
-        console.log("in input", event.target.files);
-        if(event.target && event.target.files && event.target.files.length > 0) {
-            getBase64(event.target.files[0], (result) => {
-                dispatch({ type: "UPLOAD_PDF_AND_ANALYZE", payload:  result})
-           });
-    
-        }
-    };
-    
-    const getBase64 = (file, callback) => {
-        let reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = function () {
-            callback(reader.result)
-        };
-        reader.onerror = function (error) {
-            console.log('Error: ', error);
-        };
-    }
-
-    return <Box className={classes.contentAreaWrapper}>
+   return <Box className={classes.contentAreaWrapper}>
         <Paper elevation={2} square className={classes.whiteWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
                 <Grid item xs={12} sm={4}>

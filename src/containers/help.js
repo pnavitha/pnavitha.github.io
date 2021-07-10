@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React from 'react';
 import { useHistory } from "react-router-dom";
 import {
   Box,
@@ -11,20 +10,8 @@ import {
   DialogTitle,
   Button
  } from '@material-ui/core';
-import { AppContext } from '../context/app-context/app-context-provider';
-
-const useStyles = makeStyles({
-  submitDetails: {
-      '&:hover': {
-          background: '#25252B',
-          color: '#ffffff',
-      },
-  }
-});
 
 const Help = () => {
-    const classes = useStyles();
-    const [state, dispatch] = useContext(AppContext);
     const [open, setOpen] = React.useState(true);
     const history = useHistory();
 
@@ -47,9 +34,8 @@ const Help = () => {
         </Box>
         <DialogContentText>
           <br/>
-          1. Call - 7093003840<br/>
-          2. Email - connect@findash.in<br/>
-          3. WhatsApp - 7093003840
+          1. WhatsApp - 7093003840<br/>
+          2. Email - connect@findash.in
           </DialogContentText>
     </DialogContent>
     <DialogActions>

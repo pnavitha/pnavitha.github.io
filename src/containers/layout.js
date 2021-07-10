@@ -15,7 +15,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid'
 import Help from './help';
 import IconButton from '@material-ui/core/IconButton';
-import PhoneIcon from '@material-ui/icons/Phone';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import EmailIcon from '@material-ui/icons/Email';
 import SavingsAccount from './savingsAccount';
@@ -26,11 +25,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
     },
-    subTitle: {
-        flexGrow: 1,
-        marginLeft: '6px',
-        marginTop: '9px'
-    },
     AppHeader: {
         backgroundColor: '#fff',
     },
@@ -38,10 +32,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '10px',
         backgroundColor: '#fff',
     },
-    register: {
-        fontSize: 'x-small'
-      },
-      helpSection: {
+    helpSection: {
           paddingRight: '20px'
       }  
   }));
@@ -71,9 +62,6 @@ export default function Layout() {
                             alignItems="center"
                             className={classes.helpSection}
                             >
-                                <Link to="/help">
-                                    <IconButton size='small' color='primary' onClick={() => dispatch({ type: "NAVIGATE_TO_HELP_PAGE" })}><PhoneIcon /></IconButton>
-                                </Link>
                                 <Link to="/help">
                                     <IconButton size='small' color='primary' onClick={() => dispatch({ type: "NAVIGATE_TO_HELP_PAGE" })}><EmailIcon /></IconButton>
                                 </Link>
