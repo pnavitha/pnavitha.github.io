@@ -4,10 +4,8 @@ import { Typography,Box } from '@material-ui/core';
 
 const useStyles = makeStyles({
     footer: {
-        // backgroundColor: '#25252B',
-        padding: '20px',
-        // color: '#fff',
-        // marginTop: '50px'
+        marginTop: '50px',
+        padding: '10px',
     }
 });
 

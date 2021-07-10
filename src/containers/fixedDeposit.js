@@ -134,8 +134,7 @@ const FixedDeposit = () => {
                 <Grid item xs={12} sm={4}>
                     <Typography variant="subtitle1">Interest rate on your fixed deposit</Typography>
                     <br />
-                    <br />
-                    <Typography variant="h1">Get best interest rates on your fixed deposit.</Typography>
+                    <Typography variant="h1">Check best interest rates on your fixed deposit.</Typography>
                     <br />
                     <Box fontWeight="bold" color="#0975e1" >
                         Provide the duration for which you can fix the amount. 
@@ -173,7 +172,7 @@ const FixedDeposit = () => {
                     </Grid>
                     <br />
                     <Button variant="contained" onClick={() => dispatch({ type: "CALCULATE_FIXED_DEPOSIT_RATES" })} color="secondary">
-                        GET BEST INTEREST RATES
+                        FIND BEST INTEREST RATES
                     </Button>
                     <Typography variant="body1">** Interest rates are for amount below 2 Cr for regular customer.</Typography>
                 </Grid>
