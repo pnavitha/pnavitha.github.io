@@ -284,6 +284,144 @@ const initialState = {
             "Union Bank of India": 5.6,
         }
     },
+    fuelPrices: {
+        petrolPrices: {
+            "Andhra Pradesh": {
+                price: 87.24
+            },
+            "Assam":{
+                price: 96.70
+            },
+            "Bihar":{
+                price: 103.18
+            },
+            "Chhattisgarh":{
+                price: 98.92
+            },
+            "Gujarat":{
+                price: 97.58
+            },
+            "Haryana":{
+                price: 98.70
+            },
+            "Himachal Pradesh":{
+                price: 95.85
+            },
+            "Jammu And Kashmir":{
+                price: 101.99
+            },
+            "Jharkhand":{
+                price: 95.94
+            },
+            "Karnataka":{
+                price: 103.88
+            },
+            "Kerala":{
+                price: 101.32
+            },
+            "Madhya Pradesh":{
+                price: 109.28
+            },
+            "Maharashtra":{
+                price: 107.09
+            },
+            "Odisha":{
+                price: 101.72
+            },
+            "Punjab":{
+                price: 99.80
+            },
+            "Rajasthan":{
+                price: 107.74
+            },
+            "Tamil Nadu":{
+                price: 102.08
+            },
+            "Telangana":{
+                price: 104.86
+            },
+            "Uttar Pradesh":{
+                price: 97.91
+            },
+            "Uttarakhand":{
+                price: 97.37
+            },
+            "West Bengal":{
+                price: 101.01
+            },
+            "NCT Of Delhi":{
+                price: 100.91
+            }
+        },
+        dieselPrices: {
+            "Andhra Pradesh": {
+                price: 80.21
+            },
+            "Assam":{
+                price: 89.22
+            },
+            "Bihar":{
+                price: 95.46
+            },
+            "Chhattisgarh":{
+                price: 97.18
+            },
+            "Gujarat":{
+                price: 96.66
+            },
+            "Haryana":{
+                price: 90.60
+            },
+            "Himachal Pradesh":{
+                price: 87.98
+            },
+            "Jammu And Kashmir":{
+                price: 91.97
+            },
+            "Jharkhand":{
+                price: 94.81
+            },
+            "Karnataka":{
+                price: 94.87
+            },
+            "Kerala":{
+                price: 95.02
+            },
+            "Madhya Pradesh":{
+                price: 98.72
+            },
+            "Maharashtra":{
+                price: 96.64
+            },
+            "Odisha":{
+                price: 97.95
+            },
+            "Punjab":{
+                price: 90.98
+            },
+            "Rajasthan":{
+                price: 99.02
+            },
+            "Tamil Nadu":{
+                price: 94.81
+            },
+            "Telangana":{
+                price: 97.96
+            },
+            "Uttar Pradesh":{
+                price: 90.17
+            },
+            "Uttarakhand":{
+                price: 90.57
+            },
+            "West Bengal":{
+                price: 92.97
+            },
+            "NCT Of Delhi":{
+                price: 89.88
+            }
+        }
+    },
     frequentlyAskedQuestions:{
         msmeLoans:[
             {
@@ -351,6 +489,24 @@ const initialState = {
             {
                 question: "Why is it good to take loan on Fixed deposit instead of breaking it?",
                 answer: "Fixed Deposit is your promise to the bank to let them use your money till the mentioned duration. But in time of emergency your can ask to break your fixed deposit or take loan over it. Both options are available to user in nominal charges. But it is better to take loan instead of breaking the fixed deposit. One reason is that your FD returns mostly higher and thus breaking it in between will cost you more money than the loan interest."
+            },
+            {
+                question: "Is fiexed deposit (FD) interest taxable?",
+                answer: "Fixed Deposit interest is treated as any other earning and thus it is 100% taxable."
+            }
+        ],
+        fuelPrices:[
+            {
+                question: "What is today's petrol price in India?",
+                answer: "Above table is showing statewise today's petrol price in India. Petrol price changes daily at 6:00 AM due to change in global oil price."
+            },
+            {
+                question: "Why is petrol price or diesel price different for each state in India?",
+                answer: "Fuel like petrol and diesel are subjected to VAT. Petrol and diesel prices are inclusive of these taxes. VAT is different for each state, thus petrol price and diesel price is different for each state."
+            },
+            {
+                question: "What is today's diesel price in India?",
+                answer: "Above table is showing statewise today's diesel price in India. Diesel price changes daily at 6:00 AM due to change in global oil price."
             }
         ]
     }

@@ -20,6 +20,7 @@ import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import EmailIcon from '@material-ui/icons/Email';
 import SavingsAccount from './savingsAccount';
 import FixedDeposit from './fixedDeposit';
+import FuelPrices from './fuelPrices';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -101,8 +102,11 @@ export default function Layout() {
                 <Route path="/savings-account">
                     <SavingsAccount />
                 </Route>
-                <Route path="/fixed-deposit">
+                <Route path="/fixed-deposit-interest-rates">
                     <FixedDeposit />
+                </Route>
+                <Route path="/fuel-prices-in-india">
+                    <FuelPrices />
                 </Route>
             </Switch>
         </div>
