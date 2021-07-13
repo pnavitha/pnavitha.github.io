@@ -68,21 +68,23 @@ export const AppMiddleware = (dispatch, state) => (action) => {
                 return;
             }
             
-            var banksRates = Object.entries(state.fixedDeposit[bankFdDayMap]);
+            var banksRates = Object.entries(state.fixedDeposit[bankFdDayMap].publicBank).concat(Object.entries(state.fixedDeposit[bankFdDayMap].privateBank));
             banksRates.sort((bank1, bank2) => { return bank2[1] - bank1[1];});
             dispatch({ type: 'ADD_FIXED_DEPOSIT_RATES_RESULT' , payload: banksRates});
             return;
         case 'UPDATE_BANKWISE_FIXED_DEPOSIT':
             const result = {};
-            Object.entries(state.fixedDeposit).map(([duration, banksInterest]) => {
-                Object.entries(banksInterest).map(([bankName, interestRate]) => {
-                    if(result[bankName] == undefined) {
-                        result[bankName] = {};
-                    }
-                    console.log("bank data: ", bankName + " " + duration);
+            Object.entries(state.fixedDeposit).map(([duration, banksDetails]) => {
+                Object.entries(banksDetails).map(([bankSector, bankNameInterest]) => {
+                    Object.entries(bankNameInterest).map(([bankName, interestRate]) => {
+                        if(result[bankName] == undefined) {
+                            result[bankName] = {};
+                        }
+                        console.log("bank data: ", bankName + " " + duration);
 
-                    result[bankName][duration] = interestRate;
-                })
+                        result[bankName][duration] = interestRate;
+                    })
+                });
             });   
             dispatch({ type: 'ADD_BANKWISE_FIXED_DEPOSIT_RESULT' , payload: result}); 
         default: {

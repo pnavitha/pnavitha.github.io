@@ -211,7 +211,7 @@ const FixedDeposit = () => {
         <Paper elevation={2} square className={classes.greyWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
                  <Grid item xs={12} sm={4}>
-                    <Typography variant="subtitle1">Public banks fixed deposit interest rates</Typography>
+                    <Typography variant="subtitle1">Banks fixed deposit interest rates</Typography>
                     <br/>
                     <br/>
                     <Typography variant="h1">Fixed deposit upto 3 months.</Typography>
@@ -256,7 +256,7 @@ const FixedDeposit = () => {
         <Paper elevation={2} square className={classes.whiteWrapper}>
         <Grid container direction="row" justify="space-evenly" spacing={2}>
                  <Grid item xs={12} sm={4}>
-                    <Typography variant="subtitle1">Public banks fixed deposit interest rates</Typography>
+                    <Typography variant="subtitle1">Banks fixed deposit interest rates</Typography>
                     <br/>
                     <br/>
                     <Typography variant="h1">Fixed deposit 3 months onwards till 9 month.</Typography>
@@ -301,7 +301,7 @@ const FixedDeposit = () => {
         <Paper elevation={2} square className={classes.greyWrapper}>
         <Grid container direction="row" justify="space-evenly" spacing={2}>
                  <Grid item xs={12} sm={4}>
-                    <Typography variant="subtitle1">Public banks fixed deposit interest rates</Typography>
+                    <Typography variant="subtitle1">Banks fixed deposit interest rates</Typography>
                     <br/>
                     <br/>
                     <Typography variant="h1">Fixed deposit 9 months onwards till 2 years.</Typography>
@@ -346,7 +346,7 @@ const FixedDeposit = () => {
         <Paper elevation={2} square className={classes.whiteWrapper}>
         <Grid container direction="row" justify="space-evenly" spacing={2}>
                  <Grid item xs={12} sm={4}>
-                    <Typography variant="subtitle1">Public banks fixed deposit interest rates</Typography>
+                    <Typography variant="subtitle1">Banks fixed deposit interest rates</Typography>
                     <br/>
                     <br/>
                     <Typography variant="h1">Fixed deposit 2 years onwards till 10 years.</Typography>
@@ -389,6 +389,42 @@ const FixedDeposit = () => {
             </Grid>
         </Paper>
         <Paper elevation={2} square className={classes.greyWrapper}>
+            <Grid container direction="row" justify="space-evenly" spacing={2}>
+                <Grid item xs={12} sm={4}>
+                    <Typography variant="subtitle1">Banks' links</Typography>
+                    <br />
+                    <br />
+                    <Typography variant="h1">Bankwise fixed deposit (FD) interest rates</Typography>
+                </Grid>
+                <Grid item xs={12} sm={4}>
+                    <Grid container direction="column">
+                        <Typography variant="subtitle1">Public Banks' interest rates</Typography>
+                        <br />
+                        {Object.entries(state.fixedDepositInterestLinks.publicBanks).map(([bankName, link]) =>
+                            <Link to={{ pathname: link }} target="_blank" >
+                                <Button color="primary" style={{textTransform: 'none'}}>
+                                    {bankName}
+                                </Button> 
+                            </Link> 
+                        )}
+                    </Grid>
+                </Grid>
+                <Grid item xs={12} sm={4}>
+                    <Grid container direction="column">
+                        <Typography variant="subtitle1">Private Banks' interest rates</Typography>
+                        <br />
+                        {Object.entries(state.fixedDepositInterestLinks.privateBanks).map(([bankName, link]) =>
+                            <Link to={{ pathname: link }} target="_blank" >
+                                <Button color="primary" style={{textTransform: 'none'}}>
+                                    {bankName}
+                                </Button> 
+                            </Link> 
+                        )}
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Paper>
+        <Paper elevation={2} square className={classes.whiteWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
                 <Grid item>
                     <Typography variant="subtitle1">Frequently asked questions</Typography>
