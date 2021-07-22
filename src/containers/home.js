@@ -36,9 +36,9 @@ const Home = () => {
             <Grid item>
               <ContentHeader />  
             </Grid>
-            <Grid item>
+            {/* <Grid item>
                 <NewsletterSignup />
-            </Grid>
+            </Grid> */}
             <Grid item>
                 <MoneyInformation />
             </Grid>

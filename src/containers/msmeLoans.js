@@ -25,11 +25,18 @@ import {
     TableContainer,
     TableHead,
     TableRow,
-    Hidden
+    CircularProgress
   } from '@material-ui/core'
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
-
+import { ContactSupportOutlined } from '@material-ui/icons';
+import CreditDebitTable from '../components/creditDebitTable';
+import CreditDebitBarChart from '../components/creditDebitBarChart';
+import CreditAnalysisByParty from '../components/creditAnalysisByParty';
+import CreditAnalysisByCategory from '../components/creditAnalysisByCategory';
+import DebitAnalysisByParty from '../components/debitAnalysisByParty';
+import DebitAnalysisByCategory from '../components/debitAnalysisByCategory';
+import DetailedBankStatement from '../components/detailedBankStatement';
   
 const useStyles = makeStyles({
     contentAreaWrapper: {
@@ -112,9 +119,9 @@ const MsmeLoans = () => {
     const [visibility, setVisibility] = React.useState(false);
 
     const changeHandler = (event) => {
-        console.log("in input", event.target.files);
         if(event.target && event.target.files && event.target.files.length > 0) {
             getBase64(event.target.files[0], (result) => {
+                result = result.replace('data:application/pdf;base64,', '');
                 dispatch({ type: "UPLOAD_PDF_AND_ANALYZE", payload:  result})
            });
     
@@ -133,7 +140,6 @@ const MsmeLoans = () => {
     }
 
     return <Box className={classes.contentAreaWrapper}>
-        <Hidden xsUp>
         <Paper elevation={2} square className={classes.whiteWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
                 <Grid item xs={12} sm={4}>
@@ -144,6 +150,13 @@ const MsmeLoans = () => {
                     <br/>
                     <Typography variant="body1">Your bank-statement tells alot about you. Banks use your bank-statement to check your credibility.</Typography>
                     <br/>
+                    <FormControl className={classes.bankPassword}>
+                        <InputLabel >Phone number</InputLabel>
+                        <Input
+                            type="number"
+                            value={state.newBankStatementForm ? state.newBankStatementForm.phoneNumber : ""}
+                            onChange={(event) => dispatch({ type: "UPDATE_BANK_STATEMENT_PHONENUMBER", payload: event.target.value })} />
+                    </FormControl>  
                     <Autocomplete
                         size='small'
                         fontSize='small'
@@ -173,8 +186,16 @@ const MsmeLoans = () => {
                     </Grid>
                     <br />
                     <InputLabel className={classes.submitDetails}>
-                    <input style={{ display: 'none' }} accept="application/pdf" type="file" name="file" onChange={changeHandler} />
-                        UPLOAD PDF & GET ANALYSIS
+                    <input 
+                        style={{ display: 'none' }} 
+                        accept="application/pdf" 
+                        type="file" 
+                        name="file" 
+                        onChange={changeHandler}
+                        disabled = {state.newBankStatementForm && state.newBankStatementForm.inProgress} />
+                        {(state.newBankStatementForm && state.newBankStatementForm.inProgress) ?
+                        <CircularProgress />
+                        : "UPLOAD PDF & GET ANALYSIS" }
                     </InputLabel>
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -182,7 +203,59 @@ const MsmeLoans = () => {
                 </Grid>
             </Grid>
         </Paper>
-        </Hidden>
+        {
+            state.bankStatementAnalysis &&
+            <Paper elevation={2} square className={classes.greyWrapper}>
+                <Typography variant="subtitle1" level="4" margin="xsmall">Your bank statement analysis report</Typography>
+                <br/>
+                <Typography variant="body1">First filter of your loan application is your bank-statement. Similar report is used by banks and other similar lender to decide whether to give business loans or not. This report shows your eligibility for MSME business loan and credibility to repay the loan.</Typography>
+                <br />
+                <Grid container direction="column" justify="flex-start" spacing={2}>
+                    <Grid item xs={12} sm={12}>
+                        <Typography variant="subtitle2" level="4" margin="xsmall">Summary</Typography>
+                    </Grid>
+                    <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={2}>
+                        <Grid item xs={12} sm={6}>
+                            <CreditDebitTable />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <CreditDebitBarChart />
+                        </Grid>
+                    </Grid>
+                    <br/>
+                    <Grid item xs={12} sm={12}>
+                        <Typography variant="subtitle2" level="4" margin="xsmall">Credit Analysis</Typography>
+                    </Grid>
+                    <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={2}>
+                        <Grid item xs={12} sm={6}>
+                            <CreditAnalysisByCategory />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <CreditAnalysisByParty />
+                        </Grid>
+                    </Grid>
+                    <br/>
+                    <Grid item xs={12} sm={12}>
+                        <Typography variant="subtitle2" level="4" margin="xsmall">Debit Analysis</Typography>
+                    </Grid>
+                    <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={2}>
+                        <Grid item xs={12} sm={6}>
+                            <DebitAnalysisByCategory />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <DebitAnalysisByParty />
+                        </Grid>
+                    </Grid>
+                    <br/>
+                    <Grid item xs={12} sm={12}>
+                        <Typography variant="subtitle2" level="4" margin="xsmall">Statement</Typography>
+                        <br/>
+                        <DetailedBankStatement />
+                    </Grid>
+
+                </Grid>
+            </Paper>
+        }
         <Paper elevation={2} square className={classes.whiteWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
                 <Grid item xs={12} sm={4}>
@@ -261,5 +334,4 @@ const MsmeLoans = () => {
         <Footer />
     </Box>
 }
-
 export default MsmeLoans;

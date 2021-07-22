@@ -22,6 +22,14 @@ const AppReducer = (state, action) => {
                 profilesForm: {},
                 profileAdded: true
             }
+        case 'UPDATE_BANK_STATEMENT_PHONENUMBER':
+            return {
+                ...state,
+                newBankStatementForm: {
+                    ...state.newBankStatementForm,
+                    phoneNumber: action.payload
+                }
+            }    
         case 'UPDATE_BANK_STATEMENT_PASSWORD':
             return {
                 ...state,
@@ -38,6 +46,25 @@ const AppReducer = (state, action) => {
                     selectedBankName: action.payload
                 }
             }
+        case 'BANKSTATEMENT_ANALYSIS_IN_PROGRESS':
+            return {
+                ...state,
+                bankStatementAnalysis: undefined,
+                newBankStatementForm:{
+                    ...state.newBankStatementForm,
+                    inProgress: true,
+                } 
+            }
+        case 'ADD_DETAILED_TRANSACTIONS':
+            return {
+                ...state,
+                bankStatementAnalysis: action.payload
+            }        
+        case 'BANKSTATEMENT_ANALYSIS_FINISHED':
+            return {
+                ...state,
+                newBankStatementForm: undefined
+            }        
         case 'UPDATE_FIXED_DEPOSIT_YEAR':
             return {
                 ...state,

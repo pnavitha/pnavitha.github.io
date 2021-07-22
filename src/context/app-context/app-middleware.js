@@ -1,3 +1,5 @@
+import { Crop32 } from "@material-ui/icons";
+
 export const AppMiddleware = (dispatch, state) => (action) => {
     switch (action.type) {
         case 'REGISTER':
@@ -30,27 +32,48 @@ export const AppMiddleware = (dispatch, state) => (action) => {
             break; 
         case 'UPLOAD_PDF_AND_ANALYZE':
             (async () => {
+                dispatch({ type: 'BANKSTATEMENT_ANALYSIS_IN_PROGRESS' });
+                var bankNameString = "";
+                if(state.newBankStatementForm.selectedBankName == "HDFC Bank") { 
+                    bankNameString = "hdfc";
+                } else if(state.newBankStatementForm.selectedBankName == "Axis Bank") {
+                        bankNameString = "axis";
+                } else if(state.newBankStatementForm.selectedBankName == "SBI") {
+                        bankNameString = "sbi";
+                } else if(state.newBankStatementForm.selectedBankName == "ICICI") {
+                    bankNameString = "icici";
+                }
 
-                dispatch({ type: 'LOADING_IN_PROGRESS' });
-                //  const payload = {
-                //     base64Pdf: action.payload,
-                //     bankName: state.newBankStatementForm.selectedBankName  
-                //     openCode: state.newBankStatementForm.bankStatementPassword 
-                //     action: "UPLOAD_FILE"
-                // }
-                // console.log("payload: ", payload);
-                // const response = await fetch('https://i5870mwfv5.execute-api.ap-southeast-1.amazonaws.com/prod/notes', {
-                //     method: 'POST',
-                //     body: JSON.stringify(payload),
-                // });
+                 const payload = {
+                    base64Pdf: action.payload,
+                    phoneNumber: state.newBankStatementForm.phoneNumber,
+                    bankName: bankNameString,  
+                    password: state.newBankStatementForm.bankStatementPassword ? state.newBankStatementForm.bankStatementPassword : "", 
+                    action: "UPLOAD_BANK_STATEMENT"
+                }
 
-                // const responseJson = await response.json();
-                // console.log("response: ", responseJson);
-                dispatch({ type: 'LOADING_SUCCESS' });
-                // if (responseJson.statusCode === 200) {
-                //     dispatch({ type: 'PDF_ANALYSIS_SUCCESS' });
-                // }
+                const response = await fetch('https://q44f17qqyi.execute-api.ap-south-1.amazonaws.com/prod/users', {
+                    method: 'POST',
+                    body: JSON.stringify(payload),
+                });
+
+                const responseJson = await response.json();
+                dispatch({ type: 'BANKSTATEMENT_ANALYSIS_FINISHED' });
+                if (responseJson.statusCode === 200) {
+                    try{
+                    const messageJson = JSON.parse(responseJson.message);
+                    const bodyString = JSON.parse(messageJson.Payload).body;
+                    let dataList = JSON.parse(bodyString);
+                    dataList = addMonthName(dataList);
+                    var detailedTransactions = getDetailedTransactions(dataList);
+
+                    dispatch({ type: 'ADD_DETAILED_TRANSACTIONS', payload: detailedTransactions });
+                    }catch(ex) {
+                        console.log("Exception occured with pdf analysis: ", ex);
+                    }
+                }
             })(); 
+            break; 
         case 'CALCULATE_FIXED_DEPOSIT_RATES':
             dispatch({ type: 'CLEAR_FIXED_DEPOSIT_RATES_RESULT' , payload: banksRates});
             const totalFixedDepositDays = getTotalDays(state.fixedDepositDuration);
@@ -71,7 +94,7 @@ export const AppMiddleware = (dispatch, state) => (action) => {
             var banksRates = Object.entries(state.fixedDeposit[bankFdDayMap].publicBank).concat(Object.entries(state.fixedDeposit[bankFdDayMap].privateBank));
             banksRates.sort((bank1, bank2) => { return bank2[1] - bank1[1];});
             dispatch({ type: 'ADD_FIXED_DEPOSIT_RATES_RESULT' , payload: banksRates});
-            return;
+            break;
         case 'UPDATE_BANKWISE_FIXED_DEPOSIT':
             const result = {};
             Object.entries(state.fixedDeposit).map(([duration, banksDetails]) => {
@@ -80,13 +103,12 @@ export const AppMiddleware = (dispatch, state) => (action) => {
                         if(result[bankName] == undefined) {
                             result[bankName] = {};
                         }
-                        console.log("bank data: ", bankName + " " + duration);
-
                         result[bankName][duration] = interestRate;
                     })
                 });
             });   
             dispatch({ type: 'ADD_BANKWISE_FIXED_DEPOSIT_RESULT' , payload: result}); 
+            break; 
         default: {
             dispatch(action);
             break;
@@ -101,8 +123,112 @@ const getTotalDays = (fixedDepositDuration) => {
     if(fixedDepositDuration.months !== "")    
         result += Number(30 * fixedDepositDuration.months);
     if(fixedDepositDuration.days != "")     
-        result += Number(fixedDepositDuration.days);
-
-    console.log("result days: " + result);        
+        result += Number(fixedDepositDuration.days);      
     return result;    
+}
+
+const addMonthName = (dataList) => {
+    const result = [];
+    dataList.forEach(transaction => {
+        const newTransaction = transaction;
+        newTransaction.date = getDetailedDate(transaction.date);
+        result.push(newTransaction);
+    });
+
+    return result;
+}
+
+const getDetailedTransactions = (dataList) => {
+    const result = {};
+    result["detailedTransactions"] = dataList;
+    const monthWiseResult = {};
+    const categoryWiseCreditResult = {};
+    const categoryWiseDebitResult = {};
+    const partyWiseCreditResult = {};
+    const partyWiseDebitResult = {};
+    dataList.forEach(transaction => {
+        const monthYear = transaction.date.substring(3);
+        if(monthWiseResult[monthYear] == undefined)
+            monthWiseResult[monthYear] = {
+                "cr": 0,
+                "crCount": 0,
+                "dr": 0,
+                "drCount": 0
+            };
+
+        if(categoryWiseCreditResult[transaction.cat] == undefined && transaction.cr !== null)
+            categoryWiseCreditResult[transaction.cat] = {
+                "cr": 0,
+                "crCount": 0
+            };  
+            
+        if(categoryWiseDebitResult[transaction.cat] == undefined && transaction.dr !== null)
+            categoryWiseDebitResult[transaction.cat] = {
+                "dr": 0,
+                "drCount": 0
+            };  
+            
+        if(partyWiseCreditResult[transaction.party] == undefined && transaction.cr !== null)
+            partyWiseCreditResult[transaction.party] = {
+                "cr": 0,
+                "crCount": 0
+            };  
+            
+        if(partyWiseDebitResult[transaction.party] == undefined && transaction.dr !== null)
+            partyWiseDebitResult[transaction.party] = {
+                "dr": 0,
+                "drCount": 0
+            };     
+
+        if(transaction.cr !== null)
+        {
+            monthWiseResult[monthYear].cr = (Number.parseFloat(monthWiseResult[monthYear].cr) + Number.parseFloat(transaction.cr)).toFixed(2);
+            monthWiseResult[monthYear].crCount += 1;
+
+            categoryWiseCreditResult[transaction.cat].cr = (Number.parseFloat(categoryWiseCreditResult[transaction.cat].cr) + Number.parseFloat(transaction.cr)).toFixed(2);
+            categoryWiseCreditResult[transaction.cat].crCount += 1;
+            
+            partyWiseCreditResult[transaction.party].cr = (Number.parseFloat(partyWiseCreditResult[transaction.party].cr) + Number.parseFloat(transaction.cr)).toFixed(2);
+            partyWiseCreditResult[transaction.party].crCount += 1;
+        }    
+             
+        if(transaction.dr !== null)
+        {
+            monthWiseResult[monthYear].dr = (Number.parseFloat(monthWiseResult[monthYear].dr) + Number.parseFloat(transaction.dr)).toFixed(2);
+            monthWiseResult[monthYear].drCount += 1;
+
+            categoryWiseDebitResult[transaction.cat].dr = (Number.parseFloat(categoryWiseDebitResult[transaction.cat].dr) + Number.parseFloat(transaction.dr)).toFixed(2);
+            categoryWiseDebitResult[transaction.cat].drCount += 1;
+
+            partyWiseDebitResult[transaction.party].dr = (Number.parseFloat(partyWiseDebitResult[transaction.party].dr) + Number.parseFloat(transaction.dr)).toFixed(2);
+            partyWiseDebitResult[transaction.party].drCount += 1;
+        }    
+    });
+    result["monthWiseTransactions"] = monthWiseResult;
+
+    const sortedCategoryWiseCreditResult = getSortedObject(categoryWiseCreditResult, "cr");
+    result["categoryWiseCreditTransactions"] = sortedCategoryWiseCreditResult;
+
+    const sortedCategoryWiseDebitResult = getSortedObject(categoryWiseDebitResult, "dr");
+    result["categoryWiseDebitTransactions"] = sortedCategoryWiseDebitResult;
+
+    const sortedPartyWiseCreditResult = getSortedObject(partyWiseCreditResult, "cr");
+    result["partyWiseCreditTransactions"] = sortedPartyWiseCreditResult;
+
+    const sortedPartyWiseDebitResult = getSortedObject(partyWiseDebitResult, "dr");
+    result["partyWiseDebitTransactions"] = sortedPartyWiseDebitResult;
+
+    return result;
+}
+
+const getSortedObject = (originalObj, sortProperty) => {
+    return Object.fromEntries(
+        Object.entries(originalObj).sort((r1,r2) => {return r2[1][sortProperty] - r1[1][sortProperty]}));
+}
+
+const months = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const getDetailedDate = (date) => {
+    let dateDetails = date.split("-");
+    let newDate = dateDetails[0] + " " + months[Number.parseInt(dateDetails[1])] + " " + dateDetails[2];
+    return newDate;
 }

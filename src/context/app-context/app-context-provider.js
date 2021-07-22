@@ -6,7 +6,7 @@ const initialState = {
     profilesForm: {},
     profileAdded: false,
     isLoading: false,
-    bankNames: ["HDFC Bank", "Axis Bank"],
+    bankNames: ["Axis Bank", "HDFC Bank", "ICICI", "SBI"],
     msmeLoans: {
         "Central Bank of india": {
             interestRate: "7.35% onwards"

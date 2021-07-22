@@ -37,8 +37,10 @@ export const Theme = createMuiTheme({
       },
     },
     subtitle2: {
-      fontSize: '0.8rem',
+      padding: '4px',
+      fontSize: '1rem',
       fontWeight: 'bold',
+      textAlign: 'center',
       backgroundColor: '#282c35',
       color: '#fff'
     }
