@@ -57,11 +57,7 @@ const useStyles = makeStyles({
         backgroundColor: '#f38b01',
         color: '#fff',
         textAlign: 'center',
-        boxShadow: '1px 1px #c3c3c3',
-        '&:hover': {
-            background: '#d38b01',
-            color: '#ffffff',
-        },
+        boxShadow: '1px 1px #c3c3c3'
     },
     container: {
         maxHeight: 350,
@@ -82,6 +78,17 @@ const useStyles = makeStyles({
         paddingBottom: '5%',
         paddingRight: '5%',
         paddingLeft: '5%',
+    },
+    disabledButton: {
+        border: '1px solid #ccc',
+        borderRadius: '5px',
+        display: 'inline-block',
+        padding: '8px 12px',
+        cursor: 'pointer',
+        backgroundColor: '#ffd092',
+        color: '#fff',
+        textAlign: 'center',
+        boxShadow: '1px 1px #c3c3c3',
     },
 });
 
@@ -151,7 +158,7 @@ const MsmeLoans = () => {
                     <Typography variant="body1">Your bank-statement tells alot about you. Banks use your bank-statement to check your credibility.</Typography>
                     <br/>
                     <FormControl className={classes.bankPassword}>
-                        <InputLabel >Phone number</InputLabel>
+                        <InputLabel >Phone number*</InputLabel>
                         <Input
                             type="number"
                             value={state.newBankStatementForm ? state.newBankStatementForm.phoneNumber : ""}
@@ -165,12 +172,12 @@ const MsmeLoans = () => {
                         value={state.newBankStatementForm ? state.newBankStatementForm.selectedBankName : ""}
                         onChange={(event, newValue) => dispatch({ type: "UPDATE_BANK_NAME", payload: newValue })}
                         getOptionLabel={(option) => option}
-                        renderInput={(params) => <TextField {...params} InputLabelProps={{ style: { fontSize: 12 } }} label="Select Bank Name" />}
+                        renderInput={(params) => <TextField {...params} InputLabelProps={{ style: { fontSize: 12 } }} label="Select Bank Name*" />}
                     />
                     <Grid container direction='row' justify="flex-start" alignItems="flex-end">
                         <Grid item xs={10} sm={10}>
                             <FormControl className={classes.bankPassword}>
-                                <InputLabel >Bank statement password</InputLabel>
+                                <InputLabel >Bank statement password (if present)</InputLabel>
                                 <Input
                                     type={visibility ? "text" : "password"}
                                     value={state.newBankStatementForm ? state.newBankStatementForm.bankStatementPassword : ""}
@@ -185,14 +192,17 @@ const MsmeLoans = () => {
                         </Grid>
                     </Grid>
                     <br />
-                    <InputLabel className={classes.submitDetails}>
+                    <InputLabel 
+                        disabled = {(!state.newBankStatementForm) || (state.newBankStatementForm && (state.newBankStatementForm.phoneNumber.length < 10 || !state.newBankStatementForm.selectedBankName || state.newBankStatementForm.inProgress))} 
+                        classes={{ disabled: classes.disabledButton}} 
+                        className={classes.submitDetails}>
                     <input 
                         style={{ display: 'none' }} 
                         accept="application/pdf" 
                         type="file" 
                         name="file" 
-                        onChange={changeHandler}
-                        disabled = {state.newBankStatementForm && state.newBankStatementForm.inProgress} />
+                        disabled = {(!state.newBankStatementForm) || (state.newBankStatementForm && (state.newBankStatementForm.phoneNumber.length < 10 || !state.newBankStatementForm.selectedBankName || state.newBankStatementForm.inProgress))} 
+                        onChange={changeHandler}/>
                         {(state.newBankStatementForm && state.newBankStatementForm.inProgress) ?
                         <CircularProgress />
                         : "UPLOAD PDF & GET ANALYSIS" }

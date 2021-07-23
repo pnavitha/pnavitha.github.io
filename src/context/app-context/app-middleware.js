@@ -31,48 +31,53 @@ export const AppMiddleware = (dispatch, state) => (action) => {
             }
             break; 
         case 'UPLOAD_PDF_AND_ANALYZE':
-            (async () => {
-                dispatch({ type: 'BANKSTATEMENT_ANALYSIS_IN_PROGRESS' });
-                var bankNameString = "";
-                if(state.newBankStatementForm.selectedBankName == "HDFC Bank") { 
-                    bankNameString = "hdfc";
-                } else if(state.newBankStatementForm.selectedBankName == "Axis Bank") {
-                        bankNameString = "axis";
-                } else if(state.newBankStatementForm.selectedBankName == "SBI") {
-                        bankNameString = "sbi";
-                } else if(state.newBankStatementForm.selectedBankName == "ICICI") {
-                    bankNameString = "icici";
-                }
-
-                 const payload = {
-                    base64Pdf: action.payload,
-                    phoneNumber: state.newBankStatementForm.phoneNumber,
-                    bankName: bankNameString,  
-                    password: state.newBankStatementForm.bankStatementPassword ? state.newBankStatementForm.bankStatementPassword : "", 
-                    action: "UPLOAD_BANK_STATEMENT"
-                }
-
-                const response = await fetch('https://q44f17qqyi.execute-api.ap-south-1.amazonaws.com/prod/users', {
-                    method: 'POST',
-                    body: JSON.stringify(payload),
-                });
-
-                const responseJson = await response.json();
-                dispatch({ type: 'BANKSTATEMENT_ANALYSIS_FINISHED' });
-                if (responseJson.statusCode === 200) {
-                    try{
-                    const messageJson = JSON.parse(responseJson.message);
-                    const bodyString = JSON.parse(messageJson.Payload).body;
-                    let dataList = JSON.parse(bodyString);
-                    dataList = addMonthName(dataList);
-                    var detailedTransactions = getDetailedTransactions(dataList);
-
-                    dispatch({ type: 'ADD_DETAILED_TRANSACTIONS', payload: detailedTransactions });
-                    }catch(ex) {
-                        console.log("Exception occured with pdf analysis: ", ex);
+            if (state.newBankStatementForm && 
+                state.newBankStatementForm.phoneNumber && 
+                state.newBankStatementForm.phoneNumber.trim().length >= 10 &&
+                state.newBankStatementForm.selectedBankName) {
+                (async () => {
+                    var bankNameString = "";
+                    if(state.newBankStatementForm.selectedBankName == "HDFC Bank") { 
+                        bankNameString = "hdfc";
+                    } else if(state.newBankStatementForm.selectedBankName == "Axis Bank") {
+                            bankNameString = "axis";
+                    } else if(state.newBankStatementForm.selectedBankName == "SBI") {
+                            bankNameString = "sbi";
+                    } else if(state.newBankStatementForm.selectedBankName == "ICICI") {
+                        bankNameString = "icici";
                     }
-                }
-            })(); 
+
+                    const payload = {
+                        base64Pdf: action.payload,
+                        phoneNumber: state.newBankStatementForm.phoneNumber,
+                        bankName: bankNameString,  
+                        password: state.newBankStatementForm.bankStatementPassword ? state.newBankStatementForm.bankStatementPassword : "", 
+                        action: "UPLOAD_BANK_STATEMENT"
+                    }
+                    
+                    dispatch({ type: 'BANKSTATEMENT_ANALYSIS_IN_PROGRESS' });
+                    const response = await fetch('https://q44f17qqyi.execute-api.ap-south-1.amazonaws.com/prod/users', {
+                        method: 'POST',
+                        body: JSON.stringify(payload),
+                    });
+
+                    const responseJson = await response.json();
+                    dispatch({ type: 'BANKSTATEMENT_ANALYSIS_FINISHED' });
+                    if (responseJson.statusCode === 200) {
+                        try{
+                        const messageJson = JSON.parse(responseJson.message);
+                        const bodyString = JSON.parse(messageJson.Payload).body;
+                        let dataList = JSON.parse(bodyString);
+                        dataList = addMonthName(dataList);
+                        var detailedTransactions = getDetailedTransactions(dataList);
+
+                        dispatch({ type: 'ADD_DETAILED_TRANSACTIONS', payload: detailedTransactions });
+                        }catch(ex) {
+                            console.log("Exception occured with pdf analysis: ", ex);
+                        }
+                    }
+                })(); 
+            }
             break; 
         case 'CALCULATE_FIXED_DEPOSIT_RATES':
             dispatch({ type: 'CLEAR_FIXED_DEPOSIT_RATES_RESULT' , payload: banksRates});
