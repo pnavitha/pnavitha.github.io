@@ -101,9 +101,9 @@ const CreditDebitTable = () => {
                         {columns.map((column) => {
                             const cellValue = (column.id === 'duration') ? key : value[column.id];
                             if(column.id === 'cr')
-                                credit += cellValue;
+                                credit = (Number.parseFloat(credit) + Number.parseFloat(cellValue)).toFixed(2);
                             if(column.id === 'dr')
-                                debit += cellValue;  
+                                debit = (Number.parseFloat(debit) + Number.parseFloat(cellValue)).toFixed(2);  
                             if(column.id === 'crCount')
                                 creditCount += cellValue;
                             if(column.id === 'drCount')

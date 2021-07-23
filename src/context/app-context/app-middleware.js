@@ -54,7 +54,7 @@ export const AppMiddleware = (dispatch, state) => (action) => {
                         password: state.newBankStatementForm.bankStatementPassword ? state.newBankStatementForm.bankStatementPassword : "", 
                         action: "UPLOAD_BANK_STATEMENT"
                     }
-                    
+
                     dispatch({ type: 'BANKSTATEMENT_ANALYSIS_IN_PROGRESS' });
                     const response = await fetch('https://q44f17qqyi.execute-api.ap-south-1.amazonaws.com/prod/users', {
                         method: 'POST',
@@ -228,7 +228,9 @@ const getDetailedTransactions = (dataList) => {
 
 const getSortedObject = (originalObj, sortProperty) => {
     return Object.fromEntries(
-        Object.entries(originalObj).sort((r1,r2) => {return r2[1][sortProperty] - r1[1][sortProperty]}));
+        Object.entries(originalObj).sort((r1,r2) => {
+            return Number.parseFloat(r2[1][sortProperty]).toFixed(2) - Number.parseFloat(r1[1][sortProperty]).toFixed(2)
+        }));
 }
 
 const months = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
