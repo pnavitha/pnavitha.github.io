@@ -8,6 +8,7 @@ import Footer from '../components/footer';
 import ContentHeader from '../components/contentHeader';
 import MoneyInformation from '../components/moneyInformation';
 import NewsletterSignup from '../components/newsletterSignup';
+import KnowMore from '../components/knowMore';
 
 const useStyles = makeStyles({
     contentAreaWrapper: {
@@ -41,6 +42,9 @@ const Home = () => {
             </Grid> */}
             <Grid item>
                 <MoneyInformation />
+            </Grid>
+            <Grid item>
+                <KnowMore />
             </Grid>
         </Grid>
         <Footer />

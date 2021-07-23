@@ -95,6 +95,8 @@ const MoneyInformation = () => {
                     </Link>
                 </Grid>
             </Grid>
+            <br/>
+            <br/>
     </Paper>
 }
 
