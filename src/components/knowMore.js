@@ -1,7 +1,6 @@
-import React, { useContext }  from 'react';
+import React  from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ReactPlayer from "react-player";
-import { AppContext } from '../context/app-context/app-context-provider';
 
 import { 
     Typography,
@@ -11,7 +10,6 @@ import {
 
 const useStyles = makeStyles({
     ContentWrapper: {
-        backgroundColor: '#f0f1f2',
         background: '#fff',
         paddingTop: '5%',
         paddingBottom: '5%',
@@ -25,14 +23,13 @@ const useStyles = makeStyles({
 
 const KnowMore = () => {
     const classes = useStyles();
-    const [state, dispatch] = useContext(AppContext);
 
     return <Paper square className={classes.ContentWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
                 <Grid item xs={12} sm={4}>
                     <br />
                     <Grid container direction='column'>
-                <Typography variant="h1">How FinDash helps in Business Loans?</Typography>
+                <Typography variant="h1">How FinDash helps improving your Loan chances?</Typography>
                 <br/>
                 <Typography variant="body1">We are starting our journey for faster business loans for MSMEs. Check this demo video explaining our current platform and know our future plans.</Typography>
             </Grid>

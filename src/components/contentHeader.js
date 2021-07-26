@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import InfoIcon from '@material-ui/icons/Info';
@@ -50,9 +50,9 @@ const ContentHeader = () => {
     return <Paper square className={classes.ContentWrapper}>
         <Grid container direction="row" justify="space-evenly" spacing={2}>
             <Grid item xs={12} sm={4}>
-                <Typography variant="h1">The finance platform for a changing business world.</Typography>
+                <Typography variant="h1">The finance platform for a changing world.</Typography>
                 <br />
-                <Typography variant="body1">We help businesses with their working capital. We fasten the decision making time for borrower's loan applications in banks....</Typography>
+                <Typography variant="body1">We help you evaluate your financial documents so that you can get a quicker loan in better interest rate.</Typography>
                 <Link to="/about" style={{ textDecoration: 'none' }}>
                     <Button onClick={() => dispatch({ type: "NAVIGATE_TO_ABOUT_PAGE" })} color="primary" startIcon={<InfoIcon />}>
                         Know more

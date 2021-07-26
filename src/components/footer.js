@@ -6,6 +6,8 @@ const useStyles = makeStyles({
     footer: {
         marginTop: '50px',
         padding: '10px',
+        backgroundColor: "#424242",
+        color: "#fff"
     }
 });
 

@@ -8,7 +8,6 @@ import {
     TableCell,
     TableContainer,
     TableHead,
-    TablePagination,
     TableRow ,
     Typography
 } from '@material-ui/core';
@@ -59,20 +58,10 @@ const StyledTableCell = withStyles(() => ({
 const CreditDebitTable = () => {
     const classes = useStyles();
     const [state, dispatch] = useContext(AppContext);
-    const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(10);
     let credit = 0;
     let creditCount = 0;
     let debit = 0;
     let debitCount = 0;
-    const handleChangePage = (event, newPage) => {
-        setPage(newPage);
-      };
-    
-    const handleChangeRowsPerPage = (event) => {
-        setRowsPerPage(+event.target.value);
-        setPage(0);
-    };
 
     return (
         <Paper className={classes.root}>

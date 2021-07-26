@@ -7,8 +7,9 @@ import {
 import Footer from '../components/footer';
 import ContentHeader from '../components/contentHeader';
 import MoneyInformation from '../components/moneyInformation';
-import NewsletterSignup from '../components/newsletterSignup';
 import KnowMore from '../components/knowMore';
+import BankStatementAnalyzer from '../containers/bankStatementAnalyzer';
+import BankStatementInfo from '../components/bankStatementInfo';
 
 const useStyles = makeStyles({
     contentAreaWrapper: {
@@ -35,11 +36,14 @@ const Home = () => {
     return <Box className={classes.contentAreaWrapper}>
         <Grid container direction="column" alignItems="stretch" justify="center">
             <Grid item>
-              <ContentHeader />  
+                <ContentHeader />  
             </Grid>
-            {/* <Grid item>
-                <NewsletterSignup />
-            </Grid> */}
+            <Grid item>
+                <BankStatementAnalyzer />  
+            </Grid>
+            <Grid item>
+                <BankStatementInfo />
+            </Grid>
             <Grid item>
                 <MoneyInformation />
             </Grid>
