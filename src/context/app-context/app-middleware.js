@@ -1,5 +1,3 @@
-import { Crop32 } from "@material-ui/icons";
-
 export const AppMiddleware = (dispatch, state) => (action) => {
     switch (action.type) {
         case 'REGISTER':
@@ -153,75 +151,75 @@ const getDetailedTransactions = (dataList) => {
     const partyWiseDebitResult = {};
     dataList.forEach(transaction => {
         const monthYear = transaction.date.substring(3);
-        if(monthWiseResult[monthYear] == undefined)
+        const category = (transaction.cat != null) ? (transaction.cat).toString() : "null";
+        const partyName = (transaction.party != null) ? (transaction.party).toString() : "null";
+
+        if(monthWiseResult[monthYear] == undefined) {
             monthWiseResult[monthYear] = {
                 "cr": 0,
                 "crCount": 0,
                 "dr": 0,
                 "drCount": 0
             };
+        }
 
-        if(categoryWiseCreditResult[transaction.cat] == undefined && transaction.cr !== null)
-            categoryWiseCreditResult[transaction.cat] = {
+        if(categoryWiseCreditResult[category] == undefined && transaction.cr !== null) {
+            categoryWiseCreditResult[category] = {
                 "cr": 0,
                 "crCount": 0
             };  
-            
-        if(categoryWiseDebitResult[transaction.cat] == undefined && transaction.dr !== null)
-            categoryWiseDebitResult[transaction.cat] = {
+        }
+
+        if(categoryWiseDebitResult[category] == undefined && transaction.dr !== null) {
+            categoryWiseDebitResult[category] = {
                 "dr": 0,
                 "drCount": 0
             };  
-            
-        if(partyWiseCreditResult[transaction.party] == undefined && transaction.cr !== null)
-            partyWiseCreditResult[transaction.party] = {
+        }
+
+        if(partyWiseCreditResult[partyName] == undefined && transaction.cr !== null) {
+            partyWiseCreditResult[partyName] = {
                 "cr": 0,
                 "crCount": 0
             };  
-            
-        if(partyWiseDebitResult[transaction.party] == undefined && transaction.dr !== null)
-            partyWiseDebitResult[transaction.party] = {
+        }
+
+        if(partyWiseDebitResult[partyName] == undefined && transaction.dr !== null) {
+            partyWiseDebitResult[partyName] = {
                 "dr": 0,
                 "drCount": 0
             };     
+        }
 
         if(transaction.cr !== null)
         {
             monthWiseResult[monthYear].cr = (Number.parseFloat(monthWiseResult[monthYear].cr) + Number.parseFloat(transaction.cr)).toFixed(2);
             monthWiseResult[monthYear].crCount += 1;
 
-            categoryWiseCreditResult[transaction.cat].cr = (Number.parseFloat(categoryWiseCreditResult[transaction.cat].cr) + Number.parseFloat(transaction.cr)).toFixed(2);
-            categoryWiseCreditResult[transaction.cat].crCount += 1;
+            categoryWiseCreditResult[category].cr = (Number.parseFloat(categoryWiseCreditResult[category].cr) + Number.parseFloat(transaction.cr)).toFixed(2);
+            categoryWiseCreditResult[category].crCount += 1;
             
-            partyWiseCreditResult[transaction.party].cr = (Number.parseFloat(partyWiseCreditResult[transaction.party].cr) + Number.parseFloat(transaction.cr)).toFixed(2);
-            partyWiseCreditResult[transaction.party].crCount += 1;
-        }    
-             
-        if(transaction.dr !== null)
+            partyWiseCreditResult[partyName].cr = (Number.parseFloat(partyWiseCreditResult[partyName].cr) + Number.parseFloat(transaction.cr)).toFixed(2);
+            partyWiseCreditResult[partyName].crCount += 1;
+        } 
+        else if(transaction.dr !== null)
         {
             monthWiseResult[monthYear].dr = (Number.parseFloat(monthWiseResult[monthYear].dr) + Number.parseFloat(transaction.dr)).toFixed(2);
             monthWiseResult[monthYear].drCount += 1;
 
-            categoryWiseDebitResult[transaction.cat].dr = (Number.parseFloat(categoryWiseDebitResult[transaction.cat].dr) + Number.parseFloat(transaction.dr)).toFixed(2);
-            categoryWiseDebitResult[transaction.cat].drCount += 1;
+            categoryWiseDebitResult[category].dr = (Number.parseFloat(categoryWiseDebitResult[category].dr) + Number.parseFloat(transaction.dr)).toFixed(2);
+            categoryWiseDebitResult[category].drCount += 1;
 
-            partyWiseDebitResult[transaction.party].dr = (Number.parseFloat(partyWiseDebitResult[transaction.party].dr) + Number.parseFloat(transaction.dr)).toFixed(2);
-            partyWiseDebitResult[transaction.party].drCount += 1;
+            partyWiseDebitResult[partyName].dr = (Number.parseFloat(partyWiseDebitResult[partyName].dr) + Number.parseFloat(transaction.dr)).toFixed(2);
+            partyWiseDebitResult[partyName].drCount += 1;
         }    
     });
+
     result["monthWiseTransactions"] = monthWiseResult;
-
-    const sortedCategoryWiseCreditResult = getSortedObject(categoryWiseCreditResult, "cr");
-    result["categoryWiseCreditTransactions"] = sortedCategoryWiseCreditResult;
-
-    const sortedCategoryWiseDebitResult = getSortedObject(categoryWiseDebitResult, "dr");
-    result["categoryWiseDebitTransactions"] = sortedCategoryWiseDebitResult;
-
-    const sortedPartyWiseCreditResult = getSortedObject(partyWiseCreditResult, "cr");
-    result["partyWiseCreditTransactions"] = sortedPartyWiseCreditResult;
-
-    const sortedPartyWiseDebitResult = getSortedObject(partyWiseDebitResult, "dr");
-    result["partyWiseDebitTransactions"] = sortedPartyWiseDebitResult;
+    result["categoryWiseCreditTransactions"] = getSortedObject(categoryWiseCreditResult, "cr");
+    result["categoryWiseDebitTransactions"] = getSortedObject(categoryWiseDebitResult, "dr");
+    result["partyWiseCreditTransactions"] = getSortedObject(partyWiseCreditResult, "cr");
+    result["partyWiseDebitTransactions"] = getSortedObject(partyWiseDebitResult, "dr");
 
     return result;
 }
@@ -229,7 +227,7 @@ const getDetailedTransactions = (dataList) => {
 const getSortedObject = (originalObj, sortProperty) => {
     return Object.fromEntries(
         Object.entries(originalObj).sort((r1,r2) => {
-            return Number.parseFloat(r2[1][sortProperty]).toFixed(2) - Number.parseFloat(r1[1][sortProperty]).toFixed(2)
+            return +(Number.parseFloat(r2[1][sortProperty]) - Number.parseFloat(r1[1][sortProperty])).toFixed(2)
         }));
 }
 

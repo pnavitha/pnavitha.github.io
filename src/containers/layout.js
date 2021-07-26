@@ -50,7 +50,7 @@ export default function Layout() {
                         <Grid item>
                         <Link to="/" style={{ textDecoration: 'none', color:'#0975e1'}}>
                         <Grid container direction="row">
-                        <img src={require("../images/FinDash_logo100x40.svg")} alt=""/>
+                        <img src={require("../images/FinDash_logo100x40.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers"/>
                         </Grid>
                         </Link>
                         </Grid>

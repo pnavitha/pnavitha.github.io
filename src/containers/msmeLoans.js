@@ -209,7 +209,7 @@ const MsmeLoans = () => {
                     </InputLabel>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <img src={require("../images/msme_loans.svg")} alt="" width="100%" />
+                    <img src={require("../images/msme_loans.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="100%" />
                 </Grid>
             </Grid>
         </Paper>

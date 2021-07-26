@@ -40,7 +40,7 @@ const MoneyInformation = () => {
                             <Typography variant="subtitle1" color='primary'>Fixed Deposits</Typography>
                             <br />
                             <Grid container direction='column' justify="space-between" alignItems='center'>
-                                <img src={require("../images/icon_fixed_deposit.svg")} alt="" width="25%" />
+                                <img src={require("../images/icon_fixed_deposit.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="25%" />
                                 <br />
                                 <Button size="small" onClick={() => dispatch({ type: "NAVIGATE_TO_ABOUT_PAGE" })} color="secondary" startIcon={<InfoIcon />}>
                                     Know more
@@ -55,7 +55,7 @@ const MoneyInformation = () => {
                         <Typography variant="subtitle1" color='primary'>Savings Account</Typography>
                         <br />
                         <Grid container direction='column' justify="space-between" alignItems='center'>
-                        <img src={require("../images/icon_savings.svg")} alt="" width="25%" />
+                        <img src={require("../images/icon_savings.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="25%" />
                                <br/> 
                                 <Button size="small" onClick={() => dispatch({ type: "NAVIGATE_TO_ABOUT_PAGE" })} color="secondary" startIcon={<InfoIcon />}>
                                     Know more
@@ -70,7 +70,7 @@ const MoneyInformation = () => {
                         <Typography variant="subtitle1" color='primary'>MSME Loans</Typography>
                         <br />
                         <Grid container direction='column' justify="space-between" alignItems='center'>
-                        <img src={require("../images/icon_business_loan.svg")} alt="" width="25%" />
+                        <img src={require("../images/icon_business_loan.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="25%" />
                                <br/> 
                                 <Button size="small" onClick={() => dispatch({ type: "NAVIGATE_TO_ABOUT_PAGE" })} color="secondary" startIcon={<InfoIcon />}>
                                     Know more
@@ -85,7 +85,7 @@ const MoneyInformation = () => {
                         <Typography variant="subtitle1" color='primary'>Fuel Prices</Typography>
                         <br />
                         <Grid container direction='column' justify="space-between" alignItems='center'>
-                            <img src={require("../images/icon_fuel.svg")} alt="" width="20%" />
+                            <img src={require("../images/icon_fuel.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="20%" />
                                <br/> 
                                 <Button size="small" onClick={() => dispatch({ type: "NAVIGATE_TO_ABOUT_PAGE" })} color="secondary" startIcon={<InfoIcon />}>
                                     Know more
@@ -95,6 +95,7 @@ const MoneyInformation = () => {
                     </Link>
                 </Grid>
             </Grid>
+            <br/>
             <br/>
             <br/>
     </Paper>
