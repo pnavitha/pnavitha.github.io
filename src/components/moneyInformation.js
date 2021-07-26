@@ -42,7 +42,8 @@ const MoneyInformation = () => {
                     <br />
                     <Typography variant="h1">We are going an Extra Mile For YOU!</Typography>
                     <br />
-                    <Typography variant="body1">A finance wellness is the combination of savings, investments, good loans, growing bsuiness and financial awareness. We aggregare as much information to make your finance to grow and you to prosper.</Typography>
+                    <Typography variant="body1">A finance wellness is the combination of savings, investments, good loans, growing business and financial awareness. We aggregare as much information to make your finance to grow and you to prosper.</Typography>
+                    <br />
                 </Grid>
             </Grid>
             <Link to="/fixed-deposit-interest-rates" style={{ textDecoration: 'none' }}>
@@ -98,9 +99,7 @@ const MoneyInformation = () => {
                 </Paper>
             </Link>
         </Grid>
-        <br />
-        <br />
-        <br />
+        <br/>
     </Paper>
 }
 

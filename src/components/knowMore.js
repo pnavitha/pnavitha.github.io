@@ -29,7 +29,7 @@ const KnowMore = () => {
                 <Grid item xs={12} sm={4}>
                     <br />
                     <Grid container direction='column'>
-                <Typography variant="h1">How FinDash helps improving your Loan chances?</Typography>
+                <Typography variant="h1">How FinDash improves your chances for Loan Approval?</Typography>
                 <br/>
                 <Typography variant="body1">We are starting our journey for faster business loans for MSMEs. Check this demo video explaining our current platform and know our future plans.</Typography>
             </Grid>

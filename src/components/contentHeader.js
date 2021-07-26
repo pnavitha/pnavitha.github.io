@@ -52,7 +52,7 @@ const ContentHeader = () => {
             <Grid item xs={12} sm={4}>
                 <Typography variant="h1">The finance platform for a changing world.</Typography>
                 <br />
-                <Typography variant="body1">We help you evaluate your financial documents so that you can get a quicker loan in better interest rate.</Typography>
+                <Typography variant="body1">We help you evaluate your financial documents so that you can get a quicker loan at lower interest rate.</Typography>
                 <Link to="/about" style={{ textDecoration: 'none' }}>
                     <Button onClick={() => dispatch({ type: "NAVIGATE_TO_ABOUT_PAGE" })} color="primary" startIcon={<InfoIcon />}>
                         Know more

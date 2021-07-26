@@ -8,7 +8,6 @@ import {
     TableCell,
     TableContainer,
     TableHead,
-    TablePagination,
     TableRow ,
     Typography
 } from '@material-ui/core';
