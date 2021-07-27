@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { AppContext } from '../context/app-context/app-context-provider';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import GaugeChart from 'react-gauge-chart'
 import {  
     Grid,
     Box,
@@ -204,9 +205,33 @@ const BankStatementAnalyzer = () => {
             <Paper elevation={2} square className={classes.greyWrapper}>
                 <Typography variant="subtitle1" level="4" margin="xsmall">Your bank statement analysis report</Typography>
                 <br/>
-                <Typography variant="body1">First filter of your loan application is your bank-statement. Similar report is used by banks and other similar lender to decide whether to give business loans or not. This report shows your eligibility for MSME business loan and credibility to repay the loan.</Typography>
+                <Typography variant="body1">First filter of your loan application is your bank-statement. Similar report is used by banks and other lenders to decide whether to give business loans or not. This report shows your eligibility for MSME business loan and credibility to repay the loan.</Typography>
                 <br />
                 <Grid container direction="column" justify="flex-start" spacing={2}>
+                    <Grid item xs={12} sm={12}>
+                        <Typography variant="subtitle2" level="4" margin="xsmall">FinDash Insights</Typography>
+                    </Grid>
+                    <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={2}>
+                    <Grid item xs={12} sm={6}>
+                        <GaugeChart id="bank-statement-rating" 
+                            nrOfLevels={10} 
+                            colors={["#ff0000", "#23d366"]} 
+                            arcWidth={0.4} 
+                            textColor="#0975e1"
+                            percent={.35}
+                            formatTextValue	={(value) => value + "0"}/>
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <Box color="#0975e1" >
+                            <Typography variant="subtitle1" level="4" margin="xsmall">Your bank-statement score is 350/1000</Typography>
+                        </Box>
+                        <br/>
+                        <Typography variant="subtitle1" level="4" margin="xsmall">Factors effecting your score.</Typography>
+                        <br/>
+                        <Typography variant="body1">1. EMIs default for home loan in Jan 2021 and Feb 2021.</Typography>
+                        <Typography variant="body1">2. Credit card repayment due charges of 8000 INR in Feb 2021.</Typography>
+                    </Grid>
+                    </Grid>
                     <Grid item xs={12} sm={12}>
                         <Typography variant="subtitle2" level="4" margin="xsmall">Summary</Typography>
                     </Grid>
