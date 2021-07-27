@@ -33,7 +33,7 @@ const MoneyInformation = () => {
     const [state, dispatch] = useContext(AppContext);
 
     return <Paper square className={classes.ContentWrapper}>
-        <Grid container direction="row" justify="space-evenly" alignItems="center" spacing={2}>
+        <Grid container direction="row" justify="space-evenly" alignItems="center" spacing={4}>
             <Grid item xs={12} sm={4}>
                 <br />
                 <Grid container direction='column'>
@@ -58,6 +58,7 @@ const MoneyInformation = () => {
                         </Button>
                     </Grid>
                 </Paper>
+                <br/>
             </Link>
             <Link to="/savings-account" style={{ textDecoration: 'none' }}>
                 <Paper square elevation={2} className={classes.Card}>
@@ -71,6 +72,7 @@ const MoneyInformation = () => {
                         </Button>
                     </Grid>
                 </Paper>
+                <br/>
             </Link>
             <Link to="/msme-loan" style={{ textDecoration: 'none' }}>
                 <Paper square elevation={2} className={classes.Card}>
@@ -84,6 +86,7 @@ const MoneyInformation = () => {
                         </Button>
                     </Grid>
                 </Paper>
+                <br/>
             </Link>
             <Link to="/fuel-prices-in-india" style={{ textDecoration: 'none' }}>
                 <Paper square elevation={2} className={classes.Card}>
@@ -97,6 +100,7 @@ const MoneyInformation = () => {
                         </Button>
                     </Grid>
                 </Paper>
+                <br/>
             </Link>
         </Grid>
         <br/>

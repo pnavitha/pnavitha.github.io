@@ -10,6 +10,7 @@ import MoneyInformation from '../components/moneyInformation';
 import KnowMore from '../components/knowMore';
 import BankStatementAnalyzer from '../containers/bankStatementAnalyzer';
 import BankStatementInfo from '../components/bankStatementInfo';
+import FrequentlyAskedQuestions from '../components/frequentlyAskedQuestions';
 
 const useStyles = makeStyles({
     contentAreaWrapper: {
@@ -49,6 +50,9 @@ const Home = () => {
             </Grid>
             <Grid item>
                 <KnowMore />
+            </Grid>
+            <Grid item>
+                <FrequentlyAskedQuestions />
             </Grid>
         </Grid>
         <Footer />

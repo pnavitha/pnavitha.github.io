@@ -847,6 +847,12 @@ const initialState = {
         }
     },
     frequentlyAskedQuestions: {
+        genericQuestions: [
+            {
+                question: "Why is financial documents rating required?",
+                answer: "Your financial documents tell a lot about you. Banks and other lenders check financial documents like bank statements, to check applicant's eligibility and credibility. Depending on your financial documents ratings, lenders decide on interest rates and tenure of the loan."
+            }    
+        ],
         msmeLoans: [
             {
                 question: "What is MSME full form?",
