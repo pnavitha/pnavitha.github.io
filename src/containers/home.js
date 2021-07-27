@@ -11,6 +11,7 @@ import KnowMore from '../components/knowMore';
 import BankStatementAnalyzer from '../containers/bankStatementAnalyzer';
 import BankStatementInfo from '../components/bankStatementInfo';
 import FrequentlyAskedQuestions from '../components/frequentlyAskedQuestions';
+import PreFooter from './preFooter';
 
 const useStyles = makeStyles({
     contentAreaWrapper: {
@@ -53,6 +54,9 @@ const Home = () => {
             </Grid>
             <Grid item>
                 <FrequentlyAskedQuestions />
+            </Grid>
+            <Grid item>
+                <PreFooter />
             </Grid>
         </Grid>
         <Footer />

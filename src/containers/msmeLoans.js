@@ -21,6 +21,7 @@ import {
     TableRow
   } from '@material-ui/core'
 import BankStatementAnalyzer from './bankStatementAnalyzer';
+import PreFooter from './preFooter';
   
 const useStyles = makeStyles({
     contentAreaWrapper: {
@@ -194,19 +195,7 @@ const MsmeLoans = () => {
                 </Grid>
             </Grid>
         </Paper>
-        <Paper elevation={2} square className={classes.whiteWrapper}>
-        <Link to="/" >
-                <Button color="primary" startIcon={<HomeIcon />}>
-                    GOTO HOME PAGE
-                </Button>
-            </Link>
-            <br/>
-            <Link to="/help">
-                <Button onClick={() => dispatch({ type: "NAVIGATE_TO_HELP_PAGE" })} color="primary" startIcon={<PersonAddIcon />}>
-                    Let's Connect
-                </Button>
-            </Link>
-        </Paper>
+        <PreFooter />
         <Footer />
     </Box>
 }

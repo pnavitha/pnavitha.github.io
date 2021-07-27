@@ -20,6 +20,7 @@ import EmailIcon from '@material-ui/icons/Email';
 import SavingsAccount from './savingsAccount';
 import FixedDeposit from './fixedDeposit';
 import FuelPrices from './fuelPrices';
+import BankStatementAnalyzer from './bankStatementAnalyzer';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -95,6 +96,9 @@ export default function Layout() {
                 </Route>
                 <Route path="/fuel-prices-in-india">
                     <FuelPrices />
+                </Route>
+                <Route path="/bank-statement-rating">
+                    <BankStatementAnalyzer />
                 </Route>
             </Switch>
         </div>

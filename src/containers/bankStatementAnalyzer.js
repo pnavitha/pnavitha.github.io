@@ -61,7 +61,7 @@ const useStyles = makeStyles({
     },
     greyWrapper: {
         background: '#f0f1f2',
-        paddingTop: '2%',
+        paddingTop: '5%',
         paddingBottom: '5%',
         paddingRight: '5%',
         paddingLeft: '5%',
@@ -273,7 +273,6 @@ const BankStatementAnalyzer = () => {
                         <br/>
                         <DetailedBankStatement />
                     </Grid>
-
                 </Grid>
             </Paper>
         }

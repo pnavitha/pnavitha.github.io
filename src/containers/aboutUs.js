@@ -8,6 +8,7 @@ import {
 import { AppContext } from '../context/app-context/app-context-provider';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import HomeIcon from '@material-ui/icons/Home';
+import GradeIcon from '@material-ui/icons/Grade';
 import {  
     Grid,
     Box,
@@ -92,7 +93,13 @@ const AboutUs = () => {
             </Grid>
         </Paper>
         <Paper elevation={2} square className={classes.greyWrapper}>
-        <Link to="/" >
+            <Link to="/bank-statement-rating" >
+                <Button color="primary" startIcon={<GradeIcon />}>
+                    Get Your Bank Statement Rating
+                </Button>
+            </Link>
+            <br/>
+            <Link to="/" >
                 <Button color="primary" startIcon={<HomeIcon />}>
                     GOTO HOME PAGE
                 </Button>
