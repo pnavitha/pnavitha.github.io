@@ -1,16 +1,10 @@
 import React, { useContext } from 'react';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Footer from '../components/footer';
-import {
-    Link
-} from "react-router-dom";
 import { AppContext } from '../context/app-context/app-context-provider';
-import PersonAddIcon from '@material-ui/icons/PersonAdd';
-import HomeIcon from '@material-ui/icons/Home';
 import {  
     Grid,
     Box,
-    Button,
     Paper,
     Typography,
     Table,
@@ -113,7 +107,7 @@ const SavingsAccount = () => {
                         {Object.entries(state.savingsAccount).map(([key, data]) => 
                             <StyledTableRow hover role="checkbox" tabIndex={-1}>
                                         {columns.map((column) => {
-                                            const value = column.id == "LenderName" ? key : data[column.id];
+                                            const value = column.id === "LenderName" ? key : data[column.id];
                                             return (
                                                 <TableCell key={column.id} align={column.align}>
                                                     <Typography variant="body1" margin="xsmall">{value}</Typography>

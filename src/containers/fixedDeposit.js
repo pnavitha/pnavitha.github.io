@@ -5,8 +5,6 @@ import {
     Link
 } from "react-router-dom";
 import { AppContext } from '../context/app-context/app-context-provider';
-import PersonAddIcon from '@material-ui/icons/PersonAdd';
-import HomeIcon from '@material-ui/icons/Home';
 import {
     Grid,
     Box,
@@ -126,7 +124,7 @@ const FixedDeposit = () => {
     const classes = useStyles();
     const [state, dispatch] = useContext(AppContext);
 
-    if(!state.bankwiseData || state.bankwiseData == {})
+    if(!state.bankwiseData || state.bankwiseData === {})
         dispatch({ type: "UPDATE_BANKWISE_FIXED_DEPOSIT"});
 
     return <Box className={classes.contentAreaWrapper}>
@@ -239,7 +237,7 @@ const FixedDeposit = () => {
                         {state.bankwiseData && Object.entries(state.bankwiseData).map(([bankName, data]) => 
                             <StyledTableRow hover role="checkbox" tabIndex={-1}>
                                 {upto4monthsColumns.map((column) => {
-                                            const value = column.id == "bankName" ? bankName : data[column.id];
+                                            const value = column.id === "bankName" ? bankName : data[column.id];
                                             return (
                                                 <TableCell key={column.id} align={column.align}>
                                                     <Typography variant="body1" margin="xsmall">{value}</Typography>
@@ -284,7 +282,7 @@ const FixedDeposit = () => {
                         {state.bankwiseData && Object.entries(state.bankwiseData).map(([bankName, data]) => 
                             <StyledTableRow hover role="checkbox" tabIndex={-1}>
                                 {upto9monthsColumns.map((column) => {
-                                            const value = column.id == "bankName" ? bankName : data[column.id];
+                                            const value = column.id === "bankName" ? bankName : data[column.id];
                                             return (
                                                 <TableCell key={column.id} align={column.align}>
                                                     <Typography variant="body1" margin="xsmall">{value}</Typography>
@@ -329,7 +327,7 @@ const FixedDeposit = () => {
                         {state.bankwiseData && Object.entries(state.bankwiseData).map(([bankName, data]) => 
                             <StyledTableRow hover role="checkbox" tabIndex={-1}>
                                 {upto2yearsColumns.map((column) => {
-                                            const value = column.id == "bankName" ? bankName : data[column.id];
+                                            const value = column.id === "bankName" ? bankName : data[column.id];
                                             return (
                                                 <TableCell key={column.id} align={column.align}>
                                                     <Typography variant="body1" margin="xsmall">{value}</Typography>
@@ -374,7 +372,7 @@ const FixedDeposit = () => {
                         {state.bankwiseData && Object.entries(state.bankwiseData).map(([bankName, data]) => 
                             <StyledTableRow hover role="checkbox" tabIndex={-1}>
                                 {upto10yearsColumns.map((column) => {
-                                            const value = column.id == "bankName" ? bankName : data[column.id];
+                                            const value = column.id === "bankName" ? bankName : data[column.id];
                                             return (
                                                 <TableCell key={column.id} align={column.align}>
                                                     <Typography variant="body1" margin="xsmall">{value}</Typography>

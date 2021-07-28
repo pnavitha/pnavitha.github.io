@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppContext } from '../context/app-context/app-context-provider';
 import {
     Typography,
     Grid,
@@ -39,7 +38,6 @@ const useStyles = makeStyles({
 
 const ContentHeader = () => {
     const classes = useStyles();
-    const [state, dispatch] = useContext(AppContext);
 
     return <Paper square className={classes.ContentWrapper}>
         <Grid container direction="row" justify="space-evenly" spacing={2}>

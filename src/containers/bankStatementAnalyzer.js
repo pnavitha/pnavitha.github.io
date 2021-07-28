@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import { AppContext } from '../context/app-context/app-context-provider';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import GaugeChart from 'react-gauge-chart'
@@ -13,8 +13,6 @@ import {
     Input,
     IconButton,
     Typography,
-    TableCell,
-    TableRow,
     CircularProgress
   } from '@material-ui/core'
 import VisibilityIcon from '@material-ui/icons/Visibility';
@@ -79,34 +77,6 @@ const useStyles = makeStyles({
     },
 });
 
-const StyledTableCell = withStyles(() => ({
-    head: {
-        backgroundColor: '#000',
-        color: '#fff',
-    },
-    body: {
-        fontSize: 14,
-    },
-}))(TableCell);
-
-const StyledTableRow = withStyles((theme) => ({
-    root: {
-        '&:nth-of-type(odd)': {
-        backgroundColor: '#9cc7f4'
-        },
-        '&:nth-of-type(even)': {
-        backgroundColor: '#cde3f9'
-        },
-    },
-    }))(TableRow);
-
-    
-const columns = [
-    { id: 'LenderName', label: 'Lender Name', minWidth: 5, maxWidth: 5, align: 'left' },
-    { id: 'interestRate', label: 'Interest Rates', minWidth: 20, maxWidth: 20, align: 'left' },
-];
-
-
 const BankStatementAnalyzer = () => {
     const classes = useStyles();
     const [state, dispatch] = useContext(AppContext);
@@ -155,7 +125,6 @@ const BankStatementAnalyzer = () => {
                         size='small'
                         fontSize='small'
                         options={state.bankNames}
-                        value={state.selectedBankName}
                         value={state.newBankStatementForm ? state.newBankStatementForm.selectedBankName : ""}
                         onChange={(event, newValue) => dispatch({ type: "UPDATE_BANK_NAME", payload: newValue })}
                         getOptionLabel={(option) => option}

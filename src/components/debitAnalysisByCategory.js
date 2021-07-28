@@ -111,7 +111,7 @@ const DebitAnalsisByCategory = () => {
                 </TableHead>
                 <TableBody>
                     {Object.entries(state.bankStatementAnalysis.categoryWiseDebitTransactions).map(([key, value]) => {
-                    if(value.dr != 0) {
+                    if(value.dr !== 0) {
                         return (
                             <StyledTableRow hover role="checkbox" tabIndex={-1} key={key}>
                             {columns.map((column) => {

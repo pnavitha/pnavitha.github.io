@@ -1,16 +1,10 @@
 import React, { useContext } from 'react';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Footer from '../components/footer';
-import {
-    Link
-} from "react-router-dom";
 import { AppContext } from '../context/app-context/app-context-provider';
-import PersonAddIcon from '@material-ui/icons/PersonAdd';
-import HomeIcon from '@material-ui/icons/Home';
 import {  
     Grid,
     Box,
-    Button,
     Paper,
     Typography,
     Table,
@@ -108,17 +102,6 @@ const columns = [
 const MsmeLoans = () => {
     const classes = useStyles();
     const [state, dispatch] = useContext(AppContext);
-    const [visibility, setVisibility] = React.useState(false);
-
-    const changeHandler = (event) => {
-        if(event.target && event.target.files && event.target.files.length > 0) {
-            getBase64(event.target.files[0], (result) => {
-                result = result.replace('data:application/pdf;base64,', '');
-                dispatch({ type: "UPLOAD_PDF_AND_ANALYZE", payload:  result})
-           });
-    
-        }
-    };
     
     const getBase64 = (file, callback) => {
         let reader = new FileReader();
@@ -161,7 +144,7 @@ const MsmeLoans = () => {
                         {Object.entries(state.msmeLoans).map(([key, data]) => 
                             <StyledTableRow hover role="checkbox" tabIndex={-1}>
                                         {columns.map((column) => {
-                                            const value = column.id == "LenderName" ? key : data[column.id];
+                                            const value = column.id === "LenderName" ? key : data[column.id];
                                             return (
                                                 <TableCell key={column.id} align={column.align}>
                                                     <Typography variant="body1" margin="xsmall">{value}</Typography>

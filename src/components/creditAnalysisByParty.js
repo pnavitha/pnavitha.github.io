@@ -110,7 +110,7 @@ const CreditAnalsisByParty = () => {
                 </TableHead>
                 <TableBody>
                     {Object.entries(state.bankStatementAnalysis.partyWiseCreditTransactions).map(([key, value]) => {
-                        if(value.cr != 0) {
+                        if(value.cr !== 0) {
                             return (
                                 <StyledTableRow hover role="checkbox" tabIndex={-1} key={key}>
                                 {columns.map((column) => {

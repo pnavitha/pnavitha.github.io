@@ -35,13 +35,13 @@ export const AppMiddleware = (dispatch, state) => (action) => {
                 state.newBankStatementForm.selectedBankName) {
                 (async () => {
                     var bankNameString = "";
-                    if(state.newBankStatementForm.selectedBankName == "HDFC Bank") { 
+                    if(state.newBankStatementForm.selectedBankName === "HDFC Bank") { 
                         bankNameString = "hdfc";
-                    } else if(state.newBankStatementForm.selectedBankName == "Axis Bank") {
+                    } else if(state.newBankStatementForm.selectedBankName === "Axis Bank") {
                             bankNameString = "axis";
-                    } else if(state.newBankStatementForm.selectedBankName == "SBI") {
+                    } else if(state.newBankStatementForm.selectedBankName === "SBI") {
                             bankNameString = "sbi";
-                    } else if(state.newBankStatementForm.selectedBankName == "ICICI") {
+                    } else if(state.newBankStatementForm.selectedBankName === "ICICI") {
                         bankNameString = "icici";
                     }
 
@@ -78,7 +78,7 @@ export const AppMiddleware = (dispatch, state) => (action) => {
             }
             break; 
         case 'CALCULATE_FIXED_DEPOSIT_RATES':
-            dispatch({ type: 'CLEAR_FIXED_DEPOSIT_RATES_RESULT' , payload: banksRates});
+            dispatch({ type: 'CLEAR_FIXED_DEPOSIT_RATES_RESULT' });
             const totalFixedDepositDays = getTotalDays(state.fixedDepositDuration);
             if(totalFixedDepositDays <= 0)
                 return;
@@ -90,7 +90,7 @@ export const AppMiddleware = (dispatch, state) => (action) => {
                     bankFdDayMap = maxDaysCount;
                 }
             });
-            if(bankFdDayMap == 999999999) {
+            if(bankFdDayMap === 999999999) {
                 return;
             }
             
@@ -103,7 +103,7 @@ export const AppMiddleware = (dispatch, state) => (action) => {
             Object.entries(state.fixedDeposit).map(([duration, banksDetails]) => {
                 Object.entries(banksDetails).map(([bankSector, bankNameInterest]) => {
                     Object.entries(bankNameInterest).map(([bankName, interestRate]) => {
-                        if(result[bankName] == undefined) {
+                        if(result[bankName] === undefined) {
                             result[bankName] = {};
                         }
                         result[bankName][duration] = interestRate;
@@ -125,7 +125,7 @@ const getTotalDays = (fixedDepositDuration) => {
         result += Number(365 * fixedDepositDuration.years);
     if(fixedDepositDuration.months !== "")    
         result += Number(30 * fixedDepositDuration.months);
-    if(fixedDepositDuration.days != "")     
+    if(fixedDepositDuration.days !== "")     
         result += Number(fixedDepositDuration.days);      
     return result;    
 }
@@ -154,7 +154,7 @@ const getDetailedTransactions = (dataList) => {
         const category = (transaction.cat != null) ? (transaction.cat).toString() : "null";
         const partyName = (transaction.party != null) ? (transaction.party).toString() : "null";
 
-        if(monthWiseResult[monthYear] == undefined) {
+        if(monthWiseResult[monthYear] === undefined) {
             monthWiseResult[monthYear] = {
                 "cr": 0,
                 "crCount": 0,
@@ -163,28 +163,28 @@ const getDetailedTransactions = (dataList) => {
             };
         }
 
-        if(categoryWiseCreditResult[category] == undefined && transaction.cr !== null) {
+        if(categoryWiseCreditResult[category] === undefined && transaction.cr !== null) {
             categoryWiseCreditResult[category] = {
                 "cr": 0,
                 "crCount": 0
             };  
         }
 
-        if(categoryWiseDebitResult[category] == undefined && transaction.dr !== null) {
+        if(categoryWiseDebitResult[category] === undefined && transaction.dr !== null) {
             categoryWiseDebitResult[category] = {
                 "dr": 0,
                 "drCount": 0
             };  
         }
 
-        if(partyWiseCreditResult[partyName] == undefined && transaction.cr !== null) {
+        if(partyWiseCreditResult[partyName] === undefined && transaction.cr !== null) {
             partyWiseCreditResult[partyName] = {
                 "cr": 0,
                 "crCount": 0
             };  
         }
 
-        if(partyWiseDebitResult[partyName] == undefined && transaction.dr !== null) {
+        if(partyWiseDebitResult[partyName] === undefined && transaction.dr !== null) {
             partyWiseDebitResult[partyName] = {
                 "dr": 0,
                 "drCount": 0

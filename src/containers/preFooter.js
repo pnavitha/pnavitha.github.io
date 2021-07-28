@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import {
@@ -8,7 +8,6 @@ import {
     Button,
     Divider
 } from '@material-ui/core';
-import { AppContext } from '../context/app-context/app-context-provider';
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
@@ -26,7 +25,6 @@ const useStyles = makeStyles({
 
 const PreFooter = () => {
     const classes = useStyles();
-    const [state, dispatch] = useContext(AppContext);
 
     return <Paper square className={classes.ContentWrapper}>
         <Grid container direction="row" justify="space-evenly" spacing={3}>

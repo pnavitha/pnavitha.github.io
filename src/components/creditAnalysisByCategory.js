@@ -42,13 +42,6 @@ const options = {
       },
 };
 
-function total(chart){
-    let data = chart.chart.data.datasets[0].data;
-    const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    var total = data.reduce(reducer);
-    return total;
-  }
-
   const StyledTableCell = withStyles((theme) => ({
     head: {
       backgroundColor: '#282c35',
@@ -116,7 +109,7 @@ const CreditAnalsisByCategory = () => {
                 </TableHead>
                 <TableBody>
                     {Object.entries(state.bankStatementAnalysis.categoryWiseCreditTransactions).map(([key, value]) => {
-                        if(value.cr != 0) {
+                        if(value.cr !== 0) {
                             return (
                                 <StyledTableRow hover role="checkbox" tabIndex={-1} key={key}>
                                 {columns.map((column) => {
