@@ -30,7 +30,7 @@ const PreFooter = () => {
         <Grid container direction="row" justify="space-evenly" spacing={3}>
             <Grid item xs={12} sm={6}>
                 <Grid container direction='column'>
-                    <Typography variant="h1">Analyse your Financial Documents.</Typography>
+                    <Typography variant="h1">Understand your Financial Documents.</Typography>
                     <br />
                     <Link to="/bank-statement-rating" style={{ textDecoration: 'none' }}>
                         <Button variant="contained" color="primary" >

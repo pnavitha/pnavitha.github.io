@@ -1,3 +1,6 @@
+import * as FileSaver from 'file-saver';
+import * as XLSX from 'xlsx';
+
 export const AppMiddleware = (dispatch, state) => (action) => {
     switch (action.type) {
         case 'REGISTER':
@@ -67,6 +70,7 @@ export const AppMiddleware = (dispatch, state) => (action) => {
                         const bodyString = JSON.parse(messageJson.Payload).body;
                         let dataList = JSON.parse(bodyString);
                         dataList = addMonthName(dataList);
+                        
                         var detailedTransactions = getDetailedTransactions(dataList);
 
                         dispatch({ type: 'ADD_DETAILED_TRANSACTIONS', payload: detailedTransactions });
@@ -77,6 +81,13 @@ export const AppMiddleware = (dispatch, state) => (action) => {
                 })(); 
             }
             break; 
+        case 'DOWNLOAD_BANK_ANALYSIS':
+            if(state.bankStatementAnalysis) {
+                const csvData = state.bankStatementAnalysis;
+                const fileName = "bank-statement-analysis";
+                exportToCSV(csvData,fileName)    
+            }      
+            break;
         case 'CALCULATE_FIXED_DEPOSIT_RATES':
             dispatch({ type: 'CLEAR_FIXED_DEPOSIT_RATES_RESULT' });
             const totalFixedDepositDays = getTotalDays(state.fixedDepositDuration);
@@ -118,6 +129,92 @@ export const AppMiddleware = (dispatch, state) => (action) => {
         }
     };
 };
+
+const fileType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+const fileExtension = '.xlsx';
+
+const exportToCSV = (csvData, fileName) => {
+    const sheets = {};
+    const sheetNames = [];
+    
+    if(csvData.detailedTransactions !== undefined) {
+        const detailedTransactionsSheet = XLSX.utils.json_to_sheet(csvData.detailedTransactions);
+        sheets["detailedTransactions"] = detailedTransactionsSheet;
+        sheetNames.push("detailedTransactions");
+    }
+
+    if(csvData.monthWiseTransactions !== undefined) {
+        const monthWiseTransactions = Object.entries(csvData.monthWiseTransactions).map(([monthName, transaction]) => {
+            return {
+                "month year": monthName,
+                "cr": transaction.cr,
+                "crCount": transaction.crCount,
+                "dr": transaction.dr,
+                "drCount": transaction.drCount
+            }
+        });
+        const monthWiseTransactionsSheet = XLSX.utils.json_to_sheet(monthWiseTransactions);
+        sheets["monthWiseTransactions"] = monthWiseTransactionsSheet;
+        sheetNames.push("monthWiseTransactions");
+    }
+
+    if(csvData.categoryWiseCreditTransactions !== undefined) {
+        const categoryWiseCreditTransactions = Object.entries(csvData.categoryWiseCreditTransactions).map(([categoryName, transaction]) => {
+            return {
+                "category": categoryName,
+                "cr": transaction.cr,
+                "crCount": transaction.crCount,
+            }
+        });
+        const categoryWiseCreditTransactionsSheet = XLSX.utils.json_to_sheet(categoryWiseCreditTransactions);
+        sheets["categoryWiseCreditTransactions"] = categoryWiseCreditTransactionsSheet;
+        sheetNames.push("categoryWiseCreditTransactions");
+    }
+
+    if(csvData.categoryWiseDebitTransactions !== undefined) {
+        const categoryWiseDebitTransactions = Object.entries(csvData.categoryWiseDebitTransactions).map(([categoryName, transaction]) => {
+            return {
+                "category": categoryName,
+                "dr": transaction.dr,
+                "drCount": transaction.drCount,
+            }
+        });
+        const categoryWiseDebitTransactionsSheet = XLSX.utils.json_to_sheet(categoryWiseDebitTransactions);
+        sheets["categoryWiseDebitTransactions"] = categoryWiseDebitTransactionsSheet;
+        sheetNames.push("categoryWiseDebitTransactions");
+    }
+
+    if(csvData.partyWiseCreditTransactions !== undefined) {
+        const partyWiseCreditTransactions = Object.entries(csvData.partyWiseCreditTransactions).map(([partyName, transaction]) => {
+            return {
+                "party": partyName,
+                "cr": transaction.cr,
+                "crCount": transaction.crCount,
+            }
+        });
+        const partyWiseCreditTransactionsSheet = XLSX.utils.json_to_sheet(partyWiseCreditTransactions);
+        sheets["partyWiseCreditTransactions"] = partyWiseCreditTransactionsSheet;
+        sheetNames.push("partyWiseCreditTransactions");
+    }
+
+    if(csvData.partyWiseDebitTransactions !== undefined) {
+        const partyWiseDebitTransactions = Object.entries(csvData.partyWiseDebitTransactions).map(([partyName, transaction]) => {
+            return {
+                "party": partyName,
+                "dr": transaction.dr,
+                "drCount": transaction.drCount,
+            }
+        });
+        const partyWiseDebitTransactionsSheet = XLSX.utils.json_to_sheet(partyWiseDebitTransactions);
+        sheets["partyWiseDebitTransactions"] = partyWiseDebitTransactionsSheet;
+        sheetNames.push("partyWiseDebitTransactions");
+    }
+
+    const wb = { Sheets: sheets, SheetNames: sheetNames};
+    const excelBuffer = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+    const data = new Blob([excelBuffer], {type: fileType});
+    FileSaver.saveAs(data, fileName + fileExtension);
+}
 
 const getTotalDays = (fixedDepositDuration) => {
     let result = 0;

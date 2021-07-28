@@ -13,7 +13,8 @@ import {
     Input,
     IconButton,
     Typography,
-    CircularProgress
+    CircularProgress,
+    Button
   } from '@material-ui/core'
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
@@ -75,6 +76,9 @@ const useStyles = makeStyles({
         textAlign: 'center',
         boxShadow: '1px 1px #c3c3c3',
     },
+    rightSide:{
+        float: "right"
+    }
 });
 
 const BankStatementAnalyzer = () => {
@@ -176,6 +180,13 @@ const BankStatementAnalyzer = () => {
                 <br/>
                 <Typography variant="body1">First filter of your loan application is your bank-statement. Similar report is used by banks and other lenders to decide whether to give business loans or not. This report shows your eligibility for MSME business loan and credibility to repay the loan.</Typography>
                 <br />
+                <Box className={classes.rightSide}>
+                <Button onClick={() => dispatch({ type: "DOWNLOAD_BANK_ANALYSIS" })} variant="contained" size="small" color="primary" >
+                    Download Bank Statement Report
+                </Button>
+                </Box>
+                <br />
+                <br />
                 <Grid container direction="column" justify="flex-start" spacing={2}>
                     <Grid item xs={12} sm={12}>
                         <Typography variant="subtitle2" level="4" margin="xsmall">FinDash Insights</Typography>
@@ -194,16 +205,12 @@ const BankStatementAnalyzer = () => {
                         </Grid>
                         <Grid item>
                         <Box color="#0975e1" >
-                            <Typography variant="subtitle1" level="4" margin="xsmall">350</Typography>
-                        </Box>  
+                            <Typography variant="subtitle1" level="4" margin="xsmall">Your bank-statement score is 350/1000</Typography>
+                        </Box>
                         </Grid>
                         </Grid>  
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <Box color="#0975e1" >
-                            <Typography variant="subtitle1" level="4" margin="xsmall">Your bank-statement score is 350/1000</Typography>
-                        </Box>
-                        <br/>
                         <Typography variant="subtitle1" level="4" margin="xsmall">Factors effecting your score.</Typography>
                         <br/>
                         <Typography variant="body1">1. EMIs default for home loan in Jan 2021 and Feb 2021.</Typography>
@@ -251,6 +258,12 @@ const BankStatementAnalyzer = () => {
                         <Typography variant="subtitle2" level="4" margin="xsmall">Statement</Typography>
                         <br/>
                         <DetailedBankStatement />
+                        <br/>
+                        <Box className={classes.rightSide}>
+                        <Button onClick={() => dispatch({ type: "DOWNLOAD_BANK_ANALYSIS" })} variant="contained" size="small" color="primary" >
+                            Download Bank Statement Report
+                        </Button>
+                        </Box>
                     </Grid>
                 </Grid>
             </Paper>
