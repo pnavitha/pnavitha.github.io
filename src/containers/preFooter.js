@@ -34,7 +34,7 @@ const PreFooter = () => {
                 <Grid container direction='column'>
                     <Typography variant="h1">Analyse your Financial Documents.</Typography>
                     <br />
-                    <Link to="/bank-statement-rating">
+                    <Link to="/bank-statement-rating" style={{ textDecoration: 'none' }}>
                         <Button variant="contained" color="primary" >
                             Get Bank Statement Rating
                         </Button>
@@ -46,7 +46,7 @@ const PreFooter = () => {
                 <Grid container direction='column'>
                     <Typography variant="h1">Know more about FinDash.</Typography>
                     <br />
-                    <Link to="/about">
+                    <Link to="/about" style={{ textDecoration: 'none' }}>
                         <Button variant="contained" color="primary" >
                             About Us
                         </Button>

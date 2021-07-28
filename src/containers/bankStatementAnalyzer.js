@@ -213,13 +213,22 @@ const BankStatementAnalyzer = () => {
                     </Grid>
                     <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={2}>
                     <Grid item xs={12} sm={6}>
+                        <Grid container direction="column" justify="flex-start" alignItems="center" spacing={0}>
+                        <Grid item>
                         <GaugeChart id="bank-statement-rating" 
                             nrOfLevels={10} 
                             colors={["#ff0000", "#23d366"]} 
                             arcWidth={0.4} 
                             textColor="#0975e1"
                             percent={.35}
-                            formatTextValue	={(value) => value + "0"}/>
+                            hideText/>
+                        </Grid>
+                        <Grid item>
+                        <Box color="#0975e1" >
+                            <Typography variant="subtitle1" level="4" margin="xsmall">350</Typography>
+                        </Box>  
+                        </Grid>
+                        </Grid>  
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <Box color="#0975e1" >
@@ -232,6 +241,7 @@ const BankStatementAnalyzer = () => {
                         <Typography variant="body1">2. Credit card repayment due charges of 8000 INR in Feb 2021.</Typography>
                     </Grid>
                     </Grid>
+                    <br/>
                     <Grid item xs={12} sm={12}>
                         <Typography variant="subtitle2" level="4" margin="xsmall">Summary</Typography>
                     </Grid>

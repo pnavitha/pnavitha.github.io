@@ -1,15 +1,9 @@
 import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-
-import InfoIcon from '@material-ui/icons/Info';
 import { AppContext } from '../context/app-context/app-context-provider';
-import {
-    Link
-} from "react-router-dom";
 import {
     Typography,
     Grid,
-    Button,
     Paper,
 } from '@material-ui/core';
 
@@ -53,11 +47,6 @@ const ContentHeader = () => {
                 <Typography variant="h1">The finance platform for a changing world.</Typography>
                 <br />
                 <Typography variant="body1">We help you evaluate your financial documents so that you can get a quicker loan at lower interest rate.</Typography>
-                <Link to="/about" style={{ textDecoration: 'none' }}>
-                    <Button onClick={() => dispatch({ type: "NAVIGATE_TO_ABOUT_PAGE" })} color="primary" startIcon={<InfoIcon />}>
-                        Know more
-                    </Button>
-                </Link>
             </Grid>
             <Grid item xs={12} sm={6}>
                 <img src={require("../images/aboutus.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="100%" />
