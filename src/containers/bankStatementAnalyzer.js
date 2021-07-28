@@ -25,7 +25,9 @@ import CreditAnalysisByCategory from '../components/creditAnalysisByCategory';
 import DebitAnalysisByParty from '../components/debitAnalysisByParty';
 import DebitAnalysisByCategory from '../components/debitAnalysisByCategory';
 import DetailedBankStatement from '../components/detailedBankStatement';
-  
+import GetAppIcon from '@material-ui/icons/GetApp';
+import TrackChangesIcon from '@material-ui/icons/TrackChanges';
+
 const useStyles = makeStyles({
     contentAreaWrapper: {
         height: 'auto',
@@ -165,7 +167,7 @@ const BankStatementAnalyzer = () => {
                         onChange={changeHandler}/>
                         {(state.newBankStatementForm && state.newBankStatementForm.inProgress) ?
                         <CircularProgress />
-                        : "UPLOAD PDF & GET ANALYSIS" }
+                        : <Grid container direction="row"><TrackChangesIcon fontSize="small" /><Typography>UPLOAD PDF & GET ANALYSIS</Typography></Grid> }
                     </InputLabel>
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -181,7 +183,7 @@ const BankStatementAnalyzer = () => {
                 <Typography variant="body1">First filter of your loan application is your bank-statement. Similar report is used by banks and other lenders to decide whether to give business loans or not. This report shows your eligibility for MSME business loan and credibility to repay the loan.</Typography>
                 <br />
                 <Box className={classes.rightSide}>
-                <Button onClick={() => dispatch({ type: "DOWNLOAD_BANK_ANALYSIS" })} variant="contained" size="small" color="primary" >
+                <Button onClick={() => dispatch({ type: "DOWNLOAD_BANK_ANALYSIS" })} variant="contained" size="small" color="primary" startIcon={<GetAppIcon/>}>
                     Download Bank Statement Report
                 </Button>
                 </Box>
@@ -260,7 +262,7 @@ const BankStatementAnalyzer = () => {
                         <DetailedBankStatement />
                         <br/>
                         <Box className={classes.rightSide}>
-                        <Button onClick={() => dispatch({ type: "DOWNLOAD_BANK_ANALYSIS" })} variant="contained" size="small" color="primary" >
+                        <Button onClick={() => dispatch({ type: "DOWNLOAD_BANK_ANALYSIS" })} variant="contained" size="small" color="primary" startIcon={<GetAppIcon/>}>
                             Download Bank Statement Report
                         </Button>
                         </Box>
