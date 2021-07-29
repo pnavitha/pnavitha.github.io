@@ -168,6 +168,9 @@ const BankStatementAnalyzer = () => {
                         <CircularProgress />
                         : <Grid container direction="row"><Typography>UPLOAD PDF NOW!</Typography></Grid> }
                     </InputLabel>
+                    { state.bankStatementAnalysis && <Box color="#0975e1" >
+                            <Typography variant="subtitle1" level="4" margin="xsmall">Following is your bank statement report.</Typography>
+                        </Box> }
                 </Grid>
                 <Grid item xs={12} sm={6}>
                     <img src={require("../images/msme_loans.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="100%" />
@@ -188,6 +191,7 @@ const BankStatementAnalyzer = () => {
                 </Box>
                 <br />
                 <br />
+                <Paper elevation={2} square className={classes.whiteWrapper}>
                 <Grid container direction="column" justify="flex-start" spacing={2}>
                     <Grid item xs={12} sm={12}>
                         <Typography variant="subtitle2" level="4" margin="xsmall">FinDash Insights</Typography>
@@ -259,14 +263,15 @@ const BankStatementAnalyzer = () => {
                         <Typography variant="subtitle2" level="4" margin="xsmall">Statement</Typography>
                         <br/>
                         <DetailedBankStatement />
-                        <br/>
-                        <Box className={classes.rightSide}>
-                        <Button onClick={() => dispatch({ type: "DOWNLOAD_BANK_ANALYSIS" })} variant="contained" size="small" color="primary" startIcon={<GetAppIcon/>}>
-                            Download Bank Statement Report
-                        </Button>
-                        </Box>
                     </Grid>
                 </Grid>
+                </Paper>
+                <br/>
+                <Box className={classes.rightSide}>
+                    <Button onClick={() => dispatch({ type: "DOWNLOAD_BANK_ANALYSIS" })} variant="contained" size="small" color="primary" startIcon={<GetAppIcon/>}>
+                        Download Bank Statement Report
+                    </Button>
+                </Box>
             </Paper>
         }
     </Box>
