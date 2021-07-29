@@ -138,7 +138,14 @@ const exportToCSV = (csvData, fileName) => {
     const sheetNames = [];
     
     if(csvData.detailedTransactions !== undefined) {
-        const detailedTransactionsSheet = XLSX.utils.json_to_sheet(csvData.detailedTransactions);
+        const detailedTransactions = csvData.detailedTransactions.map((transaction) => {
+            return {
+                ...transaction,
+                remarks: undefined,
+
+            }
+        });
+        const detailedTransactionsSheet = XLSX.utils.json_to_sheet(detailedTransactions);
         sheets["detailedTransactions"] = detailedTransactionsSheet;
         sheetNames.push("detailedTransactions");
     }
