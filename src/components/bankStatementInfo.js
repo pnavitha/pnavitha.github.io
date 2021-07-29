@@ -33,7 +33,7 @@ const BankStatementInfo = () => {
                     <br/>
                     <Typography variant="h1">Improve your Financial Rating Today!</Typography>
                 <br/>
-                <Typography variant="body1">Increase your chances of getting loan. We make sure that your have the best bank statement when you apply for loan, the next time.</Typography>
+                <Typography variant="body1">Increase your chances of getting loan. We make sure that you have the best bank statement when you apply for a loan, the next time.</Typography>
             </Grid>
             </Grid>
             <Grid item xs={12} sm={6}>

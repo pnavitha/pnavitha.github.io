@@ -116,7 +116,7 @@ const BankStatementAnalyzer = () => {
                     <Typography variant="subtitle1">Lenders Check Bank Statement to know your Credit Worthiness.</Typography>
                     <br/>
                     <br/>
-                    <Typography variant="h1">Get your Bank Statement Rating to improve your loan eligibility.</Typography>
+                    <Typography variant="h1">Get Bank Statement Rating to improve your loan eligibility.</Typography>
                     <br/>
                     <Typography variant="body1">Your bank-statement tells alot about you. With Statement Analyser Tool, analyze 1000+ transactions in just 20 seconds and understand what's lacking.</Typography>
                     <br/>
@@ -155,7 +155,6 @@ const BankStatementAnalyzer = () => {
                     </Grid>
                     <br />
                     <InputLabel 
-                        disabled = {(!state.newBankStatementForm) || (state.newBankStatementForm && (state.newBankStatementForm.phoneNumber.length < 10 || !state.newBankStatementForm.selectedBankName || state.newBankStatementForm.inProgress))} 
                         classes={{ disabled: classes.disabledButton}} 
                         className={classes.submitDetails}>
                     <input 
@@ -163,11 +162,11 @@ const BankStatementAnalyzer = () => {
                         accept="application/pdf" 
                         type="file" 
                         name="file" 
-                        disabled = {(!state.newBankStatementForm) || (state.newBankStatementForm && (state.newBankStatementForm.phoneNumber.length < 10 || !state.newBankStatementForm.selectedBankName || state.newBankStatementForm.inProgress))} 
+                        disabled = {(!state.newBankStatementForm) || (state.newBankStatementForm && (!state.newBankStatementForm.phoneNumber || state.newBankStatementForm.phoneNumber.length < 10 || !state.newBankStatementForm.selectedBankName || state.newBankStatementForm.inProgress))} 
                         onChange={changeHandler}/>
                         {(state.newBankStatementForm && state.newBankStatementForm.inProgress) ?
                         <CircularProgress />
-                        : <Grid container direction="row"><TrackChangesIcon fontSize="small" /><Typography>UPLOAD PDF & GET ANALYSIS</Typography></Grid> }
+                        : <Grid container direction="row"><Typography>UPLOAD PDF NOW!</Typography></Grid> }
                     </InputLabel>
                 </Grid>
                 <Grid item xs={12} sm={6}>

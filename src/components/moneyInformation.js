@@ -37,12 +37,12 @@ const MoneyInformation = () => {
             <Grid item xs={12} sm={4}>
                 <br />
                 <Grid container direction='column'>
-                    <Typography variant="subtitle1">Our other products</Typography>
+                    <Typography variant="subtitle1">Other products</Typography>
                     <br />
                     <br />
                     <Typography variant="h1">We are going an Extra Mile For YOU!</Typography>
                     <br />
-                    <Typography variant="body1">A finance wellness is the combination of savings, investments, good loans, growing business and financial awareness. We aggregare as much information to make your finance to grow and you to prosper.</Typography>
+                    <Typography variant="body1">Finance wellness is the combination of savings, investments, good loans, growing business and financial awareness. Stay ahead of everyone with easy-to-understand blogs on Business Finance.</Typography>
                     <br />
                 </Grid>
             </Grid>

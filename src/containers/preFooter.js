@@ -33,7 +33,7 @@ const PreFooter = () => {
                     <Typography variant="h1">Understand your Financial Documents.</Typography>
                     <br />
                     <Link to="/bank-statement-rating" style={{ textDecoration: 'none' }}>
-                        <Button variant="contained" color="primary" >
+                        <Button variant="contained" color="secondary" >
                             Get Bank Statement Rating
                         </Button>
                     </Link>
@@ -45,7 +45,7 @@ const PreFooter = () => {
                     <Typography variant="h1">Know more about FinDash.</Typography>
                     <br />
                     <Link to="/about" style={{ textDecoration: 'none' }}>
-                        <Button variant="contained" color="primary" >
+                        <Button variant="contained" color="secondary" >
                             About Us
                         </Button>
                     </Link>
