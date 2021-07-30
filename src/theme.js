@@ -19,6 +19,7 @@ export const Theme = createMuiTheme({
     },
     body1: {
       fontSize: '0.6rem',
+      whiteSpace: 'pre-line',
       '@media (min-width:300px)': {
         fontSize: '0.8rem',
       }

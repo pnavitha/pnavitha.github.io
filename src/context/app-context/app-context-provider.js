@@ -849,7 +849,37 @@ const initialState = {
             {
                 question: "Why is financial documents rating required?",
                 answer: "Financial documents tell a lot about your business. Banks and other lenders check financial documents like bank statements, to check applicant's eligibility and credibility. Depending on your financial documents ratings, lenders decide on interest rates and tenure of the loan."
-            }    
+            },
+            {
+                question: "How to view/download your bank statement online?",
+                answer: "Scenario 1-When you have an availed Internet Banking with your Bank:\n" +
+                "You can log in to your Internet Banking using your User ID and Password provided by your Bank. On the home screen search for your Account Statement option under the menu bar. On your Account Statement page select, the account number for the statement and the time period for you want to view your transactions.\n" +
+                "You can also download the bank statement from the download option mentioned on the screen. If it asks for a format you can select ‘.pdf’\n\n" +
+                "Scenario 2-When you have not availed of Internet Banking and want a Bank Statement in your email:\n" +
+                "You can ask the bank to share the bank statement on your registered e-mail ID. For that, you can place a request via email to the official email ID of your respective branch/branch manager.\n" + 
+                "You can find a draft version of the email below:\n\n" +
+                "Sub: Account Statement for our CA/OD No.\n\n" +
+                "Dear Sir/Madam,\n\n" +
+                "I am having a CA/OD Account No____ with your branch. I require the account statement for the subject account for the time period of ____(from date) to _____ (to date) for a period of _____ (days/months). You may send the same to my registered email ID in PDF format.\n\n" +
+                "Thanking you for your cooperation\n\n" +
+                "Regards\n" +
+                "<your name>\n\n" +
+                "Once you receive your bank statement in your email ID, download it and you can open it using the password provided in the email if required."
+            }, 
+            {
+                question: "Why is a bank statement important for a Business while applying for a loan?",
+                answer: "A bank statement provides a view of the current financial health of a business. It provides the following information:\n" +
+                "1. Credit history of a business, from the cheques which are cleared and EMIs which are paid.\n" +
+                "2. Information about the payments received from customers and made to suppliers.\n" + 
+                "3. Details of monthly expenses such as Utility payments, Salaries paid, and Statutory payments e.g. Tax payments, EPFO, ESIC.\n" +
+                "4. Information about any loan taken.\n" +
+                "5. Funds are withdrawn/transferred to related parties."
+            }, 
+            {
+                question: "Why are Bank statements analyzed if a business already submits financial statements such as Balance Sheets and GSTRs?",
+                answer: "Balance Sheet and Profit & Loss provide backdated information. Lenders compare current Bank statement transactions with backdated information to predict business growth for the current year.\n" + 
+                "GST gives details of Invoices, but actual payments received/paid against the Invoices reflect in the Bank statement."
+            }   
         ],
         msmeLoans: [
             {
