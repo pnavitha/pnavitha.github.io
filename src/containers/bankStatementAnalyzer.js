@@ -112,7 +112,7 @@ const BankStatementAnalyzer = () => {
     return <Box className={classes.contentAreaWrapper}>
         <Paper elevation={2} square className={classes.greyWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
-                <Grid item xs={12} sm={5}>
+                <Grid item xs={12} sm={4}>
                     <br/>
                     <Typography variant="h1">Get Bank Statement Rating to improve your loan eligibility.</Typography>
                     <br/>
@@ -170,7 +170,7 @@ const BankStatementAnalyzer = () => {
                             <Typography variant="subtitle1" level="4" margin="xsmall">Following is your bank statement report.</Typography>
                         </Box> }
                 </Grid>
-                <Grid item xs={12} sm={5}>
+                <Grid item xs={12} sm={6}>
                     <img src={require("../images/msme_loans.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="100%" />
                 </Grid>
             </Grid>

@@ -29,12 +29,8 @@ const useStyles = makeStyles((theme) => ({
     AppHeader: {
         backgroundColor: '#fff',
     },
-    headerWrapper: {
-        padding: '10px',
-        backgroundColor: '#fff',
-    },
     helpSection: {
-          paddingRight: '20px'
+        paddingTop: '5px'
       }  
   }));
 
@@ -47,7 +43,7 @@ export default function Layout() {
             <div className={classes.root}>
             <AppBar position="fixed">
                 <Toolbar variant="dense" className={classes.AppHeader}>
-                    <Grid container direction="row" className={classes.headerWrapper} justify="space-between" >
+                    <Grid container direction="row" justify="space-between" >
                         <Grid item>
                         <Link to="/" style={{ textDecoration: 'none', color:'#0975e1'}}>
                         <Grid container direction="row">
@@ -60,6 +56,7 @@ export default function Layout() {
                             container
                             direction="row"
                             justify="flex-end"
+                            alignContent="center"
                             alignItems="center"
                             className={classes.helpSection}
                             >
