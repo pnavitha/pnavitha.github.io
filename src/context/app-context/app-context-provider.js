@@ -3,9 +3,7 @@ import AppReducer from './app-reducer';
 import { AppMiddleware } from './app-middleware';
 
 const initialState = {
-    profilesForm: {},
-    profileAdded: false,
-    isLoading: false,
+    profile: {},
     bankNames: ["Axis Bank", "HDFC Bank", "ICICI", "SBI"],
     msmeLoans: {
         "Central Bank of india": {

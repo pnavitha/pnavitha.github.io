@@ -26,7 +26,7 @@ const KnowMore = () => {
 
     return <Paper square className={classes.ContentWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={12} sm={5}>
                     <br />
                     <Grid container direction='column'>
                 <Typography variant="h1">How FinDash improves your chances for Loan Approval?</Typography>
@@ -34,7 +34,7 @@ const KnowMore = () => {
                 <Typography variant="body1">We are starting our journey for faster business loans to MSMEs. Check this demo video explaining our current platform and know the future plans.</Typography>
             </Grid>
             </Grid>
-            <Grid item xs={12} sm={6}> 
+            <Grid item xs={12} sm={5}> 
             <ReactPlayer
                 width='100%'
                 height='100%'

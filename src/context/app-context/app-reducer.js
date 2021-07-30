@@ -1,32 +1,13 @@
 const AppReducer = (state, action) => {
     switch (action.type) {
-        case 'UPDATE_USER_PHONE_NUMBER':
-            return {
-                ...state,
-                profilesForm:{
-                    ...state.profilesForm,
-                    phoneNumber: action.payload
-                }
-            }
-        case 'UPDATE_USER_PHONE_EMALID':
-            return {
-                ...state,
-                profilesForm: {
-                    ...state.profilesForm,
-                    email: action.payload
-                }
-            }     
-        case 'REGISTER_SUCCESS':
-            return {
-                ...state,
-                profilesForm: {},
-                profileAdded: true
-            }
         case 'UPDATE_BANK_STATEMENT_PHONENUMBER':
             return {
                 ...state,
                 newBankStatementForm: {
                     ...state.newBankStatementForm,
+                    phoneNumber: action.payload
+                },
+                profile: {
                     phoneNumber: action.payload
                 }
             }    

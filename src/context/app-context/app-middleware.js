@@ -3,34 +3,6 @@ import * as XLSX from 'xlsx';
 
 export const AppMiddleware = (dispatch, state) => (action) => {
     switch (action.type) {
-        case 'REGISTER':
-            if (state.profilesForm && 
-                (state.profilesForm.phoneNumber && 
-                state.profilesForm.phoneNumber.trim().length >= 10 &&
-                state.profilesForm.email && 
-                state.profilesForm.email.trim().length > 5)) {
-                (async () => {
-
-                    dispatch({ type: 'LOADING_IN_PROGRESS' });
-                    const payload = {
-                        member: {
-                            phoneNumber: state.profilesForm.phoneNumber,
-                            email: state.profilesForm.email.toLowerCase(),
-                        },
-                        action: "REGISTER"
-                    }
-                    const response = await fetch('https://i5870mwfv5.execute-api.ap-southeast-1.amazonaws.com/prod/members', {
-                        method: 'POST',
-                        body: JSON.stringify(payload)
-                    });
-                    const responseJson = await response.json();
-                    dispatch({ type: 'LOADING_SUCCESS' });
-                    if (responseJson.statusCode === 200) {
-                        dispatch({ type: 'REGISTER_SUCCESS' });
-                    }
-                })();
-            }
-            break; 
         case 'UPLOAD_PDF_AND_ANALYZE':
             if (state.newBankStatementForm && 
                 state.newBankStatementForm.phoneNumber && 
@@ -78,6 +50,7 @@ export const AppMiddleware = (dispatch, state) => (action) => {
                             console.log("Exception occured with pdf analysis: ", ex);
                         }
                     }
+                    appendLog(action.type, state.profile.phoneNumber);
                 })(); 
             }
             break; 
@@ -85,7 +58,8 @@ export const AppMiddleware = (dispatch, state) => (action) => {
             if(state.bankStatementAnalysis) {
                 const csvData = state.bankStatementAnalysis;
                 const fileName = "bank-statement-analysis";
-                exportToCSV(csvData,fileName)    
+                exportToCSV(csvData,fileName);
+                appendLog(action.type, state.profile.phoneNumber);
             }      
             break;
         case 'CALCULATE_FIXED_DEPOSIT_RATES':
@@ -108,6 +82,7 @@ export const AppMiddleware = (dispatch, state) => (action) => {
             var banksRates = Object.entries(state.fixedDeposit[bankFdDayMap].publicBank).concat(Object.entries(state.fixedDeposit[bankFdDayMap].privateBank));
             banksRates.sort((bank1, bank2) => { return bank2[1] - bank1[1];});
             dispatch({ type: 'ADD_FIXED_DEPOSIT_RATES_RESULT' , payload: banksRates});
+            appendLog(action.type, state.profile.phoneNumber);
             break;
         case 'UPDATE_BANKWISE_FIXED_DEPOSIT':
             const result = {};
@@ -129,6 +104,21 @@ export const AppMiddleware = (dispatch, state) => (action) => {
         }
     };
 };
+
+const appendLog = (event, phoneNumber) => {
+    (async () => {
+        const logPayload = {
+            phoneNumber,
+            event,
+            action: "APPEND_LOG"
+        }
+
+        await fetch('https://q44f17qqyi.execute-api.ap-south-1.amazonaws.com/prod/users', {
+            method: 'POST',
+            body: JSON.stringify(logPayload),
+        });
+    })(); 
+}
 
 const fileType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
 const fileExtension = '.xlsx';

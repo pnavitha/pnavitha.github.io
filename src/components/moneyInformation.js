@@ -37,8 +37,6 @@ const MoneyInformation = () => {
             <Grid item xs={12} sm={4}>
                 <br />
                 <Grid container direction='column'>
-                    <Typography variant="subtitle1">Other products</Typography>
-                    <br />
                     <br />
                     <Typography variant="h1">We are going an Extra Mile For YOU!</Typography>
                     <br />
