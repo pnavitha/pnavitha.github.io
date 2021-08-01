@@ -9,6 +9,9 @@ const AppReducer = (state, action) => {
                 },
                 profile: {
                     phoneNumber: action.payload
+                },
+                error: {
+                    bankStatementError: undefined 
                 }
             }    
         case 'UPDATE_BANK_STATEMENT_PASSWORD':
@@ -34,8 +37,11 @@ const AppReducer = (state, action) => {
                 newBankStatementForm:{
                     ...state.newBankStatementForm,
                     inProgress: true,
-                } 
-            }
+                },
+                error: {
+                    bankStatementError: undefined 
+                }
+            }    
         case 'ADD_DETAILED_TRANSACTIONS':
             return {
                 ...state,
@@ -45,7 +51,14 @@ const AppReducer = (state, action) => {
             return {
                 ...state,
                 newBankStatementForm: undefined
-            }        
+            }   
+        case 'BANKSTATEMENT_ANALYSIS_FAILURE':
+            return {
+                ...state,
+                error: {
+                    bankStatementError: "Select valid bank statement pdf and phone number."
+                }
+            }         
         case 'UPDATE_FIXED_DEPOSIT_YEAR':
             return {
                 ...state,

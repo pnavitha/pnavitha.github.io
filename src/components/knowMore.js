@@ -6,6 +6,7 @@ import {
     Typography,
     Grid,
     Paper,
+    Box
 } from '@material-ui/core';
 
 const useStyles = makeStyles({
@@ -19,6 +20,10 @@ const useStyles = makeStyles({
     submitDetails: {
         padding: '4px 4px',
     },
+    videoPlayer: {
+        height: "350px",
+        width: "400px"
+    }
 });
 
 const KnowMore = () => {
@@ -34,13 +39,15 @@ const KnowMore = () => {
                 <Typography variant="body1">We are starting our journey for faster business loans to MSMEs. Check this demo video explaining our current platform and know the future plans.</Typography>
             </Grid>
             </Grid>
-            <Grid item xs={12} sm={6}> 
-            <ReactPlayer
-                width='100%'
-                height='100%'
-                controls
-                url="https://www.youtube.com/watch?v=4iNApWtnOzY&t=1s"
-            />
+            <Grid item xs={12} sm={4}> 
+            <Box className={classes.videoPlayer}>
+                <ReactPlayer
+                    width='100%'
+                    height='100%'
+                    controls
+                    url="https://www.youtube.com/watch?v=4iNApWtnOzY&t=1s"
+                />
+            </Box>
             </Grid> 
 </Grid>
 </Paper>

@@ -4,31 +4,12 @@ export const Theme = createMuiTheme({
   typography: {
     fontFamily: "'Neuton', serif",
     h1: {
-      fontSize: '6rem',
-      fontWeight: 'bold',
-      '@media (min-width:300px)': {
-        fontSize: '3rem',
-      }
-    },
-    h5: {
-      fontSize: '1.3rem',
-      fontWeight: 'bold',
-      '@media (min-width:300px)': {
-        fontSize: '1.4rem',
-      }
+      fontSize: '32px',
+      fontWeight: 'bold'
     },
     body1: {
-      fontSize: '0.6rem',
-      whiteSpace: 'pre-line',
-      '@media (min-width:300px)': {
-        fontSize: '0.8rem',
-      }
-    },
-    body2: {
-      fontSize: '0.4rem',
-      '@media (min-width:300px)': {
-        fontSize: '0.6rem',
-      }
+      fontSize: '16px',
+      whiteSpace: 'pre-line'
     },
     subtitle1: {
       fontSize: '0.8rem',

@@ -24,8 +24,8 @@ const useStyles = makeStyles({
 });
 
 const columns = [
-    { id: 'party', label: 'Party', minWidth: 20, align: 'left' },
-    { id: 'dr', label: 'Debit', minWidth: 20, align: 'right' },
+    { id: 'party', label: 'Party', minWidth: 15, align: 'left' },
+    { id: 'dr', label: 'Debit', minWidth: 15, align: 'right' },
     {
       id: 'drCount',
       label: 'Dr Ct',

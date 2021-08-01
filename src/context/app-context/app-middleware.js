@@ -6,19 +6,9 @@ export const AppMiddleware = (dispatch, state) => (action) => {
         case 'UPLOAD_PDF_AND_ANALYZE':
             if (state.newBankStatementForm && 
                 state.newBankStatementForm.phoneNumber && 
-                state.newBankStatementForm.phoneNumber.trim().length >= 10 &&
-                state.newBankStatementForm.selectedBankName) {
+                state.newBankStatementForm.phoneNumber.trim().length >= 10 ) {
                 (async () => {
-                    var bankNameString = "";
-                    if(state.newBankStatementForm.selectedBankName === "HDFC Bank") { 
-                        bankNameString = "hdfc";
-                    } else if(state.newBankStatementForm.selectedBankName === "Axis Bank") {
-                            bankNameString = "axis";
-                    } else if(state.newBankStatementForm.selectedBankName === "SBI") {
-                            bankNameString = "sbi";
-                    } else if(state.newBankStatementForm.selectedBankName === "ICICI") {
-                        bankNameString = "icici";
-                    }
+                    const bankNameString = "hdfc";
 
                     const payload = {
                         base64Pdf: action.payload,
@@ -27,7 +17,6 @@ export const AppMiddleware = (dispatch, state) => (action) => {
                         password: state.newBankStatementForm.bankStatementPassword ? state.newBankStatementForm.bankStatementPassword : "", 
                         action: "UPLOAD_BANK_STATEMENT"
                     }
-
                     dispatch({ type: 'BANKSTATEMENT_ANALYSIS_IN_PROGRESS' });
                     const response = await fetch('https://q44f17qqyi.execute-api.ap-south-1.amazonaws.com/prod/users', {
                         method: 'POST',
@@ -44,10 +33,10 @@ export const AppMiddleware = (dispatch, state) => (action) => {
                         dataList = addMonthName(dataList);
                         
                         var detailedTransactions = getDetailedTransactions(dataList);
-
                         dispatch({ type: 'ADD_DETAILED_TRANSACTIONS', payload: detailedTransactions });
                         }catch(ex) {
                             console.log("Exception occured with pdf analysis: ", ex);
+                            dispatch({ type: 'BANKSTATEMENT_ANALYSIS_FAILURE' });
                         }
                     }
                     appendLog(action.type, state.profile.phoneNumber);
@@ -229,6 +218,9 @@ const addMonthName = (dataList) => {
     dataList.forEach(transaction => {
         const newTransaction = transaction;
         newTransaction.date = getDetailedDate(transaction.date);
+        if(transaction.party && transaction.party.trim().length > 0 && !isNaN(transaction.party)) {
+            newTransaction.party = 'a/c no. - ' + newTransaction.party;
+        }
         result.push(newTransaction);
     });
 
