@@ -116,7 +116,7 @@ const BankStatementAnalyzer = () => {
                     <br />
                     <Typography variant="body1">Lenders Check Bank Statement to know your Credit Worthiness. With Statement Analyser Tool, analyze 10,000+ transactions in just 20 seconds and understand what's lacking.</Typography>
                     <br />
-                    <Typography variant="body1">** Currently support HDFC bank only. Others banks coming soon.</Typography>
+                    <Typography variant="body1">** Currently support HDFC bank only. Other banks coming soon.</Typography>
                     <br />
                     <FormControl className={classes.bankPassword}>
                         <InputLabel >Phone number*</InputLabel>
@@ -211,12 +211,12 @@ const BankStatementAnalyzer = () => {
                                             colors={["#ff0000", "#23d366"]}
                                             arcWidth={0.4}
                                             textColor="#0975e1"
-                                            percent={.35}
+                                            percent={.53}
                                             hideText />
                                     </Grid>
                                     <Grid item>
                                         <Box color="#0975e1" >
-                                            <Typography variant="subtitle1" level="4" margin="xsmall">Your bank-statement score is 350/1000</Typography>
+                                            <Typography variant="subtitle1" level="4" margin="xsmall">Your bank-statement score is 530</Typography>
                                         </Box>
                                     </Grid>
                                 </Grid>
@@ -224,8 +224,8 @@ const BankStatementAnalyzer = () => {
                             <Grid item xs={12} sm={6}>
                                 <Typography variant="subtitle1" level="4" margin="xsmall">Factors effecting your score.</Typography>
                                 <br />
-                                <Typography variant="body1">1. EMIs default for home loan in Jan 2021 and Feb 2021.</Typography>
-                                <Typography variant="body1">2. Credit card repayment due charges of 8000 INR in Feb 2021.</Typography>
+                                <Typography variant="body1">1. Personal spending done through business account.</Typography>
+                                <Typography variant="body1">2. EMI default for TATA Capital loan in Feb 2021.</Typography>
                             </Grid>
                         </Grid>
                         <br />

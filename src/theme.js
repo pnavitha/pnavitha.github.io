@@ -4,7 +4,7 @@ export const Theme = createMuiTheme({
   typography: {
     fontFamily: "'Neuton', serif",
     h1: {
-      fontSize: '32px',
+      fontSize: '40px',
       fontWeight: 'bold'
     },
     body1: {
