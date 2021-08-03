@@ -21,8 +21,7 @@ const useStyles = makeStyles({
         padding: '4px 4px',
     },
     videoPlayer: {
-        height: "350px",
-        width: "400px"
+        minHeight: "350px",
     }
 });
 
@@ -39,11 +38,10 @@ const KnowMore = () => {
                 <Typography variant="body1">We are starting our journey for faster business loans to MSMEs. Check this demo video explaining our current platform and know the future plans.</Typography>
             </Grid>
             </Grid>
-            <Grid item xs={12} sm={4}> 
+            <Grid item xs={12} sm={5}> 
             <Box className={classes.videoPlayer}>
                 <ReactPlayer
                     width='100%'
-                    height='100%'
                     controls
                     url="https://www.youtube.com/watch?v=4iNApWtnOzY&t=1s"
                 />
