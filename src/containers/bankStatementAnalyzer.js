@@ -199,7 +199,7 @@ const BankStatementAnalyzer = () => {
                 <br />
                 <Paper elevation={2} square className={classes.whiteWrapper}>
                     <Grid container direction="column" justify="flex-start" spacing={2}>
-                        <Grid item xs={12} sm={12}>
+                        {/* <Grid item xs={12} sm={12}>
                             <Typography variant="subtitle2" level="4" margin="xsmall">FinDash Insights</Typography>
                         </Grid>
                         <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={2}>
@@ -228,7 +228,7 @@ const BankStatementAnalyzer = () => {
                                 <Typography variant="body1">2. EMI default for TATA Capital loan in Feb 2021.</Typography>
                             </Grid>
                         </Grid>
-                        <br />
+                        <br /> */}
                         <Grid item xs={12} sm={12}>
                             <Typography variant="subtitle2" level="4" margin="xsmall">Summary</Typography>
                         </Grid>
