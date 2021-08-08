@@ -1,13 +1,16 @@
-import React, { useContext }  from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { AppContext } from '../context/app-context/app-context-provider';
 
-import { 
+import {
     Typography,
     Grid,
     Paper,
-    Box
+    Accordion,
+    AccordionSummary,
+    AccordionDetails
 } from '@material-ui/core';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles({
     ContentWrapper: {
@@ -27,24 +30,27 @@ const FrequentlyAskedQuestions = () => {
     const [state, dispatch] = useContext(AppContext);
 
     return <Paper elevation={2} square className={classes.ContentWrapper}>
-    <Grid container direction="row" justify="space-evenly" spacing={2}>
-        <Grid item>
-            <Typography variant="subtitle1">Frequently Asked Questions</Typography>
-            <br/>
-            <br/>
-            {state.frequentlyAskedQuestions.genericQuestions.map((faq) => 
-            {
-                return <Box>
-                    <Typography variant="subtitle1">{faq.question}</Typography>
-                    <br/>
-                    <Typography variant="body1">{faq.answer}</Typography>
-                    <br/>
-                </Box>
-            }
-            )}
+        <Grid container direction="row" justify="space-evenly" spacing={2}>
+            <Grid item>
+                <Typography variant="subtitle1">Frequently Asked Questions</Typography>
+                <br />
+                <br />
+                {state.frequentlyAskedQuestions.genericQuestions.map((faq) => {
+                    return <Accordion>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                        >
+                            <Typography variant="subtitle1">{faq.question}</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography variant="body1">{faq.answer}</Typography>
+                        </AccordionDetails>
+                    </Accordion>
+                }
+                )}
+            </Grid>
         </Grid>
-    </Grid>
-</Paper>
+    </Paper>
 }
 
 export default FrequentlyAskedQuestions;

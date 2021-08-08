@@ -929,7 +929,7 @@ const initialState = {
         ],
         fixedDeposit: [
             {
-                question: "Why are advantages of having a fixed deposit (FD)?",
+                question: "Why are the advantages of having a fixed deposit (FD)?",
                 answer: "Fixed Deposits or FDs are risk-free investment tool as they provide assured returns. Every bank and NBFCs provide facility of FD with different interest rates and tenures. Some banks even provide other facilities with fixed deposits, like loan on fixed deposits, additional interest for senior citizens and pre-mature usage of FD."
             },
             {

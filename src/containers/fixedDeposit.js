@@ -20,8 +20,12 @@ import {
     TableContainer,
     TableHead,
     TableRow,
+    Accordion,
+    AccordionSummary,
+    AccordionDetails
 } from '@material-ui/core'
 import PreFooter from './preFooter';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles({
     contentAreaWrapper: {
@@ -430,12 +434,16 @@ const FixedDeposit = () => {
                     <br />
                     <br />
                     {state.frequentlyAskedQuestions.fixedDeposit.map((faq) => {
-                        return <Box>
+                        return <Accordion>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                        >
                             <Typography variant="subtitle1">{faq.question}</Typography>
-                            <br />
+                        </AccordionSummary>
+                        <AccordionDetails>
                             <Typography variant="body1">{faq.answer}</Typography>
-                            <br />
-                        </Box>
+                        </AccordionDetails>
+                    </Accordion>
                     }
                     )}
                 </Grid>

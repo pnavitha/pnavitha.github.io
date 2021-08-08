@@ -3,20 +3,21 @@
   "name": "Using tech to understand your business finance and increasing credit quickly.",
   "icons": [
     {
-      "src": "simpleSolutionClub64.jpg",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "src": "F_logo.svg",
       "type": "image/x-icon"
     },
     {
-      "src": "simpleSolutionClub192.jpg",
+      "src": "masked_F_logo_x384.png",
+      "sizes": "384x384",
       "type": "image/png",
-      "sizes": "192x192"
+      "purpose": "any maskable"
     },
     {
-      "src": "simpleSolutionClub512.jpg",
+      "src": "F_logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }
+
   ],
   "start_url": ".",
   "display": "standalone",
