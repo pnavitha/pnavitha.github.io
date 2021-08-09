@@ -20,6 +20,7 @@ import {
 import BankStatementAnalyzer from './bankStatementAnalyzer';
 import PreFooter from './preFooter';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Feedback from './feedback';
   
 const useStyles = makeStyles({
     contentAreaWrapper: {
@@ -186,6 +187,7 @@ const MsmeLoans = () => {
                 </Grid>
             </Grid>
         </Paper>
+        <Feedback />
         <PreFooter />
         <Footer />
     </Box>

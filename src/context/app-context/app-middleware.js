@@ -87,6 +87,28 @@ export const AppMiddleware = (dispatch, state) => (action) => {
             });   
             dispatch({ type: 'ADD_BANKWISE_FIXED_DEPOSIT_RESULT' , payload: result}); 
             break; 
+        case 'SUBMIT_FEEDBACK':
+            (async () => {
+                if(action.payload !== undefined)
+                {    
+                    dispatch({ type: 'SUBMIT_FEEDBACK_RATING', payload: action.payload });
+                }
+
+                const payload = {
+                    feedback: {
+                        rating: action.payload,
+                        ...state.feedback,
+                    },
+                    action: "SUBMIT_FEEDBACK"
+                };
+
+                await fetch('https://q44f17qqyi.execute-api.ap-south-1.amazonaws.com/prod/users', {
+                    method: 'POST',
+                    body: JSON.stringify(payload),
+                });
+                dispatch({ type: 'SUBMIT_FEEDBACK_SUCCESS' });
+            })();
+            break;
         default: {
             dispatch(action);
             break;

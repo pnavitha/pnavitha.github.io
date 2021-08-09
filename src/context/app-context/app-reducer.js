@@ -97,7 +97,39 @@ const AppReducer = (state, action) => {
             return {
                 ...state,
                 bankwiseData: action.payload
-            }                   
+            }   
+        case 'UPDATE_FEEDBACK_COMMENT':
+            return {
+                ...state,
+                feedback: {
+                    ...state.feedback,
+                    comment: action.payload
+                }
+            }   
+        case 'UPDATE_FEEDBACK_PHONENUMBER':
+            return {
+                ...state,
+                feedback: {
+                    ...state.feedback,
+                    phoneNumber: action.payload
+                }
+            } 
+        case 'SUBMIT_FEEDBACK_RATING':
+            return {
+                ...state,
+                feedback: {
+                    ...state.feedback,
+                    rating: action.payload
+                }
+            }   
+        case 'SUBMIT_FEEDBACK_SUCCESS':
+            return {
+                ...state,
+                feedback: {
+                    ...state.feedback,
+                    isSubmitted: true
+                }
+            }                            
         default: return state;
     };
 };
