@@ -26,7 +26,6 @@ import {
 } from '@material-ui/core'
 import PreFooter from './preFooter';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Feedback from './feedback';
 
 const useStyles = makeStyles({
     contentAreaWrapper: {
@@ -450,7 +449,6 @@ const FixedDeposit = () => {
                 </Grid>
             </Grid>
         </Paper>
-        <Feedback />
         <PreFooter />
         <Footer />
     </Box>

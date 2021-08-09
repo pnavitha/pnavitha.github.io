@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
     ContentWrapper: {
-        background: '#f0f1f2',
+        background: '#fff',
         paddingTop: '5%',
         paddingBottom: '5%',
         paddingRight: '5%',
