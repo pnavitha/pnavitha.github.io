@@ -4,7 +4,10 @@ import {
     Typography,
     Grid,
     Paper,
+    Button,
+
 } from '@material-ui/core';
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
     ContentWrapper: {
@@ -42,9 +45,15 @@ const ContentHeader = () => {
     return <Paper square className={classes.ContentWrapper}>
         <Grid container direction="row" justify="space-evenly" spacing={2}>
             <Grid item xs={12} sm={4}>
-                <Typography variant="h1">The Finance Platform for a changing world.</Typography>
+                <Typography variant="h1">About Us.</Typography>
                 <br />
-                <Typography variant="body1">We help you evaluate your financial documents so that you get quicker loans at lower interest rates.</Typography>
+                <Typography variant="body1">"[Some content]"</Typography>
+                <br />
+                <Link to="/about" style={{ textDecoration: 'none' }}>
+                        <Button variant="contained" color="secondary" >
+                            Know More
+                        </Button>
+                    </Link>
             </Grid>
             <Grid item xs={12} sm={6}>
                 <img src={require("../images/aboutus.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="100%" />

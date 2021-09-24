@@ -37,9 +37,9 @@ const Home = () => {
 
     return <Box className={classes.contentAreaWrapper}>
         <Grid container direction="column" alignItems="stretch" justify="center">
-            <Grid item>
+            {/* <Grid item>
                 <ContentHeader />  
-            </Grid>
+            </Grid> */}
             <Grid item>
                 <BankStatementAnalyzer />  
             </Grid>
@@ -49,12 +49,12 @@ const Home = () => {
             <Grid item>
                 <MoneyInformation />
             </Grid>
-            <Grid item>
+            {/* <Grid item>
                 <KnowMore />
             </Grid>
             <Grid item>
                 <FrequentlyAskedQuestions />
-            </Grid>
+            </Grid> */}
             <Grid item>
                 <PreFooter />
             </Grid>

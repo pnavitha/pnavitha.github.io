@@ -38,69 +38,13 @@ const MoneyInformation = () => {
                 <br />
                 <Grid container direction='column'>
                     <br />
-                    <Typography variant="h1">We are going an Extra Mile For YOU!</Typography>
+                    <Typography variant="h1">How it works!</Typography>
                     <br />
-                    <Typography variant="body1">Finance wellness is the combination of savings, investments, good loans, growing business and financial awareness. Stay ahead of everyone with easy-to-understand blogs on Business Finance.</Typography>
+                    <Typography variant="body1">[Flow diagram].</Typography>
                     <br />
                 </Grid>
             </Grid>
-            <Link to="/fixed-deposit-interest-rates" style={{ textDecoration: 'none' }}>
-                <Paper square elevation={2} className={classes.Card}>
-                    <Grid container direction='column' justify="space-between" alignItems='center'>
-                        <Typography variant="subtitle1" color='primary'>Fixed Deposits</Typography>
-                        <br />
-                        <img src={require("../images/icon_fixed_deposit.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="25%" />
-                        <br />
-                        <Button size="small" onClick={() => dispatch({ type: "NAVIGATE_TO_ABOUT_PAGE" })} color="secondary" startIcon={<InfoIcon />}>
-                            Know more
-                        </Button>
-                    </Grid>
-                </Paper>
-                <br/>
-            </Link>
-            <Link to="/savings-account" style={{ textDecoration: 'none' }}>
-                <Paper square elevation={2} className={classes.Card}>
-                    <Grid container direction='column' justify="space-between" alignItems='center'>
-                        <Typography variant="subtitle1" color='primary'>Savings Account</Typography>
-                        <br />
-                        <img src={require("../images/icon_savings.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="25%" />
-                        <br />
-                        <Button size="small" onClick={() => dispatch({ type: "NAVIGATE_TO_ABOUT_PAGE" })} color="secondary" startIcon={<InfoIcon />}>
-                            Know more
-                        </Button>
-                    </Grid>
-                </Paper>
-                <br/>
-            </Link>
-            <Link to="/msme-loan" style={{ textDecoration: 'none' }}>
-                <Paper square elevation={2} className={classes.Card}>
-                    <Grid container direction='column' justify="space-between" alignItems='center'>
-                        <Typography variant="subtitle1" color='primary'>MSME Loans</Typography>
-                        <br />
-                        <img src={require("../images/icon_business_loan.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="25%" />
-                        <br />
-                        <Button size="small" onClick={() => dispatch({ type: "NAVIGATE_TO_ABOUT_PAGE" })} color="secondary" startIcon={<InfoIcon />}>
-                            Know more
-                        </Button>
-                    </Grid>
-                </Paper>
-                <br/>
-            </Link>
-            <Link to="/fuel-prices-in-india" style={{ textDecoration: 'none' }}>
-                <Paper square elevation={2} className={classes.Card}>
-                    <Grid container direction='column' justify="space-between" alignItems='center'>
-                        <Typography variant="subtitle1" color='primary'>Fuel Prices</Typography>
-                        <br />
-                        <img src={require("../images/icon_fuel.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="20%" />
-                        <br />
-                        <Button size="small" onClick={() => dispatch({ type: "NAVIGATE_TO_ABOUT_PAGE" })} color="secondary" startIcon={<InfoIcon />}>
-                            Know more
-                        </Button>
-                    </Grid>
-                </Paper>
-                <br/>
-            </Link>
-        </Grid>
+       </Grid>
         <br/>
     </Paper>
 }

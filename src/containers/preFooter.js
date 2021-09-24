@@ -30,11 +30,11 @@ const PreFooter = () => {
         <Grid container direction="row" justify="space-evenly" spacing={3}>
             <Grid item xs={12} sm={6}>
                 <Grid container direction='column'>
-                    <Typography variant="h1">Understand your Financial Documents.</Typography>
+                    <Typography variant="h1">Know more about Simple Solutions for Aspiring Product Managers.</Typography>
                     <br />
                     <Link to="/bank-statement-rating" style={{ textDecoration: 'none' }}>
                         <Button variant="contained" color="secondary" >
-                            Get Bank Statement Rating
+                            Know more
                         </Button>
                     </Link>
                 </Grid>
@@ -42,11 +42,11 @@ const PreFooter = () => {
             <Divider orientation="vertical" flexItem />
             <Grid item xs={12} sm={5}>
                 <Grid container direction='column'>
-                    <Typography variant="h1">Know more about FinDash.</Typography>
+                    <Typography variant="h1">Contact Us if you are an Aspiring Product Manager.</Typography>
                     <br />
                     <Link to="/about" style={{ textDecoration: 'none' }}>
                         <Button variant="contained" color="secondary" >
-                            About Us
+                            Contact Us
                         </Button>
                     </Link>
                 </Grid>

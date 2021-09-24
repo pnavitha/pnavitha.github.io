@@ -3,6 +3,10 @@ import { AppBar, Toolbar } from '@material-ui/core';
 import {
     Link
 } from "react-router-dom";
+import {  
+    Grid,
+    Typography
+  } from '@material-ui/core'
 import {
     Switch,
     Route
@@ -12,7 +16,6 @@ import MsmeLoans from './msmeLoans';
 import Home from './home';
 import { AppContext } from '../context/app-context/app-context-provider';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid'
 import Help from './help';
 import IconButton from '@material-ui/core/IconButton';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
@@ -47,12 +50,12 @@ export default function Layout() {
                         <Grid item>
                         <Link to="/" style={{ textDecoration: 'none', color:'#0975e1'}}>
                         <Grid container direction="row">
-                        <img src={require("../images/FinDash_logo100x40.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers"/>
+                            <Typography variant="subtitle1">Simple Solution for Aspiring Product Managers</Typography>
                         </Grid>
                         </Link>
                         </Grid>
                         <Grid item>
-                        <Grid
+                        {/* <Grid
                             container
                             direction="row"
                             justify="flex-end"
@@ -66,7 +69,7 @@ export default function Layout() {
                                 <Link to="/help">
                                     <IconButton size='small' style={{ color: '#00e600' }} onClick={() => dispatch({ type: "NAVIGATE_TO_HELP_PAGE" })}><WhatsAppIcon /></IconButton>
                                 </Link>
-                        </Grid>
+                        </Grid> */}
                         </Grid>
                     </Grid>
                 </Toolbar>

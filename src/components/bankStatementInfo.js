@@ -29,9 +29,9 @@ const BankStatementInfo = () => {
                     <br />
                     <Grid container direction='column'>
                     <br/>
-                    <Typography variant="h1">Improve your Financial Rating Today!</Typography>
+                    <Typography variant="h1">Value Props</Typography>
                 <br/>
-                <Typography variant="body1">A good bank statement can increase your chances of getting loan by 95%. We make sure that you have the best bank statement when you apply for a loan, the next time.</Typography>
+                <Typography variant="body1">Existing vs We</Typography>
             </Grid>
             </Grid>
             <Grid item xs={12} sm={6}>
