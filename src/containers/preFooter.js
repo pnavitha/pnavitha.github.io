@@ -30,16 +30,16 @@ const PreFooter = () => {
         <Grid container direction="row" justify="space-evenly" spacing={3}>
             <Grid item xs={12} sm={6}>
                 <Grid container direction='column'>
-                    <Typography variant="h1">Know more about Simple Solutions for Aspiring Product Managers.</Typography>
+                    <Typography variant="h1">We know our Unconventional Methods have got you thinking!.</Typography>
                     <br />
-                    <Link to="/bank-statement-rating" style={{ textDecoration: 'none' }}>
-                        <Button variant="contained" color="secondary" >
-                            Know more
-                        </Button>
-                    </Link>
+                    <Typography variant="body1">Get complete clarity about the Product Management Mentorship Program.</Typography>
+                    <br />
+                    <Button variant="contained" color="secondary" >
+                        Talk to us Now!
+                    </Button>
                 </Grid>
             </Grid>
-            <Divider orientation="vertical" flexItem />
+            {/* <Divider orientation="vertical" flexItem />
             <Grid item xs={12} sm={5}>
                 <Grid container direction='column'>
                     <Typography variant="h1">Contact Us if you are an Aspiring Product Manager.</Typography>
@@ -50,7 +50,7 @@ const PreFooter = () => {
                         </Button>
                     </Link>
                 </Grid>
-            </Grid>
+            </Grid> */}
         </Grid>
     </Paper>
 }

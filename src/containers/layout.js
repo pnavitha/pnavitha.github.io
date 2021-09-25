@@ -5,7 +5,8 @@ import {
 } from "react-router-dom";
 import {  
     Grid,
-    Typography
+    Typography,
+    Button
   } from '@material-ui/core'
 import {
     Switch,
@@ -17,9 +18,6 @@ import Home from './home';
 import { AppContext } from '../context/app-context/app-context-provider';
 import { makeStyles } from '@material-ui/core/styles';
 import Help from './help';
-import IconButton from '@material-ui/core/IconButton';
-import WhatsAppIcon from '@material-ui/icons/WhatsApp';
-import EmailIcon from '@material-ui/icons/Email';
 import SavingsAccount from './savingsAccount';
 import FixedDeposit from './fixedDeposit';
 import FuelPrices from './fuelPrices';
@@ -36,6 +34,12 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: '5px'
       }  
   }));
+
+const scrollTo = (sectionId) => {
+    console.log("abt to scroll to: ",sectionId);
+    var element = document.getElementById(sectionId);
+    element.scrollIntoView();
+}
 
 export default function Layout() {
     const [state, dispatch] = useContext(AppContext);
@@ -55,7 +59,7 @@ export default function Layout() {
                         </Link>
                         </Grid>
                         <Grid item>
-                        {/* <Grid
+                        <Grid
                             container
                             direction="row"
                             justify="flex-end"
@@ -63,13 +67,13 @@ export default function Layout() {
                             alignItems="center"
                             className={classes.helpSection}
                             >
-                                <Link to="/help">
-                                    <IconButton size='small' color='primary' onClick={() => dispatch({ type: "NAVIGATE_TO_HELP_PAGE" })}><EmailIcon /></IconButton>
-                                </Link>
-                                <Link to="/help">
-                                    <IconButton size='small' style={{ color: '#00e600' }} onClick={() => dispatch({ type: "NAVIGATE_TO_HELP_PAGE" })}><WhatsAppIcon /></IconButton>
-                                </Link>
-                        </Grid> */}
+                                {/* <Link to="/help"> */}
+                                    <Button size='small' color='primary' onClick={() => scrollTo('SectionTwo')}>About Us</Button>
+                                {/* </Link> */}
+                                {/* <Link to="/help"> */}
+                                    <Button size='small' color='primary' onClick={() => scrollTo('SectionOne')}>Find A mentor</Button>
+                                {/* </Link> */}
+                        </Grid>
                         </Grid>
                     </Grid>
                 </Toolbar>

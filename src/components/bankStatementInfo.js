@@ -23,15 +23,15 @@ const useStyles = makeStyles({
 const BankStatementInfo = () => {
     const classes = useStyles();
 
-    return <Paper square className={classes.ContentWrapper}>
+    return <Paper id="SectionTwo" square className={classes.ContentWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
                 <Grid item xs={12} sm={4}>
                     <br />
                     <Grid container direction='column'>
                     <br/>
-                    <Typography variant="h1">Value Props</Typography>
+                    <Typography variant="h1">STOP Wasting your Money, Time & Efforts on Courses!</Typography>
                 <br/>
-                <Typography variant="body1">Existing vs We</Typography>
+                <Typography variant="body1">We all know, Education is Great but NOTHING BEATS EXPERIENCE.</Typography>
             </Grid>
             </Grid>
             <Grid item xs={12} sm={6}>

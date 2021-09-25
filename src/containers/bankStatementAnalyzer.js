@@ -108,21 +108,23 @@ const BankStatementAnalyzer = () => {
     }
 
     return <Box className={classes.contentAreaWrapper}>
-        <Paper elevation={2} square className={classes.greyWrapper}>
+        <Paper id="SectionOne" elevation={2} square className={classes.whiteWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
                 <Grid item xs={12} sm={4}>
                     <br />
-                    <Typography variant="h1">Heading1</Typography>
+                    <Typography variant="h1">Product Management Career Mentorship Program</Typography>
                     <br />
-                    <Typography variant="body1">[subtext]</Typography>
+                    <Typography variant="body1">What’s BETTER and more EFFECTIVE than a PM Course? One-on-one Personalized Mentorship!</Typography>
                     <br />
-                    <FormControl className={classes.bankPassword}>
+                    <Typography variant="body1">Don’t just learn PM, EXPERIENCE IT with our Professional Product Managers!</Typography>
+                    <br />
+                    {/* <FormControl className={classes.bankPassword}>
                         <InputLabel >Phone number*</InputLabel>
                         <Input
                             type="number"
                             value={state.newBankStatementForm ? state.newBankStatementForm.phoneNumber : ""}
                             onChange={(event) => dispatch({ type: "UPDATE_BANK_STATEMENT_PHONENUMBER", payload: event.target.value })} />
-                    </FormControl>
+                    </FormControl> */}
                     {/* <Autocomplete
                         size='small'
                         fontSize='small'
@@ -132,7 +134,7 @@ const BankStatementAnalyzer = () => {
                         getOptionLabel={(option) => option}
                         renderInput={(params) => <TextField {...params} InputLabelProps={{ style: { fontSize: 12 } }} label="Select Bank Name*" />}
                     /> */}
-                    <Grid container direction='row' justify="flex-start" alignItems="flex-end">
+                    {/* <Grid container direction='row' justify="flex-start" alignItems="flex-end">
                         <Grid item xs={10} sm={10}>
                             <FormControl className={classes.bankPassword}>
                                 <InputLabel >Email</InputLabel>
@@ -142,11 +144,14 @@ const BankStatementAnalyzer = () => {
                                     onChange={(event) => dispatch({ type: "UPDATE_BANK_STATEMENT_PASSWORD", payload: event.target.value })} />
                             </FormControl>
                         </Grid>
-                    </Grid>
+                    </Grid> */}
                     <br />
                     <Grid container direction='row' justify="flex-start" alignItems="flex-end">
                         <Grid item>
-                            <InputLabel
+                            <Button variant="contained" color="secondary" >
+                                Find a Mentor Now!
+                            </Button>
+                            {/* <InputLabel
                                 classes={{ disabled: classes.disabledButton }}
                                 className={classes.submitDetails}>
                                 <input
@@ -158,8 +163,8 @@ const BankStatementAnalyzer = () => {
                                     onChange={changeHandler} />
                                 {(state.newBankStatementForm && state.newBankStatementForm.inProgress) ?
                                     <CircularProgress />
-                                    : <Grid container direction="row"><Typography>CTA1</Typography></Grid>}
-                            </InputLabel>
+                                    : <Grid container direction="row"><Typography>Find a Mentor Now!</Typography></Grid>}
+                            </InputLabel> */}
                         </Grid>
                         {state.error && state.error.bankStatementError && <Grid item>
                             <Typography color="error">Select valid bank statement pdf and phone number.</Typography>
