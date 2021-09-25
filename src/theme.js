@@ -12,10 +12,10 @@ export const Theme = createMuiTheme({
       whiteSpace: 'pre-line'
     },
     subtitle1: {
-      fontSize: '0.8rem',
+      fontSize: '16px',
       fontWeight: 'bold',
       '@media (min-width:300px)': {
-        fontSize: '1rem',
+        fontSize: '24px',
       },
     },
     subtitle2: {

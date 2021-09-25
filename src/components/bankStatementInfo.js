@@ -31,7 +31,7 @@ const BankStatementInfo = () => {
                     <br/>
                     <Typography variant="h1">STOP Wasting your Money, Time & Efforts on Courses!</Typography>
                 <br/>
-                <Typography variant="body1">We all know, Education is Great but NOTHING BEATS EXPERIENCE.</Typography>
+                <Typography variant="body1">You've spent your entire life in school, college, and taking several courses. You must have realised until now that Education is Great but NOTHING BEATS EXPERIENCE.</Typography>
             </Grid>
             </Grid>
             <Grid item xs={12} sm={6}>

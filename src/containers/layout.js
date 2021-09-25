@@ -65,14 +65,15 @@ export default function Layout() {
                             justify="flex-end"
                             alignContent="center"
                             alignItems="center"
+                            spacing={1}
                             className={classes.helpSection}
                             >
-                                {/* <Link to="/help"> */}
-                                    <Button size='small' color='primary' onClick={() => scrollTo('SectionTwo')}>About Us</Button>
-                                {/* </Link> */}
-                                {/* <Link to="/help"> */}
-                                    <Button size='small' color='primary' onClick={() => scrollTo('SectionOne')}>Find A mentor</Button>
-                                {/* </Link> */}
+                                <Grid item>
+                                    <Button size='small' color='secondary' onClick={() => scrollTo('SectionTwo')}>About Us</Button>
+                                </Grid>
+                                <Grid item>
+                                    <Button size='small' color='secondary' onClick={() => scrollTo('SectionOne')}>Find A mentor</Button>
+                                </Grid>
                         </Grid>
                         </Grid>
                     </Grid>
