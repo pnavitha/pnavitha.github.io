@@ -148,7 +148,7 @@ const BankStatementAnalyzer = () => {
                     <br />
                     <Grid container direction='row' justify="flex-start" alignItems="flex-end">
                         <Grid item>
-                            <Button variant="contained" color="secondary" >
+                            <Button onClick={() => window.open('https://calendly.com/mohansoe/next-innings-let-us-take-the-plunge-together?month=2021-09', "_blank")} variant="contained" color="secondary" >
                                 Find a Mentor Now!
                             </Button>
                             {/* <InputLabel
@@ -176,7 +176,7 @@ const BankStatementAnalyzer = () => {
 
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <img src={require("../images/msme_loans.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="100%" />
+                    <img src={require("../images/cowork.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="100%" />
                 </Grid>
             </Grid>
         </Paper>

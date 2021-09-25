@@ -15,7 +15,7 @@ import {
 
 const useStyles = makeStyles({
     ContentWrapper: {
-        background: '#f0f1f2',
+        background: '#fff',
         paddingTop: '5%',
         paddingBottom: '5%',
         paddingRight: '5%',
@@ -69,7 +69,7 @@ const MoneyInformation = () => {
                 <br />
                 <Grid container direction='column'>
                     <br />
-                    <img src={require("../images/win.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="100%" />
+                    <img src={require("../images/rocket.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="100%" />
                     <br />
                 </Grid>
             </Grid>

@@ -34,7 +34,8 @@ const PreFooter = () => {
                     <br />
                     <Typography variant="body1">Get complete clarity about the Product Management Mentorship Program.</Typography>
                     <br />
-                    <Button variant="contained" color="secondary" >
+                    
+                    <Button onClick={() => window.open('https://calendly.com/navita-pareek4/next-inning?month=2021-09', "_blank")} variant="contained" color="secondary" >
                         Talk to us Now!
                     </Button>
                 </Grid>
