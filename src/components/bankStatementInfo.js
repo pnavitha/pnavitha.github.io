@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { AppContext } from '../context/app-context/app-context-provider';
 
 import { 
     Typography,
     Grid,
     Paper,
+    Button
 } from '@material-ui/core';
 
 const useStyles = makeStyles({
@@ -22,6 +24,7 @@ const useStyles = makeStyles({
 
 const BankStatementInfo = () => {
     const classes = useStyles();
+    const [state, dispatch] = useContext(AppContext);
 
     return <Paper id="SectionTwo" square className={classes.ContentWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
@@ -32,10 +35,23 @@ const BankStatementInfo = () => {
                     <Typography variant="h1">STOP Wasting your Money, Time & Efforts on Courses!</Typography>
                 <br/>
                 <Typography variant="body1">You've spent your entire life in school, college, and taking several courses. You must have realised until now that Education is Great but NOTHING BEATS EXPERIENCE.</Typography>
+                <br/>
+                <br/>
+                <Grid container direction='row' justify="flex-start" alignItems="flex-end">
+                        <Grid item>
+                            <Button onClick={() => {
+                                    window.open('https://calendly.com/mohansoe/next-innings-let-us-take-the-plunge-together?month=2021-09', "_blank")
+                                    dispatch({ type: "BUTTON_CLICKED", payload: "FREE_MENTORSHIP" });
+                                }
+                             } variant="contained" color="secondary" >
+                                Get Free Mentorship Today!
+                            </Button>
+                        </Grid>
+                    </Grid>
             </Grid>
             </Grid>
             <Grid item xs={12} sm={6}>
-                <img src={require("../images/msme_loans.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="100%" />
+                <img src={require("../images/msme_loans.svg")} alt="Product Management Career Mentorship Program Become a Product Manager Career Mentor for better career high salary " width="100%" />
             </Grid>
 </Grid>
 </Paper>

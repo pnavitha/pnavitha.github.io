@@ -58,7 +58,7 @@ const AboutUs = () => {
                     <Typography variant="body1">We are the team who believes technology can help in your business money problems. We fasten the decision-making time for borrower's loan applications in banks and other lending parties. It does not matter which domain you do business in or in what turnover. We are present for each business. We use our tech to analyse your documents and direct you to the right lenders.</Typography>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <img src={require("../images/who_are_we.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="100%" />
+                    <img src={require("../images/who_are_we.svg")} alt="Product Management Career Mentorship Program Become a Product Manager Career Mentor for better career high salary " width="100%" />
                 </Grid>
             </Grid>
         </Paper>
@@ -73,7 +73,7 @@ const AboutUs = () => {
                     <Typography variant="body1">We understand that Business runs on Money and Time. We value both and thus, hustle to make money available for your business, as soon as possible. Our work is to guide you with our financial knowledge, at each step of your business.</Typography>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <img src={require("../images/our_motto.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="100%" />
+                    <img src={require("../images/our_motto.svg")} alt="Product Management Career Mentorship Program Become a Product Manager Career Mentor for better career high salary " width="100%" />
                 </Grid>
             </Grid>
         </Paper>
@@ -88,7 +88,7 @@ const AboutUs = () => {
                     <Typography variant="body1">We are experts in different kinds of business loans and MSME loans. We analyse all the documents related to your business and direct you to the right bank which can help you with the money problem and provides the best offer.</Typography>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <img src={require("../images/analysis.svg")} alt="loans in india analyse loan documents required for loans bank statement rating analyser tool get loans quicker get loans HDFC ICICI SBI PSBLoansin59mins credit score low interest rates for loans in india business loans personal loans car loans home loan eligibility for loan documents for loan best loan offers" width="100%" />
+                    <img src={require("../images/analysis.svg")} alt="Product Management Career Mentorship Program Become a Product Manager Career Mentor for better career high salary " width="100%" />
                 </Grid>
             </Grid>
         </Paper>

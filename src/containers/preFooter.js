@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { AppContext } from '../context/app-context/app-context-provider';
 
 import {
     Typography,
@@ -25,6 +26,7 @@ const useStyles = makeStyles({
 
 const PreFooter = () => {
     const classes = useStyles();
+    const [state, dispatch] = useContext(AppContext);
 
     return <Paper square className={classes.ContentWrapper}>
         <Grid container direction="row" justify="space-evenly" spacing={3}>
@@ -35,7 +37,11 @@ const PreFooter = () => {
                     <Typography variant="body1">Get complete clarity about the Product Management Mentorship Program.</Typography>
                     <br />
                     
-                    <Button onClick={() => window.open('https://calendly.com/navita-pareek4/next-inning?month=2021-09', "_blank")} variant="contained" color="secondary" >
+                    <Button onClick={() => {
+                            window.open('https://calendly.com/navita-pareek4/next-inning?month=2021-09', "_blank");
+                            dispatch({ type: "BUTTON_CLICKED", payload: "CONTACT_US" });
+                        }
+                    } variant="contained" color="secondary" >
                         Talk to us Now!
                     </Button>
                 </Grid>

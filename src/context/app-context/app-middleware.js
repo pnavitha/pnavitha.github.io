@@ -3,101 +3,11 @@ import * as XLSX from 'xlsx';
 
 export const AppMiddleware = (dispatch, state) => (action) => {
     switch (action.type) {
-        case 'UPLOAD_PDF_AND_ANALYZE':
-            if (state.newBankStatementForm && 
-                state.newBankStatementForm.phoneNumber && 
-                state.newBankStatementForm.phoneNumber.trim().length >= 10 ) {
-                (async () => {
-                    const bankNameString = "hdfc";
-
-                    const payload = {
-                        base64Pdf: action.payload,
-                        phoneNumber: state.newBankStatementForm.phoneNumber,
-                        bankName: bankNameString,  
-                        password: state.newBankStatementForm.bankStatementPassword ? state.newBankStatementForm.bankStatementPassword : "", 
-                        action: "UPLOAD_BANK_STATEMENT"
-                    }
-                    dispatch({ type: 'BANKSTATEMENT_ANALYSIS_IN_PROGRESS' });
-                    const response = await fetch('https://q44f17qqyi.execute-api.ap-south-1.amazonaws.com/prod/users', {
-                        method: 'POST',
-                        body: JSON.stringify(payload),
-                    });
-
-                    const responseJson = await response.json();
-                    dispatch({ type: 'BANKSTATEMENT_ANALYSIS_FINISHED' });
-                    if (responseJson.statusCode === 200) {
-                        try{
-                        const messageJson = JSON.parse(responseJson.message);
-                        const bodyString = JSON.parse(messageJson.Payload).body;
-                        let dataList = JSON.parse(bodyString);
-                        dataList = addMonthName(dataList);
-                        
-                        var detailedTransactions = getDetailedTransactions(dataList);
-                        dispatch({ type: 'ADD_DETAILED_TRANSACTIONS', payload: detailedTransactions });
-                        }catch(ex) {
-                            console.log("Exception occured with pdf analysis: ", ex);
-                            dispatch({ type: 'BANKSTATEMENT_ANALYSIS_FAILURE' });
-                        }
-                    }
-                    appendLog(action.type, state.profile.phoneNumber);
-                })(); 
-            }
-            break; 
-        case 'DOWNLOAD_BANK_ANALYSIS':
-            if(state.bankStatementAnalysis) {
-                const csvData = state.bankStatementAnalysis;
-                const fileName = "bank-statement-analysis";
-                exportToCSV(csvData,fileName);
-                appendLog(action.type, state.profile.phoneNumber);
-            }      
-            break;
-        case 'CALCULATE_FIXED_DEPOSIT_RATES':
-            dispatch({ type: 'CLEAR_FIXED_DEPOSIT_RATES_RESULT' });
-            const totalFixedDepositDays = getTotalDays(state.fixedDepositDuration);
-            if(totalFixedDepositDays <= 0)
-                return;
-
-            let bankFdDayMap = 999999999;
-            Object.keys(state.fixedDeposit).forEach((maxDaysCount) => {
-                if(Number(maxDaysCount) >= Number(totalFixedDepositDays) && Number(maxDaysCount) < Number(bankFdDayMap))
-                {   
-                    bankFdDayMap = maxDaysCount;
-                }
-            });
-            if(bankFdDayMap === 999999999) {
-                return;
-            }
-            
-            var banksRates = Object.entries(state.fixedDeposit[bankFdDayMap].publicBank).concat(Object.entries(state.fixedDeposit[bankFdDayMap].privateBank));
-            banksRates.sort((bank1, bank2) => { return bank2[1] - bank1[1];});
-            dispatch({ type: 'ADD_FIXED_DEPOSIT_RATES_RESULT' , payload: banksRates});
-            appendLog(action.type, state.profile.phoneNumber);
-            break;
-        case 'UPDATE_BANKWISE_FIXED_DEPOSIT':
-            const result = {};
-            Object.entries(state.fixedDeposit).map(([duration, banksDetails]) => {
-                Object.entries(banksDetails).map(([bankSector, bankNameInterest]) => {
-                    Object.entries(bankNameInterest).map(([bankName, interestRate]) => {
-                        if(result[bankName] === undefined) {
-                            result[bankName] = {};
-                        }
-                        result[bankName][duration] = interestRate;
-                    })
-                });
-            });   
-            dispatch({ type: 'ADD_BANKWISE_FIXED_DEPOSIT_RESULT' , payload: result}); 
-            break; 
-        case 'SUBMIT_FEEDBACK':
+        case 'BUTTON_CLICKED':
             (async () => {
-                if(action.payload !== undefined)
-                {    
-                    dispatch({ type: 'SUBMIT_FEEDBACK_RATING', payload: action.payload });
-                }
-
                 const payload = {
                     feedback: {
-                        rating: action.payload,
-                        ...state.feedback,
+                        button: action.payload
                     },
                     action: "SUBMIT_FEEDBACK"
                 };
@@ -106,7 +16,6 @@ export const AppMiddleware = (dispatch, state) => (action) => {
                     method: 'POST',
                     body: JSON.stringify(payload),
                 });
-                dispatch({ type: 'SUBMIT_FEEDBACK_SUCCESS' });
             })();
             break;
         default: {
