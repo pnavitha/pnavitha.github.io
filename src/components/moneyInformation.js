@@ -33,7 +33,7 @@ const MoneyInformation = () => {
     const [state, dispatch] = useContext(AppContext);
 
     return <Paper square className={classes.ContentWrapper}>
-        <Typography variant="h1">What an Ideal Journey to Become a Product Manager looks like with Next Innings?</Typography>
+        <Typography variant="h1">What an Ideal Journey to Become a Product Manager looks like with Simple Solution?</Typography>
         <Grid container direction="row" justify="space-evenly" alignItems="center" spacing={4}>
             <Grid item xs={12} sm={4}>
                 <br />

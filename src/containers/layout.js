@@ -52,7 +52,7 @@ export default function Layout() {
                 <Toolbar variant="dense" className={classes.AppHeader}>
                     <Grid container direction="row" justify="space-between" >
                         <Grid item>
-                        <Link to="/" style={{ textDecoration: 'none', color:'#0975e1'}}>
+                        <Link to="/" style={{ textDecoration: 'none', color:'#000080'}}>
                         <Grid container direction="row">
                             <Typography variant="subtitle1">Simple Solution for Aspiring Product Managers</Typography>
                         </Grid>

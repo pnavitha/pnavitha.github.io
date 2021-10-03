@@ -84,11 +84,14 @@ const BankStatementAnalyzer = () => {
             <Grid container direction="row" justify="space-evenly" spacing={2}>
                 <Grid item xs={12} sm={4}>
                     <br />
-                    <Typography variant="h1">Product Management Career Mentorship Program</Typography>
                     <br />
-                    <Typography variant="body1">What’s BETTER and more EFFECTIVE than a PM Course? One-on-one Personalized Mentorship!</Typography>
                     <br />
-                    <Typography variant="body1">Don’t just learn PM, EXPERIENCE IT with our Professional Product Managers!</Typography>
+                    <br />
+                    <Typography variant="h1">Crack Product Management in 3 weeks</Typography>
+                    <br />
+                    <Typography variant="body1">Online courses don't work. They are costly and time-consuming. Frankly, they are useless!</Typography>
+                    <br />
+                    <Typography variant="body1">With our Professional Product Managers, you don’t just learn Product Management but you also EXPERIENCE IT!</Typography>
                     <br />
                     <br />
                     <Grid container direction='row' justify="flex-start" alignItems="flex-end">
