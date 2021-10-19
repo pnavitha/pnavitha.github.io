@@ -29,7 +29,7 @@ export const Theme = createMuiTheme({
   },
   palette: {
     primary: {
-      main: '#0975e1',
+      main: '#25d366',
       contrastText: '#fff',
     },
     secondary: {

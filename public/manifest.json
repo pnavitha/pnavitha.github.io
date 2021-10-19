@@ -1,17 +1,7 @@
 {
-  "short_name": "Simple Solution Club | For Aspiring Product Managers",
+  "short_name": "My Next Inning | For Aspiring Product Managers",
   "name": "Fast pace your product manager transition.",
   "icons": [
-    {
-      "src": "F_logo.svg",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "masked_F_logo_x384.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
     {
       "src": "F_logo.png",
       "type": "image/png",

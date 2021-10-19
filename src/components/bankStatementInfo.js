@@ -8,6 +8,8 @@ import {
     Paper,
     Button
 } from '@material-ui/core';
+import SearchIcon from '@material-ui/icons/Search';
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 
 const useStyles = makeStyles({
     ContentWrapper: {
@@ -37,14 +39,24 @@ const BankStatementInfo = () => {
                 <Typography variant="body1">You've spent your entire life in school, college, and taking several courses. You must have realised until now that Education is Great but NOTHING BEATS EXPERIENCE.</Typography>
                 <br/>
                 <br/>
-                <Grid container direction='row' justify="flex-start" alignItems="flex-end">
+                <Grid container direction='row' justify="flex-start" alignItems="flex-end" spacing={1}>
                         <Grid item>
-                            <Button onClick={() => {
+                            <Button startIcon={<SearchIcon/>} onClick={() => {
                                     window.open('https://calendly.com/mohansoe/next-innings-let-us-take-the-plunge-together?month=2021-09', "_blank")
                                     dispatch({ type: "BUTTON_CLICKED", payload: "FREE_MENTORSHIP" });
                                 }
                              } variant="contained" color="secondary" >
                                 Get Free Mentorship Today!
+                            </Button>
+                        </Grid>
+                        <Grid item>
+                            <Button startIcon={<WhatsAppIcon />}  onClick={() => {
+                                        window.open('https://wa.me/+919535115847/?text=Hi,%20I%20am%20looking%20for%20a%20switch%20in%20Product%20Management.', "_blank");
+                                        dispatch({ type: "BUTTON_CLICKED", payload: "WHATSAPP_MENTOR" })
+                                    }
+                                } 
+                                variant="contained" color="primary" >
+                                WhatsApp the Montor Now!
                             </Button>
                         </Grid>
                     </Grid>

@@ -54,7 +54,7 @@ export default function Layout() {
                         <Grid item>
                         <Link to="/" style={{ textDecoration: 'none', color:'#000080'}}>
                         <Grid container direction="row">
-                            <Typography variant="subtitle1">Simple Solution for Aspiring Product Managers</Typography>
+                            <Typography variant="subtitle1">MyNextInning</Typography>
                         </Grid>
                         </Link>
                         </Grid>

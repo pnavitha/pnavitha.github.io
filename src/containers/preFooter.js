@@ -10,6 +10,7 @@ import {
     Divider
 } from '@material-ui/core';
 import { Link } from "react-router-dom";
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 
 const useStyles = makeStyles({
     ContentWrapper: {
@@ -37,12 +38,12 @@ const PreFooter = () => {
                     <Typography variant="body1">Get complete clarity about the Product Management Mentorship Program.</Typography>
                     <br />
                     
-                    <Button onClick={() => {
-                            window.open('https://calendly.com/navita-pareek4/next-inning?month=2021-09', "_blank");
-                            dispatch({ type: "BUTTON_CLICKED", payload: "CONTACT_US" });
-                        }
-                    } variant="contained" color="secondary" >
-                        Talk to us Now!
+                    <Button startIcon={<WhatsAppIcon />}  onClick={() => {
+                                        window.open('https://wa.me/+917093003840/?text=Hi,%20I%20am%20looking%20for%20a%20switch%20in%20Product%20Management.', "_blank");
+                                        dispatch({ type: "BUTTON_CLICKED", payload: "WHATSAPP_MENTOR" })
+                                    }
+                                } variant="contained" color="primary" >
+                        WhatsApp our Support Now!
                     </Button>
                 </Grid>
             </Grid>
