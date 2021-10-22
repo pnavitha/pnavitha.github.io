@@ -12,15 +12,10 @@ import {
     Switch,
     Route
 } from "react-router-dom";
-import AboutUs from './aboutUs';
-import MsmeLoans from './msmeLoans';
 import Home from './home';
 import { AppContext } from '../context/app-context/app-context-provider';
 import { makeStyles } from '@material-ui/core/styles';
 import Help from './help';
-import SavingsAccount from './savingsAccount';
-import FixedDeposit from './fixedDeposit';
-import FuelPrices from './fuelPrices';
 import BankStatementAnalyzer from './bankStatementAnalyzer';
 
 const useStyles = makeStyles((theme) => ({
@@ -84,23 +79,8 @@ export default function Layout() {
                 <Route exact path="/">
                     <Home />
                 </Route>
-                <Route path="/about">
-                    <AboutUs />
-                </Route>
                 <Route path="/help">
                     <Help />
-                </Route>
-                <Route path="/msme-loan">
-                    <MsmeLoans />
-                </Route>
-                <Route path="/savings-account">
-                    <SavingsAccount />
-                </Route>
-                <Route path="/fixed-deposit-interest-rates">
-                    <FixedDeposit />
-                </Route>
-                <Route path="/fuel-prices-in-india">
-                    <FuelPrices />
                 </Route>
                 <Route path="/bank-statement-rating">
                     <BankStatementAnalyzer />

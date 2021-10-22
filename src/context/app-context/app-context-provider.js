@@ -4,7 +4,7 @@ import { AppMiddleware } from './app-middleware';
 
 const initialState = {
     profile: {},
-    bankNames: ["Axis Bank", "HDFC Bank", "ICICI", "SBI"],
+    payment: {}
 };
 
 const AppContextProvider = ({ children }) => {

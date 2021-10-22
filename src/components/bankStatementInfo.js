@@ -56,14 +56,14 @@ const BankStatementInfo = () => {
                                     }
                                 } 
                                 variant="contained" color="primary" >
-                                WhatsApp the Montor Now!
+                                WhatsApp the Mentor Now!
                             </Button>
                         </Grid>
                     </Grid>
             </Grid>
             </Grid>
             <Grid item xs={12} sm={6}>
-                <img src={require("../images/msme_loans.svg")} alt="Product Management Career Mentorship Program Become a Product Manager Career Mentor for better career high salary " width="100%" />
+                <img src={require("../images/win.svg")} alt="Product Management Career Mentorship Program Become a Product Manager Career Mentor for better career high salary " width="100%" />
             </Grid>
 </Grid>
 </Paper>

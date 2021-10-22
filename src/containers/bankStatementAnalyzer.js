@@ -114,7 +114,7 @@ const BankStatementAnalyzer = () => {
                                     }
                                 } 
                                 variant="contained" color="primary" >
-                                WhatsApp the Montor Now!
+                                WhatsApp the Mentor Now!
                             </Button>
                         </Grid>
                     </Grid>

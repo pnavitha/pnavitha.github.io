@@ -7,11 +7,12 @@ import {
 import Footer from '../components/footer';
 import ContentHeader from '../components/contentHeader';
 import MoneyInformation from '../components/moneyInformation';
-import KnowMore from '../components/knowMore';
 import BankStatementAnalyzer from '../containers/bankStatementAnalyzer';
 import BankStatementInfo from '../components/bankStatementInfo';
 import FrequentlyAskedQuestions from '../components/frequentlyAskedQuestions';
 import PreFooter from './preFooter';
+import Testimonials from '../components/testimonials';
+import EnrollNow from '../components/enrollNow';
 
 const useStyles = makeStyles({
     contentAreaWrapper: {
@@ -44,15 +45,18 @@ const Home = () => {
                 <BankStatementAnalyzer />  
             </Grid>
             <Grid item>
+                <Testimonials />
+            </Grid>
+            <Grid item>
+                <EnrollNow />
+            </Grid>
+            <Grid item>
                 <BankStatementInfo />
             </Grid>
             <Grid item>
                 <MoneyInformation />
             </Grid>
             {/* <Grid item>
-                <KnowMore />
-            </Grid>
-            <Grid item>
                 <FrequentlyAskedQuestions />
             </Grid> */}
             <Grid item>
