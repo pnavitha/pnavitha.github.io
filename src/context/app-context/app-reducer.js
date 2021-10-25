@@ -5,7 +5,7 @@ const AppReducer = (state, action) => {
                 ...state,
                 payment: {
                     ...state.payment,
-                    amount: action.payload
+                    amount: parseInt(action.payload)
                 }
             }; 
         case 'UPDATE_PAYMENT_CURRENCY': 
@@ -16,7 +16,14 @@ const AppReducer = (state, action) => {
                     currency: action.payload
                 }
             };    
-            
+        case 'UPDATE_PAYMENT_DESCRIPTION': 
+            return {
+                ...state,
+                payment: {
+                    ...state.payment,
+                    description: action.payload
+                } 
+            }    
         default: return state;
     };
 };

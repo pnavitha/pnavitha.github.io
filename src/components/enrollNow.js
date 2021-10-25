@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { AppContext } from '../context/app-context/app-context-provider';
 
@@ -10,7 +10,8 @@ import {
     FormControl,
     InputLabel,
     Input,
-    TextField
+    TextField,
+    Box
 } from '@material-ui/core';
 import Autocomplete from '@mui/material/Autocomplete';
 import BookIcon from '@material-ui/icons/Book';
@@ -28,12 +29,71 @@ const useStyles = makeStyles({
     },
     enrollNow: {
         width: '200px'
+    },
+    infoBox: {
+        textAlign: 'flex-start'
+    },
+    error: {
+        visibility: 'hidden',
+        color: 'red',
+        textAlign: 'center'
+    },
+    paypalButton: {
+        textAlign: 'center',
+        marginTop: '0.625rem'
     }
 });
+
 
 const EnrollNow = () => {
     const classes = useStyles();
     const [state, dispatch] = useContext(AppContext);
+
+    const paypal = useRef();
+    useEffect(() => {
+        var description = document.querySelector('#smart-button-container #description');
+        var amount = document.querySelector('#smart-button-container #amount');
+        var descriptionError = document.querySelector('#smart-button-container #descriptionError');
+        var priceError = document.querySelector('#smart-button-container #priceLabelError');
+
+        window.paypal.Buttons({
+            onClick: function () {
+                if (description.value.length < 1) {
+                  descriptionError.style.visibility = "visible";
+                } else {
+                  descriptionError.style.visibility = "hidden";
+                }
+        
+                if (amount.value.length < 1) {
+                  priceError.style.visibility = "visible";
+                } else {
+                  priceError.style.visibility = "hidden";
+                }
+              },
+
+            createOrder: (data, actions, err) => {
+            return actions.order.create({
+                intent: "CAPTURE",
+                purchase_units: [
+                {
+                    description: description.value,
+                    amount: {
+                    currency_code: "USD",
+                    value: amount.value,
+                    },
+                },
+                ],
+            });
+            },
+            onApprove: async (data, actions) => {
+            const order = await actions.order.capture();
+            console.log(order);
+            },
+            onError: (err) => {
+            console.log(err);
+            },
+        }).render(paypal.current);
+    }, []);
 
     return <Paper id="SectionTwo" square className={classes.ContentWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
@@ -48,31 +108,28 @@ const EnrollNow = () => {
                 <br/>
                 <Grid container direction='column' justify="flex-start" alignItems="flex-start" spacing={1}>
                         <Grid item>
-                            <FormControl className={classes.bankPassword}>
-                                <InputLabel >Amount</InputLabel>
-                                <Input
-                                    type="number"
+                        <div id="smart-button-container">
+                            <Box className={classes.infoBox}>
+                                <FormControl >
+                                <InputLabel for="description">Name </InputLabel>
+                                <Input type="text" name="descriptionInput" id="description" maxlength="127" 
+                                    value={state.payment ? state.payment.description : ""}
+                                    onChange={(event) => dispatch({ type: "UPDATE_PAYMENT_DESCRIPTION", payload: event.target.value })} />
+                                </FormControl>
+                            </Box>
+                                <Typography id="descriptionError" className={classes.error}>Please enter your name.</Typography>
+                            <Box className={classes.infoBox}>
+                                <FormControl>
+                                <InputLabel for="amount">Amount (in USD) </InputLabel>
+                                <Input name="amountInput" type="number" id="amount" 
                                     value={state.payment ? state.payment.amount : ""}
                                     onChange={(event) => dispatch({ type: "UPDATE_PAYMENT_AMOUNT", payload: event.target.value })} />
-                            </FormControl>
-                        </Grid>
-                        <Grid item>
-                        <Autocomplete
-                            disableClearable
-                            id="combo-box-demo"
-                            options={["USD", "INR"]}
-                            sx={{ width: 150 }}
-                            value={state.payment ? state.payment.currency : ""}
-                            onChange={(event) => dispatch({ type: "UPDATE_PAYMENT_CURRENCY", payload: event.target.value })}
-                            renderInput={(params) => <TextField {...params} label="Currency" />}
-                            />
-                        </Grid>
-                        <br />
-                        <Grid item>
-                            <Button startIcon={<BookIcon />} onClick={() => dispatch({ type: "PAY"})}
-                             variant="contained" color="secondary" className={classes.enrollNow} >
-                                Enroll Now!
-                            </Button>
+                                </FormControl>
+                                {/* <span> USD</span> */}
+                            </Box>
+                            <Typography id="priceLabelError" className={classes.error}>Please enter a price</Typography>
+                            <div ref={paypal}></div>
+                        </div>
                         </Grid>
                         <br />
                     </Grid>

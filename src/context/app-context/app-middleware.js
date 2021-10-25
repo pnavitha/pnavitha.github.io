@@ -18,18 +18,20 @@ export const AppMiddleware = (dispatch, state) => (action) => {
             })();
             break;
         case 'PAY':
+            
             console.log("In payments..");
             const rzr_instance = new Razorpay({
                 key_id: 'rzp_live_gNHIeaU4k2b504',
                 key_secret: '1boq2XDGHXAWS2SP5tzOvZd0',
             });
             const options = {
-                "amount": 1000,
+                "amount": 10000,
                 "currency": "INR",
                 "receipt": Date.now().toString()
             };
 
-            rzr_instance.orders.create(options, function(err, order) {
+            console.log(" rzr_instance.orders.",  rzr_instance.orders);
+            rzr_instance.invoices.create(options, function(err, order) {
                 if(err) {
                     console.log("err:", err);
                 }
