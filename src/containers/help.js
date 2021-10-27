@@ -29,13 +29,13 @@ const Help = () => {
       <Typography variant="subtitle1">Happy to help...</Typography>
     </DialogTitle>
     <DialogContent>
-        <Box fontWeight="fontWeightBold" color="#1d75ae" >
-            We are always available at the following channels.
-        </Box>
+        <Box fontWeight="fontWeightBold">
+            To reach our customer support executives, drop an email on
+            </Box>
         <DialogContentText>
-          <br/>
-          1. WhatsApp - 7093003840<br/>
-          2. Email - connect@findash.in
+          <Box fontWeight="fontWeightBold" color="#1d75ae" >
+          connect@mynextinning.com
+          </Box>
           </DialogContentText>
     </DialogContent>
     <DialogActions>

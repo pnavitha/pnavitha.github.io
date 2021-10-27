@@ -18,7 +18,6 @@ export const AppMiddleware = (dispatch, state) => (action) => {
             })();
             break;
         case 'PAY':
-            
             console.log("In payments..");
             const rzr_instance = new Razorpay({
                 key_id: 'rzp_live_gNHIeaU4k2b504',

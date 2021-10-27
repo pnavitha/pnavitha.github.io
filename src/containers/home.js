@@ -2,7 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
     Grid,
-    Box
+    Box,
+    Typography
 } from '@material-ui/core';
 import Footer from '../components/footer';
 import ContentHeader from '../components/contentHeader';
@@ -30,7 +31,11 @@ const useStyles = makeStyles({
     },
     reportSubtitle: {
         padding: '4px'
-    }
+    },
+    connect : {
+        alignContent: 'center',
+        margin: '2%'
+    } 
 });
 
 const Home = () => {
@@ -47,9 +52,9 @@ const Home = () => {
             <Grid item>
                 <Testimonials />
             </Grid>
-            <Grid item>
+            {/* <Grid item>
                 <EnrollNow />
-            </Grid>
+            </Grid> */}
             <Grid item>
                 <BankStatementInfo />
             </Grid>
@@ -61,6 +66,14 @@ const Home = () => {
             </Grid> */}
             <Grid item>
                 <PreFooter />
+            </Grid>
+            <Grid item>
+                <Box className={classes.connect}>
+                <Typography variant="body1">To reach our customer support executives, drop an email on </Typography>
+                <Box fontWeight="fontWeightBold" color="#1d75ae" >
+                    connect@mynextinning.com
+                </Box>
+                </Box>
             </Grid>
         </Grid>
         <Footer />

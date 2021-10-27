@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     },
     helpSection: {
         paddingTop: '5px'
-      }  
+    }   
   }));
 
 const scrollTo = (sectionId) => {
@@ -67,7 +67,9 @@ export default function Layout() {
                                     <Button size='small' color='secondary' onClick={() => scrollTo('SectionTwo')}>About Us</Button>
                                 </Grid>
                                 <Grid item>
-                                    <Button size='small' color='secondary' onClick={() => scrollTo('SectionOne')}>Find A mentor</Button>
+                                <Link to="/help" style={{ textDecoration: 'none', color:'#000080'}}>
+                                    <Button size='small' color='secondary'>Contact Us</Button>
+                                </Link>
                                 </Grid>
                         </Grid>
                         </Grid>
