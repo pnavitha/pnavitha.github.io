@@ -24,18 +24,17 @@ export const AppMiddleware = (dispatch, state) => (action) => {
                 key_secret: '1boq2XDGHXAWS2SP5tzOvZd0',
             });
             const options = {
+                "type": 'link',
                 "amount": 10000,
                 "currency": "INR",
                 "receipt": Date.now().toString()
             };
 
-            console.log(" rzr_instance.orders.",  rzr_instance.orders);
-            rzr_instance.invoices.create(options, function(err, order) {
-                if(err) {
-                    console.log("err:", err);
-                }
-                console.log("order:", order);
-            });
+            (async () => {
+                console.log(" rzr_instance.orders.",  rzr_instance.orders);
+                const payment_link_response = await rzr_instance.invoices.create(options);
+                console.log("payment_link_response: ", payment_link_response);
+            })();
             break;    
         default: {
             dispatch(action);
