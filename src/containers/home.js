@@ -14,6 +14,7 @@ import FrequentlyAskedQuestions from '../components/frequentlyAskedQuestions';
 import PreFooter from './preFooter';
 import Testimonials from '../components/testimonials';
 import EnrollNow from '../components/enrollNow';
+import MentorInformation from '../components/mentorInformation';
 
 const useStyles = makeStyles({
     contentAreaWrapper: {
@@ -50,16 +51,19 @@ const Home = () => {
                 <BankStatementAnalyzer />  
             </Grid>
             <Grid item>
+                <MoneyInformation />
+            </Grid>
+            <Grid item>
                 <Testimonials />
+            </Grid>
+            <Grid item>
+                <MentorInformation />
             </Grid>
             {/* <Grid item>
                 <EnrollNow />
             </Grid> */}
             <Grid item>
                 <BankStatementInfo />
-            </Grid>
-            <Grid item>
-                <MoneyInformation />
             </Grid>
             {/* <Grid item>
                 <FrequentlyAskedQuestions />

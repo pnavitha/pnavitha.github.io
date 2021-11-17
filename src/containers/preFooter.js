@@ -14,7 +14,7 @@ import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 
 const useStyles = makeStyles({
     ContentWrapper: {
-        background: '#fff',
+        background: '#f0f1f2',
         paddingTop: '5%',
         paddingBottom: '5%',
         paddingRight: '5%',
