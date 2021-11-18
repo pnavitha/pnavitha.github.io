@@ -12,11 +12,13 @@ import {
     Switch,
     Route
 } from "react-router-dom";
-import Home from './home';
+import AspiringProductManager from './aspiringProductManager';
+import AssociateProductManager from './associateProductManager';
 import { AppContext } from '../context/app-context/app-context-provider';
 import { makeStyles } from '@material-ui/core/styles';
 import Help from './help';
-import BankStatementAnalyzer from './bankStatementAnalyzer';
+import BankStatementAnalyzer from './homeHeading';
+import Home from './home';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -68,7 +70,7 @@ export default function Layout() {
                                 </Grid>
                                 <Grid item>
                                 <Link to="/help" style={{ textDecoration: 'none', color:'#000080'}}>
-                                    <Button size='small' color='secondary'>Contact Us</Button>
+                                    <Button size='small' >+91 7093003840</Button>
                                 </Link>
                                 </Grid>
                         </Grid>
@@ -80,6 +82,12 @@ export default function Layout() {
             <Switch>
                 <Route exact path="/">
                     <Home />
+                </Route>
+                <Route exact path="/aspiring-product-manager">
+                    <AspiringProductManager />
+                </Route>
+                <Route exact path="/associate-product-manager">
+                    <AssociateProductManager />
                 </Route>
                 <Route path="/help">
                     <Help />

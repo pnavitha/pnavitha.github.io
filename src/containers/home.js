@@ -6,14 +6,11 @@ import {
     Typography
 } from '@material-ui/core';
 import Footer from '../components/footer';
-import ContentHeader from '../components/contentHeader';
-import MoneyInformation from '../components/moneyInformation';
-import BankStatementAnalyzer from '../containers/bankStatementAnalyzer';
+import HomeHeading from './homeHeading';
 import BankStatementInfo from '../components/bankStatementInfo';
-import FrequentlyAskedQuestions from '../components/frequentlyAskedQuestions';
 import PreFooter from './preFooter';
 import Testimonials from '../components/testimonials';
-import EnrollNow from '../components/enrollNow';
+import RoleChoice from '../containers/roleChoice';
 import MentorInformation from '../components/mentorInformation';
 
 const useStyles = makeStyles({
@@ -44,14 +41,11 @@ const Home = () => {
 
     return <Box className={classes.contentAreaWrapper}>
         <Grid container direction="column" alignItems="stretch" justify="center">
-            {/* <Grid item>
-                <ContentHeader />  
-            </Grid> */}
             <Grid item>
-                <BankStatementAnalyzer />  
+                <HomeHeading />  
             </Grid>
             <Grid item>
-                <MoneyInformation />
+                <RoleChoice />
             </Grid>
             <Grid item>
                 <Testimonials />
@@ -59,15 +53,9 @@ const Home = () => {
             <Grid item>
                 <MentorInformation />
             </Grid>
-            {/* <Grid item>
-                <EnrollNow />
-            </Grid> */}
             <Grid item>
                 <BankStatementInfo />
             </Grid>
-            {/* <Grid item>
-                <FrequentlyAskedQuestions />
-            </Grid> */}
             <Grid item>
                 <PreFooter />
             </Grid>

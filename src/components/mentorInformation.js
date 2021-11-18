@@ -26,7 +26,7 @@ const useStyles = makeStyles({
     Card: {
         padding: '8%',
         width: '200px',
-        height: '400px',
+        height: '430px',
     },
     LinkedInButton: {
         background: '#0975e1',
@@ -47,6 +47,7 @@ const MentorInformation = () => {
             <Paper square elevation={2} className={classes.Card}>
                 <Grid container direction='column' justify="flex-start" alignItems='center'>
                     <Typography variant="subtitle1" color='primary'>Arpita Srivastava</Typography>
+                    <Typography variant="body1" color='secondary'>(PM Wells Fargo)</Typography>
                     <Typography variant="body1">Loved by candidates for her way of explaining different concepts of Product Thinking and Management.</Typography>
                     <br />
                     <img src={require("../images/arpita.png")} alt="Product Management Career Mentorship Program Become a Product Manager Career Mentor for better career high salary " width="100%" />
@@ -61,8 +62,9 @@ const MentorInformation = () => {
        </Grid>
        <Grid item xs={12} sm={4}>
        <Paper square elevation={2} className={classes.Card}>
-            <Grid container direction='column' justify="space-between" alignItems='center'>
+            <Grid container direction='column' justify="flex-start" alignItems='center'>
                 <Typography variant="subtitle1" color='primary'>Kushagra Mohan</Typography>
+                <Typography variant="body1" color='secondary'>(PM CasaOne)</Typography>
                 <Typography variant="body1">A perfect mentor to learn Growth and Customers.</Typography>
                 <br />
                 <img src={require("../images/kushagra.png")} alt="Product Management Career Mentorship Program Become a Product Manager Career Mentor for better career high salary " width="100%" />
@@ -78,8 +80,9 @@ const MentorInformation = () => {
        </Grid>
        <Grid item xs={12} sm={4}>
         <Paper square elevation={2} className={classes.Card}>
-                <Grid container direction='column' justify="space-between" alignItems='center'>
+                <Grid container direction='column' justify="flex-start" alignItems='center'>
                     <Typography variant="subtitle1" color='primary'>Pooshkar Rajiv</Typography>
+                    <Typography variant="body1" color='secondary'>(PM Myntra)</Typography>
                     <Typography variant="body1">Expert on how to win in competitive market</Typography>
                     <br />
                     <img src={require("../images/pooshkar.png")} alt="Product Management Career Mentorship Program Become a Product Manager Career Mentor for better career high salary " width="100%" />
