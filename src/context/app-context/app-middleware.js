@@ -1,5 +1,3 @@
-import Razorpay from 'razorpay';
-
 export const AppMiddleware = (dispatch, state) => (action) => {
     switch (action.type) {
         case 'BUTTON_CLICKED':
@@ -17,24 +15,24 @@ export const AppMiddleware = (dispatch, state) => (action) => {
                 });
             })();
             break;
-        case 'PAY':
-            console.log("In payments..");
-            const rzr_instance = new Razorpay({
-                key_id: 'rzp_live_gNHIeaU4k2b504',
-                key_secret: '1boq2XDGHXAWS2SP5tzOvZd0',
-            });
-            const options = {
-                "type": 'link',
-                "amount": 10000,
-                "currency": "INR",
-                "receipt": Date.now().toString()
-            };
-
+        case 'SUBMIT_LINKEDIN_URL':
+            console.log("linkedInUrl: ", state.linkedInUrl);
+            if(state.linkedInUrl && state.linkedInUrl.length > 0){
             (async () => {
-                console.log(" rzr_instance.orders.",  rzr_instance.orders);
-                const payment_link_response = await rzr_instance.invoices.create(options);
-                console.log("payment_link_response: ", payment_link_response);
+                const payload = {
+                    feedback: {
+                        linkedInUrl: state.linkedInUrl
+                    },
+                    action: "SUBMIT_FEEDBACK"
+                };
+
+                await fetch('https://q44f17qqyi.execute-api.ap-south-1.amazonaws.com/prod/users', {
+                    method: 'POST',
+                    body: JSON.stringify(payload),
+                });
+                dispatch({ type: "LINKEDIN_SUBMITTED" })
             })();
+            }
             break;    
         default: {
             dispatch(action);

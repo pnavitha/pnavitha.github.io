@@ -34,7 +34,7 @@ const RoleChoice = () => {
         <Grid container direction="row" justify="space-evenly" spacing={3}>
             <Grid item xs={12} sm={5}>
                 <Grid container direction='column'>
-                    <Typography variant="h1">I'm an Aspiring Product Manager.</Typography>
+                    <Typography variant="h1">Are you an Aspiring Product Manager?</Typography>
                     <br />
                     <Typography variant="body1">The Product Management Mentorship Program with 1 year Interview Support.</Typography>
                     <br />
@@ -57,7 +57,7 @@ const RoleChoice = () => {
             <Divider orientation="vertical" flexItem />
             <Grid item xs={12} sm={5}>
                 <Grid container direction='column'>
-                    <Typography variant="h1">I'm an Associate Product Manager.</Typography>
+                    <Typography variant="h1">Are you an Associate Product Manager?</Typography>
                     <br />
                     <Typography variant="body1">The Product Management Mentorship Program with in-depth PM Concepts.</Typography>
                     <br />

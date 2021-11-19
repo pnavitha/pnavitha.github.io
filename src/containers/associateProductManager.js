@@ -16,6 +16,7 @@ import EnrollNow from '../components/enrollNow';
 import MentorInformation from '../components/mentorInformation';
 import AssociateHeading from './associateHeading';
 import AssociateBrochure from '../components/associateBrochure';
+import MockInterview from '../components/mockInterview';
 
 const useStyles = makeStyles({
     contentAreaWrapper: {
@@ -45,6 +46,9 @@ const AssociateProductManager = () => {
 
     return <Box className={classes.contentAreaWrapper}>
         <Grid container direction="column" alignItems="stretch" justify="center">
+            <Grid item>
+                <MockInterview />
+            </Grid>
             <Grid item>
                 <AssociateHeading />  
             </Grid>

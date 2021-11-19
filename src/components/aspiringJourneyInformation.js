@@ -26,7 +26,7 @@ const AspiringJourneyInformation = () => {
     const classes = useStyles();
     const [state, dispatch] = useContext(AppContext);
 
-    return <Paper square className={classes.ContentWrapper}>
+    return <Paper id="SectionTwo" square className={classes.ContentWrapper}>
         <Typography variant="h1">An Ideal Journey to Become an Awesome Product Manager with NextInning</Typography>
         <br />
         <Grid container direction="row" justify='center' spacing={2}>

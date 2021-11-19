@@ -12,6 +12,7 @@ import PreFooter from './preFooter';
 import Testimonials from '../components/testimonials';
 import RoleChoice from '../containers/roleChoice';
 import MentorInformation from '../components/mentorInformation';
+import MockInterview from '../components/mockInterview';
 
 const useStyles = makeStyles({
     contentAreaWrapper: {
@@ -40,7 +41,10 @@ const Home = () => {
     const classes = useStyles();
 
     return <Box className={classes.contentAreaWrapper}>
-        <Grid container direction="column" alignItems="stretch" justify="center">
+        <Grid container direction="column" alignItems="stretch" justify="center" spacing={0}>
+            <Grid item>
+                <MockInterview />
+            </Grid>    
             <Grid item>
                 <HomeHeading />  
             </Grid>

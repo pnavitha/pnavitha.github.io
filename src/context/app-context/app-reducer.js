@@ -1,20 +1,16 @@
 const AppReducer = (state, action) => {
     switch (action.type) { 
-        case 'UPDATE_PAYMENT_AMOUNT': 
+        case 'UPDATE_LINKEDIN_URL': 
             return {
                 ...state,
-                payment: {
-                    ...state.payment,
-                    amount: parseInt(action.payload)
-                }
+                linkedInUrl: action.payload
             }; 
-        case 'UPDATE_PAYMENT_CURRENCY': 
+        case 'LINKEDIN_SUBMITTED': 
+            console.log("LINKEDIN_SUBMITTED dispatched");
             return {
                 ...state,
-                payment: {
-                    ...state.payment,
-                    currency: action.payload
-                }
+                linkedInUrl: undefined,
+                linkedInSubmitted: true
             };    
         case 'UPDATE_PAYMENT_DESCRIPTION': 
             return {
@@ -23,7 +19,8 @@ const AppReducer = (state, action) => {
                     ...state.payment,
                     description: action.payload
                 } 
-            }    
+            }  
+
         default: return state;
     };
 };

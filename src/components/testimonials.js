@@ -32,7 +32,7 @@ const Testimonials = () => {
     const classes = useStyles();
     const [state, dispatch] = useContext(AppContext);
 
-    return <Paper id="SectionTwo" square className={classes.ContentWrapper}>
+    return <Paper square className={classes.ContentWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
                 <Grid item xs={12} sm={6}>
                     <br />
