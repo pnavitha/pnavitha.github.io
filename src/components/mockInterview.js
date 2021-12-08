@@ -17,15 +17,15 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 const useStyles = makeStyles({
     ContentWrapper: {
         background: '#ffda61',
-        paddingRight: '2%',
-        paddingLeft: '2%',
+        paddingRight: '5%',
+        paddingLeft: '5%',
         paddingBottom: '2%'
     },
     blueContentWrapper: {
-        background: '#004aad',
-        paddingRight: '2%',
-        paddingLeft: '2%',
-        paddingBottom: '2%'
+        background: '#fea631',
+        paddingRight: '5%',
+        paddingLeft: '5%',
+        // paddingBottom: '2%'
     },
     whiteText: {
         color: '#fff',
@@ -40,7 +40,7 @@ const MockInterview = () => {
     return <Paper>
     <Paper square className={classes.ContentWrapper} elevation={4} >
         <Grid container direction="row" alignContent='center' justify='center' spacing={2}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={7}>
                 <Typography variant="subtitle1">Check your Product Thinking by our FREE Mock Interview</Typography>
                 <Typography variant="body1">Interact with an Experienced PM to know what can get you shortlisted and make an awesome PM.</Typography>
             </Grid> 
@@ -61,7 +61,7 @@ const MockInterview = () => {
        </Paper>
        <Paper square className={classes.blueContentWrapper} elevation={4} >
        <Grid container direction="row" alignContent='center' justify='center' spacing={2}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={7}>
                 <Box color="#fff" >
                 <Typography variant="subtitle1">Your LinkedIn Profile tells a lot about you</Typography>
                 <Typography variant="body1">Assess your linkedIn profile and get a report on what hiring managers and recruiters think looking at your profile.</Typography>
@@ -78,9 +78,9 @@ const MockInterview = () => {
                 <br/>
                 <Button 
                 startIcon={<LinkedInIcon />} 
+                style={{backgroundColor: '#0975e1', color: '#FFFFFF'}} 
                 onClick={() => dispatch({ type: "SUBMIT_LINKEDIN_URL" })} 
-                variant="contained"
-                color="secondary" >
+                variant="contained">
                 SUBMIT LinkedIn URL
             </Button>
             </Grid> 

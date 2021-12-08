@@ -70,23 +70,10 @@ const HomeHeading = () => {
     const classes = useStyles();
     const [state, dispatch] = useContext(AppContext);
 
-   const getBase64 = (file, callback) => {
-        let reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = function () {
-            callback(reader.result)
-        };
-        reader.onerror = function (error) {
-            console.log('Error: ', error);
-        };
-    }
-
     return <Box className={classes.contentAreaWrapper}>
         <Paper id="SectionOne" elevation={2} square className={classes.whiteWrapper}>
             <Grid container direction="row" justify="space-evenly" spacing={2}>
                 <Grid item xs={12} sm={4}>
-                    <br />
-                    <br />
                     <br />
                     <br />
                     <Typography variant="h1">Take a Career Leap in Product Management</Typography>

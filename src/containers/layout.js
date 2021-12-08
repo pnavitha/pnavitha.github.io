@@ -47,12 +47,10 @@ export default function Layout() {
             <div className={classes.root}>
             <AppBar position="fixed">
                 <Toolbar variant="dense" className={classes.AppHeader}>
-                    <Grid container direction="row" justify="space-between" >
+                    <Grid container direction="row" alignContent="center" justify="space-between" >
                         <Grid item>
                         <Link to="/" style={{ textDecoration: 'none', color:'#000080'}}>
-                        <Grid container direction="row">
-                            <Typography variant="subtitle1">MyNextInning</Typography>
-                        </Grid>
+                        <Typography variant="subtitle1">MyNextInning</Typography>
                         </Link>
                         </Grid>
                         <Grid item>
