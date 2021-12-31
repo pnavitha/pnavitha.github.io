@@ -59,7 +59,7 @@ const MockInterview = () => {
             </Grid> 
        </Grid>
        </Paper>
-       <Paper square className={classes.blueContentWrapper} elevation={4} >
+       {/* <Paper square className={classes.blueContentWrapper} elevation={4} >
        <Grid container direction="row" alignContent='center' justify='center' spacing={2}>
             <Grid item xs={12} sm={7}>
                 <Box color="#fff" >
@@ -91,7 +91,7 @@ const MockInterview = () => {
             </Box>
             }
        </Grid>
-    </Paper>
+    </Paper> */}
     </Paper>
 }
 
