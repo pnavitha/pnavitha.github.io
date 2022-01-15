@@ -46,7 +46,7 @@ const BankStatementInfo = () => {
                                     dispatch({ type: "BUTTON_CLICKED", payload: "FREE_MENTORSHIP" });
                                 }
                              } variant="contained" color="secondary" >
-                                Get Free Mentorship Today!
+                                Get FREE Mentorship Today!
                             </Button>
                         </Grid>
                         <Grid item>

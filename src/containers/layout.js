@@ -50,7 +50,7 @@ export default function Layout() {
                     <Grid container direction="row" alignContent="center" justify="space-between" >
                         <Grid item>
                         <Link to="/" style={{ textDecoration: 'none', color:'#000080'}}>
-                        <Typography variant="subtitle1">MyNextInning</Typography>
+                        <Typography variant="subtitle1">NextInning</Typography>
                         </Link>
                         </Grid>
                         <Grid item>

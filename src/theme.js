@@ -25,6 +25,9 @@ export const Theme = createMuiTheme({
       textAlign: 'center',
       backgroundColor: '#282c35',
       color: '#fff'
+    },
+    button: {
+      textTransform: 'none'
     }
   },
   palette: {

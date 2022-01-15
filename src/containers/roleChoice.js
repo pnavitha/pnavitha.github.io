@@ -36,9 +36,10 @@ const RoleChoice = () => {
                 <Grid container direction='column'>
                     <Typography variant="h1">Are you an Aspiring Product Manager?</Typography>
                     <br />
-                    <Typography variant="body1">The Product Management Mentorship Program with 1 year Interview Support.</Typography>
-                    <br />
                     <Link to="/aspiring-product-manager" style={{ textDecoration: 'none' }}>
+                        <img src={require("../images/Aspiring/3.png")} alt="Product Management Career Mentorship Program Become a Product Manager Career Mentor for better career high salary " width="100%" />
+                        <br />
+                    
                         <Button startIcon={<SearchIcon/>} variant="contained" color="secondary" >
                             Check Aspiring Product Manager Plans
                         </Button>
@@ -59,9 +60,10 @@ const RoleChoice = () => {
                 <Grid container direction='column'>
                     <Typography variant="h1">Are you an Associate Product Manager?</Typography>
                     <br />
-                    <Typography variant="body1">The Product Management Mentorship Program with in-depth PM Concepts.</Typography>
-                    <br />
                     <Link to="/associate-product-manager" style={{ textDecoration: 'none' }}>
+                    <img src={require("../images/Associate/3.png")} alt="Product Management Career Mentorship Program Become a Product Manager Career Mentor for better career high salary " width="100%" />
+                    <br />
+                    
                         <Button startIcon={<SearchIcon/>} variant="contained" color="secondary" >
                             Check Associate Product Manager Plans
                         </Button>

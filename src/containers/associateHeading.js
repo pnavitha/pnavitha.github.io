@@ -99,17 +99,17 @@ const AssociateHeading = () => {
                     <Grid container direction='row' justify="flex-start" alignItems="flex-end" spacing={1}>
                         <Grid item>
                             <Button startIcon={<SearchIcon/>} onClick={() => {
-                                        window.open('https://calendly.com/mohansoe/next-innings-let-us-take-the-plunge-together?month=2021-09', "_blank");
+                                        window.open('https://calendly.com/pooshkar-01/15min?month=2022-01&date=2022-01-04', "_blank");
                                         dispatch({ type: "BUTTON_CLICKED", payload: "FIND_MENTOR" })
                                     }
                                 } 
                                 variant="contained" color="secondary" >
-                                Find a Mentor Now!
+                                Book Mentor's time for FREE interaction
                             </Button>
                         </Grid>
                         <Grid item>
                             <Button startIcon={<WhatsAppIcon />} onClick={() => {
-                                        window.open('https://wa.me/+919535115847/?text=Hi,%20I%20am%20looking%20for%20deep%20delve%20in%20Product%20Management.', "_blank");
+                                        window.open('https://wa.me/+917093003840/?text=Hi,%20I%20am%20looking%20for%20deep%20delve%20in%20Product%20Management.', "_blank");
                                         dispatch({ type: "BUTTON_CLICKED", payload: "WHATSAPP_MENTOR" })
                                     }
                                 } 
