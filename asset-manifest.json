@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.js": "/static/js/main.2eafeef3.chunk.js",
+    "main.js.map": "/static/js/main.2eafeef3.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ea755a08.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ea755a08.js.map",
+    "static/js/2.efdecf4e.chunk.js": "/static/js/2.efdecf4e.chunk.js",
+    "static/js/2.efdecf4e.chunk.js.map": "/static/js/2.efdecf4e.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.05498b403b7ead9fd2318eeb01f8c432.js": "/precache-manifest.05498b403b7ead9fd2318eeb01f8c432.js",
+    "service-worker.js": "/service-worker.js",
+    "static/js/2.efdecf4e.chunk.js.LICENSE.txt": "/static/js/2.efdecf4e.chunk.js.LICENSE.txt",
+    "static/media/1.png": "/static/media/1.ecc6ccd7.png",
+    "static/media/2.png": "/static/media/2.9fbd0716.png",
+    "static/media/3.png": "/static/media/3.1202988f.png",
+    "static/media/4.png": "/static/media/4.6c74560f.png",
+    "static/media/AspiringProductManagerBrochure.pdf": "/static/media/AspiringProductManagerBrochure.578fe156.pdf",
+    "static/media/AssociateProductManagerBrochure.pdf": "/static/media/AssociateProductManagerBrochure.6c933617.pdf",
+    "static/media/aboutus.svg": "/static/media/aboutus.a57d42b5.svg",
+    "static/media/arpita.png": "/static/media/arpita.8fffbb91.png",
+    "static/media/cowork.svg": "/static/media/cowork.e9a5e302.svg",
+    "static/media/find_mentor.svg": "/static/media/find_mentor.f1d0587d.svg",
+    "static/media/kushagra.png": "/static/media/kushagra.ed9673a0.png",
+    "static/media/msme_loans.svg": "/static/media/msme_loans.6d2d338d.svg",
+    "static/media/pooshkar.png": "/static/media/pooshkar.ab700692.png",
+    "static/media/rocket.svg": "/static/media/rocket.6ad281df.svg",
+    "static/media/testimony_saloni.png": "/static/media/testimony_saloni.fd4648b6.png",
+    "static/media/win.svg": "/static/media/win.633c380b.svg",
+    "static/media/work_together.svg": "/static/media/work_together.162589b0.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ea755a08.js",
+    "static/js/2.efdecf4e.chunk.js",
+    "static/js/main.2eafeef3.chunk.js"
+  ]
+}
