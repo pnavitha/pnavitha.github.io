@@ -115,7 +115,7 @@ const MockInterview = () => {
                     <Typography variant="subtitle1">Sunday Demo Session</Typography>
                 </Grid>
                 <Grid item xs={12}>
-                    <Typography variant="body2">Join our Demo Session in 199/- ONLY</Typography>                
+                    <Typography variant="body2">Join our Demo Session at 199/- ONLY</Typography>                
                 </Grid>
                 <Grid item xs={12}>
                     <CategoryIcon/>
