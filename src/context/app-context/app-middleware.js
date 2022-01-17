@@ -1,6 +1,7 @@
 export const AppMiddleware = (dispatch, state) => (action) => {
     switch (action.type) {
         case 'BUTTON_CLICKED':
+            // TODO: "deploy": "react-scripts build && aws s3 rm s3://mynextinning.com/ --recursive && aws s3 sync build/ s3://mynextinning.com --acl public-read",
             // (async () => {
             //     const payload = {
             //         feedback: {
