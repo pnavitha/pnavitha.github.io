@@ -64,7 +64,7 @@ const MentorInformation = () => {
        <Paper square elevation={2} className={classes.Card}>
             <Grid container direction='column' justify="flex-start" alignItems='center'>
                 <Typography variant="subtitle1" color='primary'>Kushagra Mohan</Typography>
-                <Typography variant="body1" color='secondary'>(PM Leap Finance)</Typography>
+                <Typography variant="body1" color='secondary'>(Senior PM Leap Finance)</Typography>
                 <Typography variant="body1">A perfect mentor to learn Growth and Customers.</Typography>
                 <br />
                 <img src={require("../images/kushagra.png")} alt="Product Management Career Mentorship Program Become a Product Manager Career Mentor for better career high salary " width="100%" />

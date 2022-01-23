@@ -19,6 +19,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Help from './help';
 import BankStatementAnalyzer from './homeHeading';
 import Home from './home';
+import ProductCaseStudyTemplate from './productCaseStudy';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -83,6 +84,9 @@ export default function Layout() {
                 </Route>
                 <Route exact path="/aspiring-product-manager">
                     <AspiringProductManager />
+                </Route>
+                <Route exact path="/product-case-study">
+                    <ProductCaseStudyTemplate />
                 </Route>
                 <Route exact path="/associate-product-manager">
                     <AssociateProductManager />
