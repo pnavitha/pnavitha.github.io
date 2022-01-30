@@ -30,12 +30,12 @@ const TemplateJourneyInformation = () => {
         <Typography variant="h1">An Ideal Journey with NextInning</Typography>
         <br />
         <Grid container direction="row" justify='center' spacing={2}>
-        <Grid item xs={12} sm={2}>
+        <Grid item xs={12} sm={3}>
         <Grid container direction="column" spacing={0}>
                 <Paper square elevation={2} className={classes.Card}>
                     <Grid container direction='column' justify="space-between" alignItems='center'>
                         <Typography variant="subtitle1" color='primary'>Interact with a PM</Typography>
-                        <Typography variant="body1">Book PM's time-slot and tell your requirement.</Typography>
+                        <Typography variant="body1">Reach out to us and we will set up a conversation on the product case you have been given to solve for your dream job.</Typography>
                         <br />
                         <img src={require("../images/find_mentor.svg")} alt="Product Management Career Mentorship Program Become a Product Manager Career Mentor for better career high salary " width="100%" />
 
@@ -44,13 +44,13 @@ const TemplateJourneyInformation = () => {
             </Grid>
             
        </Grid>
-       <Grid item xs={12} sm={2}>
+       <Grid item xs={12} sm={3}>
         <Grid container direction="column" spacing={0}>
             <br/>
             <Paper square elevation={2} className={classes.Card}>
                 <Grid container direction='column' justify="space-between" alignItems='center'>
-                    <Typography variant="subtitle1" color='primary'>Get Feedback on case study or PRD</Typography>
-                    <Typography variant="body1">Analyze your product casestudy or PRD</Typography>
+                    <Typography variant="subtitle1" color='primary'>Get feedback on case study/PRD</Typography>
+                    <Typography variant="body1">Discuss the case study with our experienced PM’s and take their feedback to make it 10x better.</Typography>
                     <br />
                     <img src={require("../images/aboutus.svg")} alt="Product Management Career Mentorship Program Become a Product Manager Career Mentor for better career high salary " width="100%" />
 
@@ -58,22 +58,22 @@ const TemplateJourneyInformation = () => {
             </Paper>
        </Grid>
        </Grid>
-       <Grid item xs={12} sm={2}>
+       <Grid item xs={12} sm={3}>
        <Grid container direction="column" spacing={0}>
        <br/>
        <br/>
        <br />
             <Paper square elevation={2} className={classes.Card}>
                 <Grid container direction='column' justify="space-between" alignItems='center'>
-                    <Typography variant="subtitle1" color='primary'>Improve your casestudy</Typography>
-                    <Typography variant="body1">PMs feedback will help you in getting better at Case-study</Typography>
+                    <Typography variant="subtitle1" color='primary'>Get a personalized template</Typography>
+                    <Typography variant="body1">Get a personalized template to best display the creative solutions you discussed with our mentors.</Typography>
                     <br />
                     <img src={require("../images/msme_loans.svg")} alt="Product Management Career Mentorship Program Become a Product Manager Career Mentor for better career high salary " width="100%" />
                 </Grid>
             </Paper>
         </Grid>
        </Grid>
-       <Grid item xs={12} sm={2}>
+       <Grid item xs={12} sm={3}>
        <Grid container direction="column" spacing={0}>
        <br/>
        <br/>
@@ -82,28 +82,10 @@ const TemplateJourneyInformation = () => {
 
             <Paper square elevation={2} className={classes.Card}>
                 <Grid container direction='column' justify="space-between" alignItems='center'>
-                    <Typography variant="subtitle1" color='primary'>Get Personalised Template</Typography>
-                    <Typography variant="body1">An awesome template as per your requirment</Typography>
+                    <Typography variant="subtitle1" color='primary'>Final result</Typography>
+                    <Typography variant="body1">Clear the case study round of your dream job and voila you are 90% there!</Typography>
                     <br />
                     <img src={require("../images/work_together.svg")} alt="Product Management Career Mentorship Program Become a Product Manager Career Mentor for better career high salary " width="100%" />
-
-                </Grid>
-            </Paper>
-        </Grid>
-       </Grid>
-       <Grid item xs={12} sm={2}>
-       <Grid container direction="column" spacing={0}>
-       <br/>
-       <br/>
-       <br/>
-       <br />
-       <br/>
-            <Paper square elevation={2} className={classes.Card}>
-                <Grid container direction='column' justify="space-between" alignItems='center'>
-                    <Typography variant="subtitle1" color='primary'>Final Result, Smoother & Quicker</Typography>
-                    <Typography variant="body1">Use the template with your data, and Viola!</Typography>
-                    <br />
-                    <img src={require("../images/rocket.svg")} alt="Product Management Career Mentorship Program Become a Product Manager Career Mentor for better career high salary " width="100%" />
 
                 </Grid>
             </Paper>

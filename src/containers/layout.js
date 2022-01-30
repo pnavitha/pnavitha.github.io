@@ -64,9 +64,9 @@ export default function Layout() {
                             spacing={1}
                             className={classes.helpSection}
                             >
-                                <Grid item>
+                                {/* <Grid item>
                                     <Button size='small' color='secondary' onClick={() => scrollTo('SectionTwo')}>About Us</Button>
-                                </Grid>
+                                </Grid> */}
                                 <Grid item>
                                 <Link to="/help" style={{ textDecoration: 'none', color:'#000080'}}>
                                     <Button size='small' >+91 7093003840</Button>

@@ -49,9 +49,6 @@ const ProductCaseStudyTemplate = () => {
     return <Box className={classes.contentAreaWrapper}>
         <Grid container direction="column" alignItems="stretch" justify="center">
             <Grid item>
-                <MockInterview />
-            </Grid>
-            <Grid item>
                 <ProductCaseStudyHeading />  
             </Grid>
             <Grid item>
@@ -59,6 +56,9 @@ const ProductCaseStudyTemplate = () => {
             </Grid>
             <Grid item>
                 <TemplateJourneyInformation />
+            </Grid>
+            <Grid item>
+                <MockInterview />
             </Grid>
             <Grid item>
                 <Testimonials />

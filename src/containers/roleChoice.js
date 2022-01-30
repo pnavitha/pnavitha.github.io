@@ -12,6 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import SearchIcon from '@material-ui/icons/Search';
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 
 const useStyles = makeStyles({
     ContentWrapper: {
@@ -56,28 +57,20 @@ const RoleChoice = () => {
                 </Grid>
             </Grid>
             <Divider orientation="vertical" flexItem />
-            <Grid item xs={12} sm={5}>
-                <Grid container direction='column'>
-                    <Typography variant="h1">Are you an Associate Product Manager?</Typography>
-                    <br />
-                    <Link to="/associate-product-manager" style={{ textDecoration: 'none' }}>
-                    <img src={require("../images/Associate/3.png")} alt="Product Management Career Mentorship Program Become a Product Manager Career Mentor for better career high salary " width="100%" />
-                    <br />
-                    
-                        <Button startIcon={<SearchIcon/>} variant="contained" color="secondary" >
-                            Check Associate Product Manager Plans
-                        </Button>
-                    </Link>
-                    <br />
-                    <Button 
-                        variant="contained" 
-                        style={{backgroundColor: '#0975e1', color: '#FFFFFF'}} 
-                        href={require("../pdfs/AssociateProductManagerBrochure.pdf")} 
-                        download="AssociateProductManagerBrochure"
-                        startIcon={<FileDownloadIcon />}>
-                            Download Associate Product Manager Brochure
-                    </Button>
-                </Grid>
+            <Grid item xs={12} sm={4}>
+                <Typography variant="h1">Try our next demo session..</Typography>
+                <br />
+                <img src={require("../images/demo.png")} alt="Product Management Career Mentorship Program Become a Product Manager Career Mentor for better career high salary " width="75%" />
+                <br />
+                <br />
+                <Button startIcon={<WhatsAppIcon />} onClick={() => {
+                            window.open('https://wa.me/+917093003840/?text=Hi,%20I%20want%20to%20register%20for%20upcoming%20demo%20session%20in%20Product%20Management.', "_blank");
+                            dispatch({ type: "BUTTON_CLICKED", payload: "WHATSAPP_MENTOR" })
+                        }
+                    } 
+                    variant="contained" color="primary" >
+                    Register Now!
+                </Button>
             </Grid>
         </Grid>
     </Paper>

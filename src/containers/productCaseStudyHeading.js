@@ -86,14 +86,11 @@ const ProductCaseStudyHeading = () => {
             <Grid container direction="row" justify="space-evenly" spacing={2}>
                 <Grid item xs={12} sm={4}>
                     <br />
+                    <Typography variant="h1">Ace your interview with the Perfect Case Study</Typography>
                     <br />
+                    <Typography variant="body1">Do you know that almost 80% of companies have product case study rounds?</Typography>
                     <br />
-                    <br />
-                    <Typography variant="h1">Present an Awesome Product Case Study</Typography>
-                    <br />
-                    <Typography variant="body1">Tell a rocking story with our product case-study templates.</Typography>
-                    <br />
-                    <Typography variant="body1">Let our panel of experienced PMs help you present your case-study in the Best way!!</Typography>
+                    <Typography variant="body1">Don’t worry, you can present an awesome case with the help of our personalized templates & after discussions with our experienced PM’s.</Typography>
                     <br />
                     <br />
                     <Grid container direction='row' justify="flex-start" alignItems="flex-end" spacing={1}>

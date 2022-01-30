@@ -15,6 +15,7 @@ import ForumIcon from '@mui/icons-material/Forum';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PagesIcon from '@mui/icons-material/Pages';
 import CategoryIcon from '@mui/icons-material/Category';
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
     ContentWrapper: {
@@ -58,12 +59,13 @@ const MockInterview = () => {
                 <Grid item xs={12}>
                     <Typography variant="body2">Interact with an Experienced PM</Typography>
                 </Grid>
-                <Grid item xs={12}>
+                {/* <Grid item xs={12}>
                     <ForumIcon/>
-                </Grid>
+                </Grid> */}
                 <Grid item xs={12}>
                 <Button 
                 size="small"
+                startIcon={<ForumIcon/>}
                 style={{backgroundColor: '#0975e1', color: '#FFFFFF'}} 
                 onClick={() => {
                         window.open('https://calendly.com/nextinning/pm-mock-interview', "_blank");
@@ -82,19 +84,22 @@ const MockInterview = () => {
         <Grid item xs={12} sm={4}>
         <Paper square className={classes.BlueContentWrapper} elevation={4} >
         <Grid container direction="column" alignItems='center' alignContent="center" justify='center' spacing={0}>
-                <Grid item xs={12}>
-                    <Typography variant="subtitle1">PM Casestudy Templates</Typography>
-                </Grid>
+                <Link to="/product-case-study" >
+                    <Grid item xs={12}>
+                        <Typography variant="subtitle1">PM Casestudy Templates</Typography>
+                    </Grid>
+                </Link>
                 <Grid item xs={12}>
                     <Typography variant="body2">Get Best PRDs and Casestudy Templates</Typography>
                 </Grid>
-                <Grid item xs={12}>
+                {/* <Grid item xs={12}>
                     <PagesIcon/>
-                </Grid>
+                </Grid> */}
                 <Grid item xs={12}>
                 <Button 
                 size="small"
                 style={{backgroundColor: '#0975e1', color: '#FFFFFF'}} 
+                startIcon={<PagesIcon/>}
                 onClick={() => {
                     window.open('https://wa.me/+917093003840/?text=Hi,%20I%20am%20looking%20for%20Casestudy%20template%20in%20Product%20Management.', "_blank");
                     dispatch({ type: "BUTTON_CLICKED", payload: "WHATSAPP_MENTOR" })
@@ -112,17 +117,18 @@ const MockInterview = () => {
         <Paper square className={classes.RedContentWrapper} elevation={4} >
         <Grid container direction="column" alignItems='center'  alignContent="center" justify='center' spacing={0}>
                 <Grid item xs={12}>
-                    <Typography variant="subtitle1">Sunday Demo Session</Typography>
+                    <Typography variant="subtitle1">Saturday Demo Session</Typography>
                 </Grid>
                 <Grid item xs={12}>
-                    <Typography variant="body2">Join our Demo Session at 199/- ONLY</Typography>                
+                    <Typography variant="body2">Join our Demo Session at 249/- ONLY</Typography>                
                 </Grid>
-                <Grid item xs={12}>
+                {/* <Grid item xs={12}>
                     <CategoryIcon/>
-                </Grid>
+                </Grid> */}
                 <Grid item xs={12}>
                 <Button 
                 size="small"
+                startIcon={<CategoryIcon/>}
                 style={{backgroundColor: '#0975e1', color: '#FFFFFF'}} 
                 onClick={() => {
                     window.open('https://wa.me/+917093003840/?text=Hi,%20I%20am%20looking%20for%20a%20Product%20related%20demo%20session.', "_blank");

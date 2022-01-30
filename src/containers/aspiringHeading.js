@@ -87,8 +87,6 @@ const AspiringHeading = () => {
                 <Grid item xs={12} sm={4}>
                     <br />
                     <br />
-                    <br />
-                    <br />
                     <Typography variant="h1">Crack Product Management in 3 weeks</Typography>
                     <br />
                     <Typography variant="body1">Online courses don't work. They are costly and time-consuming. Frankly, they are useless!</Typography>

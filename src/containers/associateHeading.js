@@ -87,8 +87,6 @@ const AssociateHeading = () => {
                 <Grid item xs={12} sm={4}>
                     <br />
                     <br />
-                    <br />
-                    <br />
                     <Typography variant="h1">Strengthen your Product Management Foundation</Typography>
                     <br />
                     <Typography variant="body1">Online courses don't work. They are costly and time-consuming. Frankly, they are useless!</Typography>
